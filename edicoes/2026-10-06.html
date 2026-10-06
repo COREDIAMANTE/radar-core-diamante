@@ -1,170 +1,219 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Radar Regulatório e de Mercado | Grupo Diamante</title>
+<meta name="description" content="Radar Regulatório e de Mercado do CORE do Grupo Diamante">
 <style>
-:root{--navy:#0b1830;--navy2:#12284a;--gold:#caa24a;--paper:#f5f6f8;--ink:#172033;--muted:#667085;--line:#d9dde5;--white:#fff;--red:#b42318;--amber:#b7791f;--blue:#175cd3;--green:#027a48;--soft:#eef2f6}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--paper);color:var(--ink)}
-.wrap{max-width:1180px;margin:auto}.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:46px 20px 34px;border-bottom:4px solid var(--gold)}
-.eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#dcc37f}.hero h1{font-size:40px;line-height:1.05;margin:10px 0}.subtitle{max-width:930px;color:#dce4ef;line-height:1.6}
-.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.pill{font-size:12px;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:7px 11px;background:rgba(255,255,255,.06)}
-nav{position:sticky;top:0;z-index:8;background:#fff;border-bottom:1px solid var(--line)}.navin{display:flex;gap:8px;overflow:auto;padding:9px 20px}.navin a{text-decoration:none;white-space:nowrap;font-size:13px;font-weight:700;padding:8px 9px;border-radius:8px}
-main{padding:26px 20px 60px}.section{margin-top:28px}.section-title{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;margin-bottom:14px}.section-title h2{font-size:27px;margin:0}.section-title p{margin:0;color:var(--muted);font-size:13px}
-.grid2{display:grid;grid-template-columns:2fr 1fr;gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 8px 24px rgba(15,23,42,.045)}
-.tag{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 9px;border:1px solid var(--line);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.dot{width:8px;height:8px;border-radius:50%}
-.red{border-top:5px solid var(--red)}.amber{border-top:5px solid var(--amber)}.blue{border-top:5px solid var(--blue)}.green{border-top:5px solid var(--green)}
-h3{margin:9px 0 8px;font-size:20px;line-height:1.28}.body{color:#344054;line-height:1.6}.muted{color:var(--muted);font-size:13px}.impact,.action,.note{margin-top:12px;border-radius:9px;padding:11px 13px;line-height:1.5}.impact{border-left:4px solid var(--gold);background:#fbf7ec}.action{border-left:4px solid var(--red);background:#fff4f1}.note{border-left:4px solid var(--blue);background:#f3f7ff}
-.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.metric{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px}.metric strong{display:block;font-size:27px;color:var(--navy)}.metric span{font-size:12px;color:var(--muted)}
-.table{width:100%;border-collapse:collapse;font-size:13px}.table th,.table td{padding:11px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.table th{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:#fafbfc}.status{font-weight:800}.placeholder{color:#9a3412;font-weight:800}
-.timeline{display:grid;gap:10px}.deadline{display:grid;grid-template-columns:105px 1fr;gap:13px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px}.deadline time{font-weight:800;color:var(--navy)}
-.process{padding:14px;border:1px solid var(--line);border-radius:12px;background:#fff;margin-top:10px}.process code{font-size:12px;color:var(--navy)}.source{font-size:12px;color:#475467;margin-top:10px}.source a{color:inherit}
-.archive a{display:block;padding:9px 0;border-top:1px solid var(--line);text-decoration:none}.archive a:first-of-type{border-top:0}
-footer{background:#0a1427;color:#aeb8c8;padding:24px 20px;font-size:12px}
-@media(max-width:900px){.grid2,.grid3,.kpi{grid-template-columns:1fr}.section-title{align-items:flex-start;flex-direction:column}.hero h1{font-size:33px}}
+:root{
+ --bg:#f5f7fb;--paper:#ffffff;--blue:#17365f;--blue2:#1f6fb2;--orange:#ed8a24;
+ --orange2:#f7a947;--ink:#182230;--muted:#637083;--line:#dbe3ec;--line2:#edf1f5;
+ --soft:#f7f9fc;--softblue:#eef5fb;--softorange:#fff6eb;--red:#b5473c;--green:#287d53;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Segoe UI,Arial,sans-serif}
+button,a{font:inherit}.topbar{height:82px;background:#fff;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:0 38px;position:sticky;top:0;z-index:20}
+.brand-name{font-weight:850;letter-spacing:.13em;font-size:17px;color:var(--blue)}.brand-sub{font-size:10px;letter-spacing:.15em;color:#8291a2;margin-top:3px}
+.actions{display:flex;align-items:center;gap:9px}.use{font-size:11px;color:#6e7c8c;margin-right:5px}.btn{border:1px solid #c9d4df;background:#fff;color:var(--blue);padding:9px 12px;border-radius:7px;text-decoration:none;cursor:pointer}.btn:hover{border-color:#9db2c7;background:#f8fafc}
+.layout{max-width:1180px;margin:0 auto;padding:28px 26px 62px;display:grid;grid-template-columns:165px minmax(0,1fr);gap:28px}
+.sidebar{padding-top:52px;position:sticky;top:82px;height:calc(100vh - 108px)}.side-item{display:flex;gap:10px;align-items:center;text-decoration:none;color:#8493a3;border-left:2px solid #dbe4ec;padding:12px 0 12px 13px;margin:7px 0;font-size:12px;transition:.2s}.side-item.active{color:var(--orange);border-left-color:var(--orange)}.side-num{font-family:Georgia,serif}
+.issue-row{display:flex;justify-content:space-between;gap:18px;color:#64778b;font:11px "Courier New",monospace;letter-spacing:.14em;text-transform:uppercase;padding-bottom:38px}
+.eyebrow{color:var(--orange);font:12px "Courier New",monospace;letter-spacing:.13em;text-transform:uppercase}.hero-title{font-family:Georgia,"Times New Roman",serif;color:var(--blue);font-size:58px;line-height:.98;margin:18px 0 8px;font-weight:600}.hero-title em{display:block;color:var(--orange);font-weight:500}.hero-copy{max-width:780px;color:#526174;font-size:14px;line-height:1.65;margin-top:18px}
+.rule{border-top:1px solid var(--line);margin:34px 0 18px}.edition-row{display:flex;justify-content:space-between;gap:20px;align-items:center}.edition-row .left{font-size:15px;color:var(--blue2)}.cut{font:10px "Courier New",monospace;letter-spacing:.1em;color:#677b90;text-transform:uppercase}
+.highlights{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);background:#fff;margin-top:22px}.highlight{padding:31px;min-height:310px}.highlight+.highlight{border-left:1px solid var(--line)}.badge{display:inline-flex;align-items:center;gap:7px;padding:6px 9px;border-radius:999px;font:10px "Courier New",monospace;letter-spacing:.04em;text-transform:uppercase}.badge.orange{background:var(--softorange);color:#9a5514;border:1px solid #f2c891}.badge.blue{background:var(--softblue);color:#245f94;border:1px solid #bfd6ea}.badge.green{background:#eef8f2;color:#2f7250;border:1px solid #c7e6d3}.mini{float:right;color:#708ba1;font:10px "Courier New",monospace;letter-spacing:.1em;text-transform:uppercase}.highlight h2{font-family:Georgia,serif;color:var(--blue);font-size:30px;line-height:1.12;font-weight:500;margin:28px 0 15px}.highlight p{color:#4e5e6f;font-size:13px;line-height:1.65}.read{color:var(--orange);font-weight:750;font-size:12px;margin-top:16px;display:inline-block}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);margin:26px 0 68px}.metric{padding:0 21px;border-right:1px solid var(--line)}.metric:first-child{padding-left:0}.metric:last-child{border-right:0}.metric .num{font-family:Georgia,serif;color:var(--orange);font-size:31px}.metric .label{font-size:11px;color:#526174;line-height:1.4;margin-top:7px}
+.section{scroll-margin-top:105px;margin-top:68px}.section-kicker{font:11px "Courier New",monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--blue2)}.section-title{font-family:Georgia,serif;color:var(--blue);font-size:34px;font-weight:500;margin:8px 0 25px}
+.panel{background:#fff;border:1px solid var(--line)}.decision{display:grid;grid-template-columns:150px 1fr 205px;gap:18px;padding:21px 23px;border-bottom:1px solid var(--line2)}.decision:last-child{border-bottom:0}.type{font:10px "Courier New",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--orange)}.decision h3{font-family:Georgia,serif;color:var(--blue);font-size:21px;font-weight:500;margin:0 0 7px}.decision p,.next{font-size:12px;line-height:1.55;color:#59697a;margin:0}.next strong{display:block;color:var(--blue);margin-bottom:4px}.source{display:inline-block;color:var(--blue2);font-size:11px;margin-top:7px;text-decoration:underline}
+.insight{display:grid;grid-template-columns:1.35fr .65fr;background:#fff;border:1px solid var(--line)}.insight-main{padding:32px;border-right:1px solid var(--line)}.insight-main h3{font-family:Georgia,serif;color:var(--blue);font-size:32px;line-height:1.15;font-weight:500;margin:17px 0}.insight-main p{font-size:13px;line-height:1.72;color:#4d5d6e}.impact{background:var(--softblue);border-left:4px solid var(--blue2);padding:14px;margin-top:18px;font-size:12px;line-height:1.6}.action{background:var(--softorange);border-left:4px solid var(--orange);padding:14px;margin-top:10px;font-size:12px;line-height:1.6}.asset-list{padding:24px}.asset{padding:13px 0;border-bottom:1px solid var(--line2)}.asset:last-child{border-bottom:0}.asset strong{display:block;color:var(--blue);font-size:13px;margin-bottom:4px}.asset span{font-size:11px;line-height:1.5;color:#617184}
+.market-grid{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid var(--line)}.market{padding:18px;border-right:1px solid var(--line2);border-bottom:1px solid var(--line2);min-height:126px}.market:nth-child(4n){border-right:0}.market .name{font:10px "Courier New",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--blue2)}.market .value{font-family:Georgia,serif;font-size:23px;color:var(--orange);margin:10px 0 7px}.market .note{font-size:10.5px;line-height:1.45;color:#637486}
+details.tech{margin-top:13px;background:#fff;border:1px solid var(--line)}details.tech summary{cursor:pointer;padding:15px 18px;color:var(--blue);font-weight:750;font-size:12px}.tech-inner{padding:0 18px 18px;display:grid;grid-template-columns:1fr 1fr;gap:10px}.tech-item{border-top:1px solid var(--line2);padding:11px 0;font-size:11px;line-height:1.5;color:#5b6c7d}.tech-item strong{color:var(--blue);display:block;margin-bottom:3px}.pending{color:#9a5a1e;font-weight:700}
+.monitor-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.monitor,.agenda{background:#fff;border:1px solid var(--line);padding:22px}.monitor-item{padding:13px 0;border-bottom:1px solid var(--line2)}.monitor-item:last-child{border-bottom:0}.level{font:10px "Courier New",monospace;letter-spacing:.08em;text-transform:uppercase}.level.high{color:#b5473c}.level.med{color:#a5671e}.level.low{color:#2f6fa5}.monitor-item h3{font-family:Georgia,serif;color:var(--blue);font-size:19px;font-weight:500;margin:4px 0}.monitor-item p{font-size:11px;line-height:1.5;color:#617184;margin:0}.agenda-row{display:grid;grid-template-columns:84px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid var(--line2)}.agenda-row:last-child{border-bottom:0}.agenda-row time{font:10px "Courier New",monospace;color:var(--orange)}.agenda-row div{font-size:11px;line-height:1.45;color:#546476}
+.actions-list{margin-top:14px;background:#fff;border:1px solid var(--line);padding:20px}.action-row{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:9px 0;border-bottom:1px solid var(--line2);font-size:11px;line-height:1.5;color:#566779}.action-row:last-child{border-bottom:0}.action-row b{color:var(--orange);font-family:Georgia,serif;font-size:17px}
+.processes{display:grid;grid-template-columns:1fr 1fr;gap:11px}.process{background:#fff;border:1px solid var(--line);padding:15px}.process code{font-size:10px;color:var(--blue2)}.process h3{font-family:Georgia,serif;color:var(--blue);font-size:17px;font-weight:500;margin:7px 0}.process p{font-size:10.5px;line-height:1.45;color:#687789;margin:0}.process .state{margin-top:8px;color:#8c5a26;font-weight:700}
+.footer{margin-top:66px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:18px;color:#7a8999;font-size:10px;line-height:1.5}
+@media print{.topbar,.sidebar{display:none}.layout{display:block;max-width:none;padding:0}.section{break-inside:avoid}.btn{display:none}}
+@media(max-width:940px){.layout{grid-template-columns:1fr}.sidebar{display:none}.highlights,.insight,.monitor-grid{grid-template-columns:1fr}.highlight+.highlight{border-left:0;border-top:1px solid var(--line)}.insight-main{border-right:0;border-bottom:1px solid var(--line)}.metrics,.market-grid,.tech-inner,.processes{grid-template-columns:1fr 1fr}.decision{grid-template-columns:1fr}.hero-title{font-size:45px}.topbar{padding:0 18px}.use{display:none}}
+@media(max-width:620px){.metrics,.market-grid,.tech-inner,.processes{grid-template-columns:1fr}.issue-row,.edition-row{align-items:flex-start;flex-direction:column}.highlight{padding:23px}.hero-title{font-size:39px}.actions .btn:first-of-type{display:none}}
 </style>
 </head>
 <body>
-<header class="hero"><div class="wrap">
-<div class="eyebrow">CORE • Comercialização, Planejamento e Regulação</div>
-<h1>Radar Regulatório e de Mercado</h1>
-<div class="subtitle">Publicação executiva do Grupo Diamante. Seleção orientada a impacto sobre CTJL, UTE Porto do Pecém I, UTE Porto do Pecém II, UTE Porto do Itaqui e Comercializadora. Cada item responde: “O que isso muda para o Grupo Diamante?”</div>
-<div class="meta"><span class="pill">Edição: 06/10/2026</span><span class="pill">Corte: 06/10/2026 • 09:08 BRT</span><span class="pill">Próxima atualização: terça-feira • 13h</span><span class="pill">Leitura-alvo: 5 min</span></div>
-</div></header>
+<header class="topbar">
+ <div><div class="brand-name">GRUPO DIAMANTE</div><div class="brand-sub">CORE / INTELIGÊNCIA REGULATÓRIA E DE MERCADO</div></div>
+ <div class="actions"><span class="use">Uso interno</span><a class="btn" href="../index.html">Voltar para edição atual</a><button class="btn" onclick="location.reload()">↻ Atualizar</button><button class="btn" onclick="window.print()">Imprimir / PDF</button></div>
+</header>
 
-<nav><div class="wrap navin"><a href="#capa">Capa</a><a href="#atos">Atos</a><a href="#insight">Insight CORE</a><a href="#mercado">Mercado</a><a href="#monitor">Monitor CORE</a><a href="#processos">Processos</a><a href="#historico">Edições</a></div></nav>
+<div class="layout">
+<aside class="sidebar">
+ <a class="side-item active" href="#capa"><span class="side-num">01</span>Capa</a>
+ <a class="side-item" href="#atos"><span class="side-num">02</span>Atos & decisões</a>
+ <a class="side-item" href="#insight"><span class="side-num">03</span>Insight CORE</a>
+ <a class="side-item" href="#mercado"><span class="side-num">04</span>Mercado</a>
+ <a class="side-item" href="#monitor"><span class="side-num">05</span>Monitor CORE</a>
+</aside>
 
-<main><div class="wrap">
+<main>
+<section id="capa">
+ <div class="issue-row"><span>EDIÇÃO · TERÇA-FEIRA · 06/10/2026</span><span>LEITURA EXECUTIVA · ~5 MIN</span></div>
+ <div class="eyebrow">COMERCIALIZAÇÃO · PLANEJAMENTO · REGULAÇÃO</div>
+ <h1 class="hero-title">Radar Regulatório<em>e de Mercado.</em></h1>
+ <p class="hero-copy">Seleção executiva dos fatos regulatórios e de mercado com efeito identificável sobre o Grupo Diamante. A edição considera apenas informações publicadas e verificáveis até o horário de corte; propostas, decisões e interpretações são distinguidas entre si.</p>
+ <div class="rule"></div>
+ <div class="edition-row"><span class="left">Edição de 06/10/2026 · fatos considerados até o corte desta manhã.</span><span class="cut">CORTE · 06/10 · 09:51 BRT</span></div>
 
-<section id="capa" class="section">
-<div class="section-title"><h2>1. Capa executiva</h2><p>Dois destaques, sem recomendação operacional.</p></div>
-<div class="grid2">
-<div class="card red"><span class="tag"><span class="dot" style="background:var(--red)"></span>Impacta a Diamante</span><h3>Gas Release avança para audiência pública</h3><p class="body">A ANP consolidou as contribuições da CP nº 16/2026 e o tema segue para audiência pública em 21/10. O desenho final pode alterar condições competitivas e comerciais do mercado de gás natural.</p></div>
-<div class="card amber"><span class="tag"><span class="dot" style="background:var(--amber)"></span>Monitorar</span><h3>Classificação operacional de usinas segue em revisão</h3><p class="body">A CP ANEEL nº 034/2026 discute critérios de participação de usinas nos processos de planejamento, programação, supervisão e operação do SIN.</p></div>
-</div>
-<div class="kpi" style="margin-top:14px">
-<div class="metric"><strong>21/10</strong><span>Audiência pública ANP • Gas Release</span></div>
-<div class="metric"><strong>30/10</strong><span>Prazo CP ANEEL 035/2026</span></div>
-<div class="metric"><strong>5</strong><span>processos permanentes no Monitor CORE</span></div>
-<div class="metric"><strong>09:08</strong><span>horário de corte desta edição</span></div>
-</div>
+ <div class="highlights">
+  <article class="highlight">
+   <span class="badge orange">• Monitorar · impacto potencial alto</span><span class="mini">Destaque 01</span>
+   <h2>CP 034/2026 pode alterar a classificação operacional de usinas no SIN</h2>
+   <p>A proposta encaminhada pelo ONS revisa critérios que definem o nível de participação das usinas no planejamento, programação, supervisão e operação coordenada. As contribuições vão até 02/11.</p>
+   <a class="read" href="#insight">Ler análise na seção 03</a>
+  </article>
+  <article class="highlight">
+   <span class="badge green">• Oportunidade · Comercializadora</span><span class="mini">Destaque 02</span>
+   <h2>Gas Release avança para audiência pública em 21/10</h2>
+   <p>A ANP recebeu 655 contribuições à proposta de redução da concentração no mercado de gás. O tema é relevante para eventual atuação comercial em gás, mas não representa mudança direta no combustível principal das UTEs a carvão do Grupo.</p>
+   <a class="read" href="#atos">Ler na seção 02</a>
+  </article>
+ </div>
+
+ <div class="metrics">
+  <div class="metric"><div class="num">R$ 57,31</div><div class="label">PLD em todos os submercados em 06/10/2026</div></div>
+  <div class="metric"><div class="num">02/11</div><div class="label">prazo final da CP ANEEL 034/2026</div></div>
+  <div class="metric"><div class="num">655</div><div class="label">contribuições consolidadas pela ANP no Gas Release</div></div>
+  <div class="metric"><div class="num">+1,57%</div><div class="label">IGP-M de setembro/2026</div></div>
+ </div>
 </section>
 
 <section id="atos" class="section">
-<div class="section-title"><h2>2. Decisões, atos legais e publicações</h2><p>Prioridade para ação, impacto e prazo.</p></div>
-<div class="card">
-<table class="table">
-<thead><tr><th>Classificação</th><th>Órgão / ato</th><th>O que foi publicado</th><th>O que muda para a Diamante</th><th>Prazo / providência</th></tr></thead>
-<tbody>
-<tr><td><span class="status">Ação Necessária</span></td><td>ANP • CP 16/2026</td><td>Relatório da consulta sobre Gas Release divulgado; processo segue para audiência pública.</td><td>Potencial efeito sobre competição, oferta e condições de contratação de gás para térmicas e Comercializadora.</td><td>21/10 • avaliar relatório e pontos materiais para suprimento e estratégia comercial.</td></tr>
-<tr><td><span class="status">Monitorar</span></td><td>ANEEL • CP 034/2026</td><td>Revisão dos critérios de classificação operacional das usinas do SIN.</td><td>Pode alterar obrigações e intensidade de participação dos ativos nos processos do ONS.</td><td>Verificar abrangência específica sobre os ativos Diamante.</td></tr>
-<tr><td><span class="status">Monitorar</span></td><td>MME • CP 232/2026</td><td>Metas do RenovaBio para 2027-2036 em consulta.</td><td>Relevância indireta para Comercializadora e estratégia de descarbonização/combustíveis.</td><td>Acompanhar desfecho e efeitos comerciais.</td></tr>
-<tr><td><span class="status">Contexto Setorial</span></td><td>ANEEL • CP 035/2026</td><td>Metodologia de amortização de investimentos associada à extensão de outorgas de geração.</td><td>Referência metodológica regulatória para reconhecimento econômico de investimentos em geração.</td><td>30/10 • acompanhar resultado.</td></tr>
-</tbody>
-</table>
-<div class="note"><strong>Regra editorial:</strong> proposta ≠ decisão. Itens acima permanecem identificados conforme o estágio conhecido e devem ser revistos se houver ato superveniente.</div>
-</div>
+ <div class="section-kicker">02 / DECISÕES, ATOS LEGAIS E PUBLICAÇÕES</div>
+ <h2 class="section-title">O que merece atenção</h2>
+ <div class="panel">
+  <div class="decision">
+   <div class="type">Monitorar · proposta</div>
+   <div><h3>ANEEL · CP 034/2026 · classificação operacional</h3><p>A ANEEL abriu consulta sobre critérios de classificação das modalidades de operação das usinas integrantes do SIN. A proposta considera avaliação individual e por conjuntos operativos.</p><a class="source" target="_blank" href="https://www.gov.br/aneel/pt-br/assuntos/noticias/2026-defeso-eleitoral/aneel-abre-consulta-publica-para-aprimorar-classificacao-operacional-de-usinas-do-sin">Fonte oficial · ANEEL</a></div>
+   <div class="next"><strong>O que muda</strong>Pode alterar nível de coordenação, informações e obrigações operacionais das usinas abrangidas.<strong style="margin-top:8px">Prazo</strong>Contribuições até 02/11/2026.</div>
+  </div>
+  <div class="decision">
+   <div class="type">Oportunidade · proposta</div>
+   <div><h3>ANP · CP/AP 16/2026 · Gas Release</h3><p>A ANP publicou o relatório da consulta em 05/10. Foram 40 respostas e 655 contribuições. A audiência pública ocorrerá em 21/10, das 14h às 18h.</p><a class="source" target="_blank" href="https://www.gov.br/anp/pt-br/canais_atendimento/imprensa/noticias-comunicados/anp-divulga-relatorio-da-consulta-publica-sobre-programa-de-gas-release">Fonte oficial · ANP</a></div>
+   <div class="next"><strong>O que muda</strong>Relevância potencial para a Comercializadora e estratégia de gás. Não se presume efeito direto sobre as UTEs a carvão.<strong style="margin-top:8px">Próximo marco</strong>Audiência em 21/10.</div>
+  </div>
+  <div class="decision">
+   <div class="type">Contexto setorial · proposta</div>
+   <div><h3>ANEEL · CP 035/2026 · amortização de investimentos</h3><p>A consulta propõe metodologia, baseada em fluxo de caixa descontado, para extensão de prazo de outorgas hidrelétricas em caso de acréscimo de capacidade.</p><a class="source" target="_blank" href="https://www.gov.br/aneel/pt-br/assuntos/noticias/2026-defeso-eleitoral/consulta-publica-propoe-metodologia-para-amortizacoes-de-investimentos-em-geracao">Fonte oficial · ANEEL</a></div>
+   <div class="next"><strong>O que muda</strong>Nenhum impacto direto identificado sobre as térmicas nesta edição. Serve como referência de política regulatória em geração.<strong style="margin-top:8px">Prazo</strong>Contribuições até 30/10.</div>
+  </div>
+  <div class="decision">
+   <div class="type">Monitorar · proposta</div>
+   <div><h3>MME · CP 232/2026 · RenovaBio</h3><p>Consulta sobre metas anuais de redução de emissões para 2027–2036, aberta por 45 dias a partir de 15/09.</p><a class="source" target="_blank" href="https://www.gov.br/mme/pt-br/assuntos/noticias/mme-abre-consulta-publica-sobre-metas-do-renovabio-para-o-periodo-de-2027-a-2036">Fonte oficial · MME</a></div>
+   <div class="next"><strong>O que muda</strong>Relevância indireta para a Comercializadora e acompanhamento de políticas de combustíveis/descarbonização. Sem efeito direto comprovado nos ativos nesta edição.</div>
+  </div>
+ </div>
 </section>
 
 <section id="insight" class="section">
-<div class="section-title"><h2>3. Radar executivo & Insight CORE</h2><p>Um único tema aprofundado.</p></div>
-<div class="grid2">
-<div class="card red">
-<span class="tag"><span class="dot" style="background:var(--red)"></span>Proposta para validação do CORE</span>
-<h3>Gas Release: possível mudança estrutural no ambiente de contratação de gás</h3>
-<p class="body"><strong>Fato gerador.</strong> A ANP divulgou o relatório da CP nº 16/2026, consolidando contribuições sobre o programa de Gas Release e encaminhando o processo para audiência pública.</p>
-<p class="body"><strong>Contexto.</strong> O tema busca ampliar competição e reduzir concentração no mercado de gás. Para geradores térmicos, a relevância está menos na norma abstrata e mais nos efeitos sobre acesso, quantidade ofertada, flexibilidade e poder de negociação.</p>
-<div class="impact"><strong>Interpretação para a Diamante.</strong> CTJL, Pecém I, Pecém II, Itaqui e Comercializadora podem ser afetados de forma distinta conforme combustível, contratos vigentes e estratégia comercial. Não se presume aplicação uniforme a todos os ativos.</div>
-<div class="action"><strong>Providência sustentada pela documentação:</strong> revisar o relatório da CP 16/2026 e separar os pontos que incidam sobre oferta, acesso, concentração, obrigações de agentes e condições de comercialização antes da audiência pública de 21/10.</div>
-</div>
-<aside class="card">
-<h3>Ativos potencialmente afetados</h3>
-<p class="body"><strong>CTJL:</strong> avaliar aderência conforme estratégia de combustível e contratação.</p>
-<p class="body"><strong>Pecém I / II / Itaqui:</strong> verificar exposição contratual e oportunidades de suprimento.</p>
-<p class="body"><strong>Comercializadora:</strong> acompanhar eventual ampliação de liquidez, novos ofertantes e mudanças de estrutura competitiva.</p>
-<div class="note"><strong>Impacto financeiro:</strong> <span class="placeholder">Atualizar — CORE</span><br><span class="muted">Não quantificado nesta edição por ausência de premissas contratuais e dados internos suficientes.</span></div>
-</aside>
-</div>
+ <div class="section-kicker">03 / RADAR EXECUTIVO E INSIGHT CORE</div>
+ <h2 class="section-title">CP 034/2026: operação coordenada sob revisão</h2>
+ <div class="insight">
+  <div class="insight-main">
+   <span class="badge blue">• Proposta para validação do CORE</span>
+   <h3>A pergunta não é se a regra muda para “todas” as usinas, mas como cada ativo será enquadrado</h3>
+   <p><strong>Fato gerador.</strong> A ANEEL abriu a CP nº 034/2026 em 15/09, com contribuições de 17/09 a 02/11, para aprimorar os critérios utilizados na classificação das modalidades de operação das usinas do SIN.</p>
+   <p><strong>O que a proposta traz.</strong> Além da avaliação individual, usinas localizadas em uma mesma região elétrica ou com comportamento agregado relevante poderão ser analisadas por conjuntos operativos. A proposta também reorganiza modalidades de participação e busca adequar obrigações ao impacto efetivo sobre o sistema.</p>
+   <div class="impact"><strong>O que isso pode mudar para o Grupo Diamante?</strong><br>Para os ativos do Grupo que sejam abrangidos pelos novos critérios, pode haver alteração no grau de interação com o ONS, nas informações operativas requeridas e na proporcionalidade das obrigações. A edição não presume mudança de enquadramento antes da análise técnica de cada usina.</div>
+   <div class="action"><strong>Próximo movimento proposto:</strong><br>Comparar o enquadramento atual de CTJL, Pecém I, Pecém II e Itaqui com os critérios da minuta e registrar, por ativo, eventuais novas obrigações, custos de adequação ou pontos para contribuição antes de 02/11.</div>
+   <a class="source" target="_blank" href="https://www.gov.br/aneel/pt-br/assuntos/noticias/2026-defeso-eleitoral/aneel-abre-consulta-publica-para-aprimorar-classificacao-operacional-de-usinas-do-sin">Documento-base · ANEEL</a>
+  </div>
+  <aside class="asset-list">
+   <div class="asset"><strong>CTJL</strong><span>Validar modalidade atual e eventual efeito da avaliação individual/conjunta. Não presumir reenquadramento.</span></div>
+   <div class="asset"><strong>Pecém I</strong><span>Usina a carvão e despachada centralizadamente; verificar aderência aos novos critérios e obrigações propostas.</span></div>
+   <div class="asset"><strong>Pecém II</strong><span>Usina a carvão; validar modalidade atual e eventual alteração de interação com o ONS.</span></div>
+   <div class="asset"><strong>Itaqui</strong><span>Usina a carvão; validar modalidade atual e obrigações sob a proposta.</span></div>
+   <div class="asset"><strong>Comercializadora</strong><span>Impacto indireto, principalmente se houver reflexo sobre disponibilidade, programação ou custos dos ativos.</span></div>
+  </aside>
+ </div>
 </section>
 
 <section id="mercado" class="section">
-<div class="section-title"><h2>4. Mercado</h2><p>Valores só entram quando verificados e com referência temporal.</p></div>
-<div class="card">
-<table class="table">
-<thead><tr><th>Indicador</th><th>Valor / referência</th><th>Fonte</th><th>Comentário executivo</th></tr></thead>
-<tbody>
-<tr><td>PLD por submercado</td><td class="placeholder">Atualizar — CORE</td><td>CCEE</td><td>Coleta automática pendente. Não substituir por CMO ou preço futuro.</td></tr>
-<tr><td>PLD mín. / máx. estrutural / máx. horário</td><td class="placeholder">Atualizar — CORE</td><td>CCEE</td><td>Apresentar unidade e período.</td></tr>
-<tr><td>CMO por subsistema</td><td class="placeholder">Atualizar — CORE</td><td>ONS</td><td>Distinguir programação operativa de valor verificado.</td></tr>
-<tr><td>ENA</td><td class="placeholder">Atualizar — CORE</td><td>ONS</td><td>Indicar se bruta ou armazenável.</td></tr>
-<tr><td>EARM por subsistema e SIN</td><td class="placeholder">Atualizar — CORE</td><td>ONS</td><td>Manter data de referência própria.</td></tr>
-<tr><td>Geração térmica</td><td class="placeholder">Atualizar — CORE</td><td>ONS/CCEE</td><td>Não inferir motivo de despacho quando a base não o discriminar.</td></tr>
-<tr><td>Henry Hub</td><td class="placeholder">Atualizar — CORE</td><td>EIA</td><td>Identificar natureza da cotação.</td></tr>
-<tr><td>Newcastle Coal Index</td><td class="placeholder">Atualizar — CORE</td><td>Fonte verificável</td><td>Distinguir índice físico NEWC de futuros.</td></tr>
-<tr><td>Brent</td><td class="placeholder">Atualizar — CORE</td><td>Fonte verificável</td><td>Identificar spot ou futuro.</td></tr>
-<tr><td>IPCA</td><td class="placeholder">Atualizar — CORE</td><td>IBGE</td><td>Índice mensal não equivale a reajuste contratual anual.</td></tr>
-<tr><td>IGP-M</td><td class="placeholder">Atualizar — CORE</td><td>FGV IBRE</td><td>Manter mês e data de divulgação.</td></tr>
-<tr><td>Preço médio / curvas</td><td class="placeholder">Atualizar — CORE</td><td>BBCE / CCEE / CORE</td><td>Não misturar produtos mensais, trimestrais e anuais.</td></tr>
-</tbody>
-</table>
-</div>
-
-<div class="section-title" style="margin-top:18px"><h2 style="font-size:22px">CVU conjuntural • CCEE</h2><p>Somente CVU_CONJUNTURAL, R$/MWh.</p></div>
-<div class="card">
-<table class="table">
-<thead><tr><th>Parcela / usina</th><th>Código</th><th>CVU conjuntural</th><th>Referência</th></tr></thead>
-<tbody>
-<tr><td>CTJL A1</td><td>26</td><td class="placeholder">Atualizar — CORE</td><td>Fonte CCEE ainda não acessível nesta coleta</td></tr>
-<tr><td>CTJL A2</td><td>27</td><td class="placeholder">Atualizar — CORE</td><td>Fonte CCEE ainda não acessível nesta coleta</td></tr>
-<tr><td>CTJL B</td><td>25</td><td class="placeholder">Atualizar — CORE</td><td>Fonte CCEE ainda não acessível nesta coleta</td></tr>
-<tr><td>CTJL C</td><td>24</td><td class="placeholder">Atualizar — CORE</td><td>Fonte CCEE ainda não acessível nesta coleta</td></tr>
-<tr><td>Porto do Pecém I</td><td>167</td><td class="placeholder">Atualizar — CORE</td><td>Fonte CCEE ainda não acessível nesta coleta</td></tr>
-<tr><td>Porto do Pecém II</td><td>163</td><td class="placeholder">Atualizar — CORE</td><td>Não confundir com UTE Pecém II diesel, código 162</td></tr>
-<tr><td>Porto do Itaqui</td><td>176</td><td class="placeholder">Atualizar — CORE</td><td>Fonte CCEE ainda não acessível nesta coleta</td></tr>
-</tbody>
-</table>
-</div>
+ <div class="section-kicker">04 / MERCADO</div>
+ <h2 class="section-title">Mercado em 60 segundos</h2>
+ <div class="market-grid">
+  <div class="market"><div class="name">PLD · 06/10</div><div class="value">R$ 57,31/MWh</div><div class="note">SE/CO, Sul, Nordeste e Norte. Piso regulatório de 2026.</div></div>
+  <div class="market"><div class="name">CMO · PMO out</div><div class="value">42,43 / 461,46</div><div class="note">R$/MWh: SE/CO, Sul e NE / Norte. Programação da semana 26/09–02/10.</div></div>
+  <div class="market"><div class="name">ENA · PMO out</div><div class="value">193 · 105 · 61 · 43%</div><div class="note">MLT: Sul · SE/CO · Nordeste · Norte. Projeção, não verificado.</div></div>
+  <div class="market"><div class="name">EARM · 31/10</div><div class="value">91,5 · 55,6 · 63,4 · 66,1%</div><div class="note">Sul · SE/CO · Nordeste · Norte. Estimativa do ONS.</div></div>
+  <div class="market"><div class="name">Henry Hub</div><div class="value">US$ 3,02/MMBtu</div><div class="note">Média semanal encerrada em 25/09/2026.</div></div>
+  <div class="market"><div class="name">Brent spot</div><div class="value">US$ 135,51/bbl</div><div class="note">Fechamento de 02/10/2026, republicado pela EIA.</div></div>
+  <div class="market"><div class="name">IPCA</div><div class="value">-0,32%</div><div class="note">Ago/2026 · 3,11% no ano · 4,22% em 12 meses.</div></div>
+  <div class="market"><div class="name">IGP-M</div><div class="value">+1,57%</div><div class="note">Set/2026 · 3,45% no ano · 3,34% em 12 meses.</div></div>
+ </div>
+ <details class="tech">
+  <summary>Painel técnico completo · indicadores obrigatórios e lacunas</summary>
+  <div class="tech-inner">
+   <div class="tech-item"><strong>Limites do PLD 2026</strong>Mínimo R$ 57,31/MWh · máximo estrutural R$ 785,27/MWh · máximo horário R$ 1.611,04/MWh. Fonte: CCEE / DSP ANEEL 3.850/2025.</div>
+   <div class="tech-item"><strong>Geração/despacho térmico verificado</strong><span class="pending">Atualizar — CORE</span> · valor com discriminação adequada do motivo de despacho não validado nesta coleta.</div>
+   <div class="tech-item"><strong>Newcastle Coal Index</strong><span class="pending">Atualizar — CORE</span> · valor físico NEWC requer fonte específica/licenciada; não substituir por futuro.</div>
+   <div class="tech-item"><strong>Preço médio de energia / curvas</strong><span class="pending">Atualizar — CORE</span> · BBCE e curvas internas não disponíveis publicamente nesta coleta.</div>
+   <div class="tech-item"><strong>CVU conjuntural · CCEE</strong>Base oficial 2026 disponível no Dados Abertos da CCEE; última atualização do conjunto em 17/09/2026. Valores por parcela permanecem pendentes de extração automatizada validada.</div>
+   <div class="tech-item"><strong>Códigos CVU a conferir</strong>CTJL A1 26 · A2 27 · B 25 · C 24 · Pecém I 167 · Pecém II 163 · Itaqui 176. Nunca confundir Pecém II com código 162.</div>
+  </div>
+ </details>
+ <div style="font-size:10px;color:#7b8998;margin-top:10px">Fontes: CCEE, ONS, EIA, IBGE e FGV IBRE. Cada indicador preserva sua própria data de referência.</div>
 </section>
 
 <section id="monitor" class="section">
-<div class="section-title"><h2>5. Monitor CORE</h2><p>Temas estratégicos, agenda e ações.</p></div>
-<div class="grid3">
-<div class="card red"><span class="tag"><span class="dot" style="background:var(--red)"></span>Alto impacto</span><h3>Gas Release</h3><p class="body">Situação: relatório da consulta divulgado; audiência pública próxima.</p><p class="muted">Próximo marco: 21/10/2026.</p></div>
-<div class="card amber"><span class="tag"><span class="dot" style="background:var(--amber)"></span>Médio impacto</span><h3>Classificação operacional de usinas</h3><p class="body">Situação: proposta em consulta.</p><p class="muted">Próximo marco: validar abrangência sobre ativos Diamante e desfecho regulatório.</p></div>
-<div class="card blue"><span class="tag"><span class="dot" style="background:var(--blue)"></span>Monitorar</span><h3>RenovaBio 2027-2036</h3><p class="body">Situação: metas em consulta pública.</p><p class="muted">Próximo marco: encerramento da consulta e publicação da trajetória final.</p></div>
-</div>
+ <div class="section-kicker">05 / MONITOR CORE</div>
+ <h2 class="section-title">Temas estratégicos, agenda e ações</h2>
+ <div class="monitor-grid">
+  <div class="monitor">
+   <div class="monitor-item"><div class="level high">Impacto potencial alto · Monitorar</div><h3>CP 034/2026 · classificação operacional</h3><p>Proposta em consulta até 02/11. Próximo passo: mapear efeito por ativo antes de eventual contribuição.</p></div>
+   <div class="monitor-item"><div class="level med">Oportunidade · Comercializadora</div><h3>Gas Release</h3><p>Relatório da consulta divulgado em 05/10; audiência em 21/10. Não atribuir efeito direto aos ativos a carvão.</p></div>
+   <div class="monitor-item"><div class="level high">Impacto alto · Processo permanente</div><h3>TCU 008.289/2025-5 · LRCAP 2026</h3><p>Processo permanece aberto, sob relatoria do Min. Jorge Oliveira. O TCU indicou continuidade do acompanhamento das etapas posteriores ao leilão.</p></div>
+   <div class="monitor-item"><div class="level low">Monitorar · Comercializadora</div><h3>MME · CP 232/2026 · RenovaBio</h3><p>Metas 2027–2036 em consulta. Relevância indireta para combustíveis e estratégia comercial.</p></div>
+  </div>
+  <aside class="agenda">
+   <div style="color:var(--blue);font-weight:800;font-size:12px;margin-bottom:5px">Agenda · próximos 5 dias úteis</div>
+   <div class="agenda-row"><time>09/10</time><div><strong>IBGE · IPCA setembro/2026</strong><br>Divulgação oficial prevista para sexta-feira.</div></div>
+   <div class="agenda-row"><time>13/10</time><div><strong>Radar CORE</strong><br>Próxima atualização ordinária às 13h.</div></div>
+   <div style="font-size:10px;color:#7a8999;margin-top:10px">Nenhum outro marco regulatório diretamente relevante foi confirmado nesta janela até o corte.</div>
+  </aside>
+ </div>
 
-<div class="section-title" style="margin-top:18px"><h2 style="font-size:22px">Agenda • próximos 5 dias úteis</h2></div>
-<div class="timeline">
-<div class="deadline"><time>06/10/2026</time><div><strong>Terça-feira</strong><br><span class="muted">Edição publicada às 13h. Outros marcos: <span class="placeholder">Atualizar — CORE</span> (movimentação não confirmada).</span></div></div>
-<div class="deadline"><time>07/10/2026</time><div><strong>Quarta-feira</strong><br><span class="muted">Nenhum marco confirmado inserido nesta coleta.</span></div></div>
-<div class="deadline"><time>08/10/2026</time><div><strong>Quinta-feira</strong><br><span class="muted">Nenhum marco confirmado inserido nesta coleta.</span></div></div>
-<div class="deadline"><time>09/10/2026</time><div><strong>Sexta-feira</strong><br><span class="muted">Nenhum marco confirmado inserido nesta coleta.</span></div></div>
-<div class="deadline"><time>13/10/2026</time><div><strong>Terça-feira</strong><br><span class="muted">Próxima atualização ordinária do Radar às 13h.</span></div></div>
-</div>
+ <div class="actions-list">
+  <div style="color:var(--blue);font-weight:800;font-size:12px;margin-bottom:5px">Ações de curto e médio prazo · propostas para validação</div>
+  <div class="action-row"><b>01</b><div>Mapear a CP 034/2026 por ativo e identificar se existe mudança de obrigação, informação ou custo de adequação.</div></div>
+  <div class="action-row"><b>02</b><div>Tratar Gas Release como tema da Comercializadora/estratégia de gás, sem vinculá-lo ao combustível principal das UTEs a carvão.</div></div>
+  <div class="action-row"><b>03</b><div>Concluir a extração dos CVUs conjunturais da CCEE por código de parcela e substituir a lacuna somente após validação.</div></div>
+  <div class="action-row"><b>04</b><div>Atualizar os andamentos dos processos permanentes com documentação pública ou interna antes de qualquer afirmação de resultado/prazo.</div></div>
+ </div>
 
-<div class="card" style="margin-top:16px"><h3>Ações de curto e médio prazo</h3>
-<p class="body">• Revisar tecnicamente o relatório do Gas Release antes da audiência de 21/10.</p>
-<p class="body">• Validar, para cada ativo, eventual incidência da CP ANEEL 034/2026.</p>
-<p class="body">• Preservar espaço para inclusão manual de ofícios, pareceres, manifestações e demandas da Diretoria.</p>
-</div>
+ <h2 class="section-title" style="font-size:27px;margin-top:32px">Processos permanentes</h2>
+ <div class="processes">
+  <div class="process"><code>ANEEL 48500.011030/2026-84</code><h3>Reajuste da Receita Fixa anual do CER CTJL nº 478/2025</h3><p>Objeto informado pelo CORE.</p><div class="state">Atualizar — CORE · andamento público não confirmado nesta coleta.</div></div>
+  <div class="process"><code>ANEEL 48500.011033/2026-18</code><h3>Recomposição do equilíbrio econômico-financeiro do CER-CTJL nº 478/25 · LC 224/2025</h3><p>Objeto informado pelo CORE.</p><div class="state">Atualizar — CORE · andamento público não confirmado nesta coleta.</div></div>
+  <div class="process"><code>ANEEL 48500.000094-2023-15</code><h3>Recálculo de Eficiência do CTJL 2022</h3><p>Objeto informado pelo CORE.</p><div class="state">Atualizar — CORE · andamento público não confirmado nesta coleta.</div></div>
+  <div class="process"><code>ANEEL 48500.000375/2019-83</code><h3>3ª Fase da CP nº 45/2019 · critérios operativos para redução/limitação de geração</h3><p>Processo e objeto confirmados em documentos da ANEEL.</p><div class="state">Atualizar — CORE · último andamento não confirmado nesta coleta.</div></div>
+  <div class="process"><code>TCU 008.289/2025-5</code><h3>LRCAP 2026</h3><p>Processo de acompanhamento aberto; AudElétrica; relator Min. Jorge Oliveira.</p><div class="state" style="color:#2f7250">Situação pública confirmada: aberto.</div></div>
+ </div>
 </section>
 
-<section id="processos" class="section">
-<div class="section-title"><h2>Processos permanentes</h2><p>Objetos informados pelo CORE; andamentos exigem comprovação.</p></div>
-<div class="process"><code>ANEEL 48500.011030/2026-84</code><strong> • Reajuste da Receita Fixa anual do CER CTJL nº 478/2025</strong><div class="muted">Último andamento: <span class="placeholder">Atualizar — CORE</span> • movimentação não confirmada.</div></div>
-<div class="process"><code>ANEEL 48500.011033/2026-18</code><strong> • Recomposição do Equilíbrio Econômico-Financeiro do CER-CTJL nº 478/25 — LC 224/2025</strong><div class="muted">Último andamento: <span class="placeholder">Atualizar — CORE</span> • movimentação não confirmada.</div></div>
-<div class="process"><code>ANEEL 48500.000094-2023-15</code><strong> • Recálculo de Eficiência do CTJL 2022</strong><div class="muted">Último andamento: <span class="placeholder">Atualizar — CORE</span> • movimentação não confirmada.</div></div>
-<div class="process"><code>ANEEL 48500.000375/2019-83</code><strong> • Resultado da 3ª Fase da Consulta Pública nº 45/2019</strong><div class="muted">Último andamento: <span class="placeholder">Atualizar — CORE</span> • movimentação não confirmada.</div></div>
-<div class="process"><code>TCU 008.289/2025-5</code><strong> • LRCAP 2026</strong><div class="muted">Último andamento: <span class="placeholder">Atualizar — CORE</span> • movimentação não confirmada.</div></div>
-<div class="note"><strong>Referências consolidadas pelo CORE:</strong> Pecém I com início de suprimento a partir de agosto de 2026; Pecém II e Itaqui a partir de agosto de 2031. Na discussão sobre data-base do IPCA e Subcláusula 7.3 do CRCAP, qualquer afirmação sobre acolhimento parcial deve ser conferida no documento e atribuída corretamente à CCEE.</div>
-</section>
+<div class="footer"><span>GRUPO DIAMANTE · CORE</span><span>Análises automáticas são propostas para validação interna. A classificação “Uso interno” não altera as permissões técnicas da URL.</span></div>
+</main>
+</div>
 
-<section id="historico" class="section">
-<div class="section-title"><h2>Histórico de edições</h2><p>A URL principal permanece fixa.</p></div>
-<div class="card archive"><a href="../index.html"><strong>06/10/2026</strong> • edição atual</a></div>
-</section>
-
-</div></main>
-<footer><div class="wrap">Radar Regulatório e de Mercado • CORE • Grupo Diamante • Análises automáticas são propostas para validação interna e não substituem posicionamento formal do CORE.</div></footer>
-</body></html>
+<script>
+const links=[...document.querySelectorAll('.side-item')];
+const sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
+    }
+  })
+},{rootMargin:'-20% 0px -65% 0px',threshold:0});
+sections.forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
