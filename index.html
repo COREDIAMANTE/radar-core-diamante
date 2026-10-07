@@ -154,18 +154,18 @@ details.tech{margin-top:13px;background:#fff;border:1px solid var(--line)}detail
   <div class="market"><div class="name">BRENT <span class="market-source">REUTERS · FECH. 06/10</span></div><div class="value">US$ 100,58/bbl</div><div style="font-size:10px;color:#637486">Fechamento de 06/10/2026</div><div class="note">Referência revisada. O valor de US$ 135,51/bbl exibido anteriormente estava incorreto.</div></div>
  </div>
  <div class="market-bottom">
-  <div class="energy-card"><div class="name">ENERGIA · MERCADO FORWARD <span class="market-source">BBCE · ÚLTIMA REF. PÚBLICA</span></div><div class="value">R$ 227,17/MWh</div><div style="font-size:10px;color:#637486">Contrato Out/26 · fechamento de agosto</div><div class="market-reading"><strong>Leitura CORE:</strong> referência pública da BBCE para o produto com entrega em outubro. Não é PLD nem cotação de 07/10. O card deve migrar para uma referência corrente assim que houver dado BBCE/Dcide público ou licenciado.</div></div>
-  <div class="cvu-card"><div class="name">CVU DAS USINAS DIAMANTE · R$/MWh <span class="market-source">ONS · PMO 26/09–02/10</span></div>
-   <table class="cvu-table"><thead><tr><th>Usina / parcela</th><th>Base ONS</th><th>CVU PMO · R$/MWh</th></tr></thead><tbody>
-    <tr><td>Jorge Lacerda A1</td><td>26/09–02/10</td><td>518,90*</td></tr>
-    <tr><td>Jorge Lacerda A2</td><td>26/09–02/10</td><td>416,39*</td></tr>
-    <tr><td>Jorge Lacerda B</td><td>26/09–02/10</td><td>406,71</td></tr>
-    <tr><td>Jorge Lacerda C</td><td>26/09–02/10</td><td>347,20</td></tr>
-    <tr><td>UTE Porto do Pecém I</td><td>26/09–02/10</td><td>367,62</td></tr>
-    <tr><td>UTE Porto do Pecém II</td><td>26/09–02/10</td><td>4.289,61†</td></tr>
-    <tr><td>Porto do Itaqui</td><td>26/09–02/10</td><td>366,79</td></tr>
-   </tbody></table>
-   <div class="market-reading"><strong>Leitura CORE:</strong> CVU semanal usado no PMO, fonte primária ONS, semana 26/09–02/10. *A1/A2 foram individualizados pela combinação das duas parcelas de J. Lacerda A com a distribuição completa publicada pelo ONS; o agregado oficial de J. Lacerda A aparece a R$ 416,39/MWh em publicação CCEE. †Pecém II aparece no arquivo ONS como código 162, óleo/diesel, R$ 4.289,61/MWh; manter a anomalia visível até confirmação da modelagem vigente.</div>
+  <div class="energy-card"><div class="name">ENERGIA · MERCADO FORWARD <span class="market-source">BBCE / DCIDE</span></div><div class="value">A atualizar</div><div style="font-size:10px;color:#637486">Sem cotação corrente pública validada no corte</div><div class="market-reading"><strong>Leitura CORE:</strong> o valor histórico de R$ 227,17/MWh foi retirado. Este card só volta a exibir preço quando houver referência forward atual, com produto e data-base identificados.</div></div>
+  <div class="cvu-card" style="border-top:4px solid var(--orange)"><div class="name" style="font-size:12px;font-weight:800;color:var(--blue)">CVU DAS USINAS DIAMANTE · R$/MWh <span class="market-source">ONS / CCEE</span></div>
+   <table class="cvu-table"><thead><tr><th>Usina / parcela</th><th>Referência</th><th>CVU · R$/MWh</th></tr></thead><tbody>
+<tr><td>Jorge Lacerda A1</td><td>aguarda linha oficial</td><td>—</td></tr>
+<tr><td>Jorge Lacerda A2</td><td>aguarda linha oficial</td><td>—</td></tr>
+<tr><td>Jorge Lacerda B</td><td>ONS · 26/09–02/10</td><td>406,71</td></tr>
+<tr><td>Jorge Lacerda C</td><td>ONS · 26/09–02/10</td><td>347,20</td></tr>
+<tr><td>UTE Porto do Pecém I</td><td>ONS · 26/09–02/10</td><td>367,62</td></tr>
+<tr><td>UTE Porto do Pecém II</td><td>divergência de modelagem</td><td>Em revisão</td></tr>
+<tr><td>Porto do Itaqui</td><td>ONS · 26/09–02/10</td><td>366,79</td></tr>
+</tbody></table>
+   <div class="market-reading"><strong>Leitura CORE:</strong> exibimos apenas valores cuja associação usina/parcela ficou inequívoca na referência operacional consultada. A1, A2 e Pecém II ficam sem número até validação individual, evitando inferência ou mistura de modelagens.</div>
   </div>
  </div>
  <details class="tech"><summary>Painel técnico · metodologia e rastreabilidade</summary><div class="tech-inner">
