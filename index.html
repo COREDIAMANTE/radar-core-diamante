@@ -40,7 +40,7 @@ details.tech{margin-top:13px;background:#fff;border:1px solid var(--line)}detail
 
 /* Seletor de edições CORE */
 .edition-picker{position:relative;flex-shrink:0;font-size:12px;color:var(--blue)}.edition-picker>summary{list-style:none;display:flex;align-items:center;gap:9px;border:1px solid #c9d4df;background:#fff;padding:9px 13px;border-radius:8px;cursor:pointer;font-weight:700;user-select:none;transition:background .15s,border-color .15s}.edition-picker>summary::-webkit-details-marker{display:none}.edition-picker>summary:hover,.edition-picker[open]>summary{background:var(--softblue);border-color:#9db2c7}.edition-picker-icon{color:var(--orange);font-size:15px}.edition-chevron{color:#8192a3;font-size:16px;margin-left:7px}.edition-picker[open] .edition-chevron{transform:rotate(180deg)}.edition-menu{position:absolute;right:0;top:calc(100% + 8px);width:225px;background:#fff;border:1px solid var(--line);border-radius:11px;box-shadow:0 12px 35px rgba(18,44,75,.15);padding:8px;z-index:40}.edition-menu-title{display:block;padding:9px 10px 7px;font-size:9px;letter-spacing:.13em;color:#8393a4;font-weight:800}.edition-menu a{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:11px 10px;border-radius:7px;text-decoration:none;color:var(--blue);font-weight:700}.edition-menu a small{font-size:10px;color:#8796a6;font-weight:500}.edition-menu a[aria-current="page"]{background:var(--softblue)}.edition-menu a:hover{background:#f4f7fa}
-</style>
+.data-pending{font-size:14px!important;line-height:1.4!important;color:#a5671e!important;font-weight:750!important;white-space:normal!important}</style>
 </head>
 <body>
 <header class="topbar">
@@ -83,10 +83,10 @@ details.tech{margin-top:13px;background:#fff;border:1px solid var(--line)}detail
  </div>
 
  <div class="metrics">
-  <div class="metric"><div class="num">R$ 57,31</div><div class="label">PLD em todos os submercados em 06/10/2026</div></div>
+  <div class="metric"><div class="num">R$ 77,79</div><div class="label">PLD médio diário CCEE · 13/10/2026 · R$/MWh</div></div>
   <div class="metric"><div class="num">02/11</div><div class="label">prazo final da CP ANEEL 034/2026</div></div>
   <div class="metric"><div class="num">655</div><div class="label">contribuições consolidadas pela ANP no Gas Release</div></div>
-  <div class="metric"><div class="num">US$ 100,58</div><div class="label">Brent · fechamento de 06/10/2026 · US$/bbl</div></div>
+  <div class="metric"><div class="num data-pending">A validar</div><div class="label">Brent · sem cotação atual confirmada</div></div>
  </div>
 </section>
 
@@ -146,36 +146,30 @@ details.tech{margin-top:13px;background:#fff;border:1px solid var(--line)}detail
  <h2 class="section-title">Mercado em 60 segundos · referências datadas</h2>
  <div class="market-reading" style="margin-bottom:14px;border-left:4px solid var(--orange);padding:12px;background:var(--softorange)"><strong>CONTROLE DE QUALIDADE · 13/10:</strong> a base oficial de CVU do ONS foi atualizada em 12/10, mas seus registros individuais ainda não foram conferidos nesta edição. Os valores abaixo são históricos e NÃO devem ser interpretados como CVUs atuais. <a href="https://dados.ons.org.br/dataset/cvu-usitermica" target="_blank" rel="noopener">Consultar base oficial ONS</a> · <a href="https://dadosabertos.ccee.org.br/dataset/pld_media_diaria" target="_blank" rel="noopener">Consultar PLD oficial CCEE</a>.</div>
  <div class="market-grid">
-  <div class="market"><div class="name">PLD · SEMANAL <span class="market-source">CCEE · 26/09–02/10</span></div><div class="value">R$ 114,85/MWh</div><div style="font-size:10px;color:#637486">SE/CO 114,85 · Sul 110,27 · NE 112,55 · Norte 114,71</div><div class="note">Referência histórica de 26/09 a 02/10. Não utilizar como cotação atual de 13/10. Consultar série diária oficial da CCEE.</div></div>
-  <div class="market"><div class="name">CMO <span class="market-source">ONS · 26/09–02/10</span></div><div class="value">R$ 42,43/MWh</div><div style="font-size:10px;color:#637486">SE/CO, Sul e NE · Norte R$ 461,46/MWh</div><div class="note">Referência histórica de 26/09 a 02/10. Atualização da semana 10 a 16/10 ainda não transcrita/validada.</div></div>
-  <div class="market"><div class="name">RESERVATÓRIOS SIN <span class="market-source">ONS · 05/10</span></div>
-   <div class="reservoir-row"><div class="reservoir-head"><span>SE/CO</span><b>56,1%</b></div><div class="reservoir-track"><div class="reservoir-fill" style="width:56.1%"></div></div></div>
-   <div class="reservoir-row"><div class="reservoir-head"><span>SUL</span><b>81,6%</b></div><div class="reservoir-track"><div class="reservoir-fill" style="width:81.6%"></div></div></div>
-   <div class="reservoir-row"><div class="reservoir-head"><span>NE</span><b>67,5%</b></div><div class="reservoir-track"><div class="reservoir-fill" style="width:67.5%"></div></div></div>
-   <div class="reservoir-row"><div class="reservoir-head"><span>NORTE</span><b>71,0%</b></div><div class="reservoir-track"><div class="reservoir-fill" style="width:71%"></div></div></div>
-   <div class="note">SIN consolidado de 05/10: 60,7%. Referência histórica; consultar atualização diária do ONS.</div>
-  </div>
-  <div class="market"><div class="name">HENRY HUB <span class="market-source">EIA · SEM. 25/09</span></div><div class="value">US$ 3,02/MMBtu</div><div style="font-size:10px;color:#637486">Média semanal spot oficial</div><div class="note">Referência histórica de 25/09, não é cotação atual. A EIA publica série semanal posterior.</div></div>
-  <div class="market"><div class="name">NEWCASTLE COAL <span class="market-source">ICE · FECH. 06/10</span></div><div class="value">US$ 152,00/t</div><div style="font-size:10px;color:#637486">Contrato futuro Out/26</div><div class="note">Contrato futuro de Out/26, fechamento de 06/10; dado histórico, não cotação corrente.</div></div>
-  <div class="market"><div class="name">BRENT <span class="market-source">REUTERS · FECH. 06/10</span></div><div class="value">US$ 100,58/bbl</div><div style="font-size:10px;color:#637486">Fechamento de 06/10/2026</div><div class="note">Fechamento histórico de 06/10, não cotação corrente de 13/10. Valor pendente de nova checagem.</div></div>
+  <div class="market"><div class="name">PLD · MÉDIA DIÁRIA <span class="market-source">CCEE · 13/10/2026</span></div><div class="value">R$ 77,79/MWh</div><div style="font-size:10px;color:#637486">SE/CO 77,79 · Sul 77,79 · NE 77,79 · Norte 77,79</div><div class="note">Média diária oficial da CCEE em 13/10/2026. <a href="https://www.ccee.org.br/login/pages/pld/" target="_blank" rel="noopener">Conferir PLD</a>.</div></div>
+  <div class="market"><div class="name">CMO <span class="market-source">ATUALIZAÇÃO PENDENTE · 13/10</span></div><div class="value data-pending">Aguardando validação</div><div style="font-size:10px;color:#637486">Sem referência atual conferida</div><div class="note">Referência histórica de 26/09 a 02/10. Atualização da semana 10 a 16/10 ainda não transcrita/validada.</div></div>
+  <div class="market"><div class="name">RESERVATÓRIOS SIN <span class="market-source">ONS · ATUALIZAÇÃO PENDENTE</span></div><div class="value data-pending">Aguardando validação</div><div class="note">Armazenamento do SIN e dos quatro subsistemas: sem números até conferência da atualização diária oficial. <a href="https://www.ons.org.br/" target="_blank" rel="noopener">Fonte ONS</a>.</div></div>
+  <div class="market"><div class="name">HENRY HUB <span class="market-source">ATUALIZAÇÃO PENDENTE · 13/10</span></div><div class="value data-pending">Aguardando validação</div><div style="font-size:10px;color:#637486">Sem referência atual conferida</div><div class="note">Referência histórica de 25/09, não é cotação atual. A EIA publica série semanal posterior.</div></div>
+  <div class="market"><div class="name">NEWCASTLE COAL <span class="market-source">ATUALIZAÇÃO PENDENTE · 13/10</span></div><div class="value data-pending">Aguardando validação</div><div style="font-size:10px;color:#637486">Sem referência atual conferida</div><div class="note">Contrato futuro de Out/26, fechamento de 06/10; dado histórico, não cotação corrente.</div></div>
+  <div class="market"><div class="name">BRENT <span class="market-source">ATUALIZAÇÃO PENDENTE · 13/10</span></div><div class="value data-pending">Aguardando validação</div><div style="font-size:10px;color:#637486">Sem referência atual conferida</div><div class="note">Fechamento histórico de 06/10, não cotação corrente de 13/10. Valor pendente de nova checagem.</div></div>
  </div>
  <div class="market-bottom">
-  <div class="cvu-card" style="border-top:4px solid var(--orange)"><div class="name" style="font-size:12px;font-weight:800;color:var(--blue)">CVU DAS USINAS DIAMANTE · AGUARDANDO VALIDAÇÃO ATUAL (BASE HISTÓRICA 26/09–02/10) · R$/MWh <span class="market-source">ONS · PMO OUT/26 · REV. 0</span></div>
-   <table class="cvu-table"><thead><tr><th>Usina / parcela</th><th>ONS · semana 26/09–02/10</th><th>CVU · R$/MWh</th></tr></thead><tbody>
-<tr><td>Jorge Lacerda A1</td><td>Carvão mineral</td><td>518,90</td></tr>
-<tr><td>Jorge Lacerda A2</td><td>Carvão mineral</td><td>416,39</td></tr>
-<tr><td>Jorge Lacerda B</td><td>Carvão mineral</td><td>406,71</td></tr>
-<tr><td>Jorge Lacerda C</td><td>Carvão mineral</td><td>347,20</td></tr>
-<tr><td>UTE Porto do Pecém I</td><td>Carvão mineral · P.PECEM1</td><td>367,62</td></tr>
-<tr><td>UTE Porto do Pecém II</td><td>Carvão mineral · P.PECEM2</td><td>375,20</td></tr>
-<tr><td>Porto do Itaqui</td><td>Carvão mineral</td><td>366,79</td></tr>
+  <div class="cvu-card" style="border-top:4px solid var(--orange)"><div class="name" style="font-size:12px;font-weight:800;color:var(--blue)">CVU DAS USINAS DIAMANTE · VALIDAÇÃO DA SEMANA ATUAL PENDENTE · R$/MWh <span class="market-source">ONS · PMO OUT/26 · REV. 0</span></div>
+   <table class="cvu-table"><thead><tr><th>Usina / parcela</th><th>Última competência · a conferir</th><th>CVU · R$/MWh</th></tr></thead><tbody>
+<tr><td>Jorge Lacerda A1</td><td>Carvão mineral</td><td class="data-pending">Aguardando validação</td></tr>
+<tr><td>Jorge Lacerda A2</td><td>Carvão mineral</td><td class="data-pending">Aguardando validação</td></tr>
+<tr><td>Jorge Lacerda B</td><td>Carvão mineral</td><td class="data-pending">Aguardando validação</td></tr>
+<tr><td>Jorge Lacerda C</td><td>Carvão mineral</td><td class="data-pending">Aguardando validação</td></tr>
+<tr><td>UTE Porto do Pecém I</td><td>Carvão mineral · P.PECEM1</td><td class="data-pending">Aguardando validação</td></tr>
+<tr><td>UTE Porto do Pecém II</td><td>Carvão mineral · P.PECEM2</td><td class="data-pending">Aguardando validação</td></tr>
+<tr><td>Porto do Itaqui</td><td>Carvão mineral</td><td class="data-pending">Aguardando validação</td></tr>
 </tbody></table>
-   <div class="market-reading"><strong>Leitura CORE:</strong> os valores abaixo são a última referência anteriormente consolidada no Radar (ONS, semana 26/09 a 02/10), NÃO representam validação da semana de 10 a 16/10. Pecém II do Grupo é P.PECEM2, usina a carvão; não confundir com PECEM 2 (cód. 162), modelada a óleo/diesel e responsável pelo valor de R$ 4.289,61/MWh que apareceu incorretamente antes.</div>
+   <div class="market-reading"><strong>Leitura CORE:</strong> nenhum dos sete CVUs será exibido sem validação individual na base oficial mais recente do ONS. Pecém II do Grupo é P.PECEM2 (cód. 163, carvão), diferente de PECEM 2 (cód. 162, diesel). <a href="https://dados.ons.org.br/dataset/cvu-usitermica" target="_blank" rel="noopener">Base oficial de CVU</a>.</div>
   </div>
  </div>
  <details class="tech"><summary>Painel técnico · metodologia e rastreabilidade</summary><div class="tech-inner">
-  <div class="tech-item"><strong>PLD 2026</strong>Mínimo R$ 57,31/MWh · máximo estrutural R$ 785,27/MWh · máximo horário R$ 1.611,04/MWh.</div>
-  <div class="tech-item"><strong>CVU operacional</strong>Fonte: ONS · CVU das Usinas Térmicas, semana operativa 26/09/2026 a 02/10/2026. É o custo declarado considerado no PMO e nos modelos NEWAVE/DECOMP/DESSEM, não custo realizado de combustível.</div>
+  <div class="tech-item"><strong>PLD</strong>Média diária CCEE de 13/10/2026, R$ 77,79/MWh, todos os submercados. Não confundir com PLD semanal.</div>
+  <div class="tech-item"><strong>CVU operacional</strong>Atualização pendente: consultar a competência mais recente do conjunto CVU das Usinas Térmicas do ONS antes de exibir valores.</div>
  </div></details>
  <div style="font-size:10px;color:#7b8998;margin-top:10px">Fontes prioritárias: CCEE, ONS, EIA/Reuters e ICE/globalCOAL. Cada indicador preserva sua data de referência.</div>
 </section>
