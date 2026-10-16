@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "atualizado_em": "2026-10-16",
+  "repositorio": "COREDIAMANTE/radar-core-diamante",
+  "descricao": "Cadastro canônico de fontes, metodologia e histórico de evidências do Radar CORE. Cadastro não equivale a validação dos valores publicados.",
+  "fontes": [
+    {
+      "id": "F001",
+      "url": "https://www.ons.org.br/",
+      "rotulo": "Fonte: ONS",
+      "origem": "index.html da revisão 15/10/2026",
+      "tipo": "primaria",
+      "validacao": "cadastrada; revalidar conteúdo e data antes de usar",
+      "exige_documento_especifico": true
+    },
+    {
+      "id": "F002",
+      "url": "https://www.gov.br/mme/pt-br/assuntos/noticias/mme-abre-consulta-publica-para-aprimorar-a-governanca-dos-modelos-computacionais-do-setor-eletrico",
+      "rotulo": "Documento-base · MME · 13/10",
+      "origem": "index.html da revisão 15/10/2026",
+      "tipo": "primaria",
+      "validacao": "cadastrada; revalidar conteúdo e data antes de usar",
+      "exige_documento_especifico": false
+    },
+    {
+      "id": "F003",
+      "url": "https://www.gov.br/mme/pt-br/assuntos/noticias/mme-abre-consulta-publica-do-plano-decenal-de-expansao-de-energia-2036",
+      "rotulo": "Fonte primária · MME",
+      "origem": "index.html da revisão 15/10/2026",
+      "tipo": "primaria",
+      "validacao": "cadastrada; revalidar conteúdo e data antes de usar",
+      "exige_documento_especifico": false
+    },
+    {
+      "id": "F004",
+      "url": "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026-defeso-eleitoral/aneel-abre-consulta-publica-para-aprimorar-regras-em-funcao-da-implantacao-de-politica-nacional-de-acesso-ao-sistema-de-transmissao",
+      "rotulo": "Fonte primária · ANEEL",
+      "origem": "index.html da revisão 15/10/2026",
+      "tipo": "primaria",
+      "validacao": "cadastrada; revalidar conteúdo e data antes de usar",
+      "exige_documento_especifico": false
+    },
+    {
+      "id": "F005",
+      "url": "https://www.gov.br/mme/pt-br/assuntos/noticias/acoes-do-cmse-garantem-encerramento-do-periodo-seco-com-reservatorios-em-niveis-superiores-aos-do-ano-passado-mesmo-com-o-el-nino",
+      "rotulo": "Fonte primária · MME/CMSE",
+      "origem": "index.html da revisão 15/10/2026",
+      "tipo": "primaria",
+      "validacao": "cadastrada; revalidar conteúdo e data antes de usar",
+      "exige_documento_especifico": false
+    },
+    {
+      "id": "F006",
+      "url": "https://www.gov.br/anp/pt-br/acesso-a-informacao/agenda-eventos",
+      "rotulo": "Agenda oficial · ANP",
+      "origem": "index.html da revisão 15/10/2026",
+      "tipo": "primaria",
+      "validacao": "cadastrada; revalidar conteúdo e data antes de usar",
+      "exige_documento_especifico": true
+    },
+    {
+      "id": "F007",
+      "url": "https://dados.ons.org.br/dataset/cvu-usitermica",
+      "rotulo": "Base ONS",
+      "origem": "index.html da revisão 15/10/2026",
+      "tipo": "primaria",
+      "validacao": "pagina da base consultada em 16/10/2026; valores não revalidados nesta criação",
+      "exige_documento_especifico": false
+    },
+    {
+      "id": "F008",
+      "url": "https://dadosabertos.ccee.org.br/dataset/pld_media_diaria",
+      "rotulo": "Consultar PLD oficial CCEE",
+      "origem": "index.html da revisão 15/10/2026",
+      "tipo": "primaria",
+      "validacao": "pagina da base consultada em 16/10/2026; valores não revalidados nesta criação",
+      "exige_documento_especifico": false
+    },
+    {
+      "id": "F009",
+      "url": "https://www.ccee.org.br/login/pages/pld/",
+      "rotulo": "Conferir PLD",
+      "origem": "index.html da revisão 15/10/2026",
+      "tipo": "primaria",
+      "validacao": "cadastrada; revalidar conteúdo e data antes de usar",
+      "exige_documento_especifico": false
+    },
+    {
+      "id": "F010",
+      "url": "https://www.ons.org.br/paginas/imprensa/sala-de-imprensa",
+      "rotulo": "ONS",
+      "origem": "index.html da revisão 15/10/2026",
+      "tipo": "primaria",
+      "validacao": "cadastrada; revalidar conteúdo e data antes de usar",
+      "exige_documento_especifico": true
+    },
+    {
+      "id": "F011",
+      "url": "https://www.paranoaenergia.com.br/manchete/2026/10/11/ons-estima-cenario-de-avanco-na-energia-armazenada-em-3-subsistemas/",
+      "rotulo": "Fonte",
+      "origem": "index.html da revisão 15/10/2026",
+      "tipo": "complementar",
+      "validacao": "cadastrada; revalidar conteúdo e data antes de usar",
+      "exige_documento_especifico": false
+    },
+    {
+      "id": "F012",
+      "url": "https://www.eia.gov/dnav/ng/hist/rngwhhdd.htm",
+      "rotulo": "Série oficial EIA",
+      "origem": "index.html da revisão 15/10/2026",
+      "tipo": "primaria",
+      "validacao": "cadastrada; revalidar conteúdo e data antes de usar",
+      "exige_documento_especifico": false
+    },
+    {
+      "id": "F013",
+      "url": "https://br.investing.com/commodities/newcastle-coal-futures-historical-data",
+      "rotulo": "Histórico do contrato",
+      "origem": "index.html da revisão 15/10/2026",
+      "tipo": "complementar",
+      "validacao": "cadastrada; revalidar conteúdo e data antes de usar",
+      "exige_documento_especifico": false
+    },
+    {
+      "id": "F014",
+      "url": "https://www.reuters.com/business/energy/oil-climbs-mideast-conflict-tanker-attacks-persist-2026-10-11/",
+      "rotulo": "Reuters",
+      "origem": "index.html da revisão 15/10/2026",
+      "tipo": "complementar",
+      "validacao": "cadastrada; revalidar conteúdo e data antes de usar",
+      "exige_documento_especifico": false
+    },
+    {
+      "id": "F015",
+      "url": "https://www.gov.br/aneel/pt-br",
+      "rotulo": "Fonte: ANEEL, 14/10",
+      "origem": "index.html da revisão 15/10/2026",
+      "tipo": "primaria",
+      "validacao": "cadastrada; revalidar conteúdo e data antes de usar",
+      "exige_documento_especifico": true
+    }
+  ],
+  "indicadores": [
+    {
+      "nome": "CVU operacional",
+      "fonte": "F007",
+      "unidade": "R$/MWh",
+      "periodo": "semana operativa",
+      "metodo": "CSV ONS por código e início/fim da semana; não substituir por CVU conjuntural CCEE sem distinção explícita"
+    },
+    {
+      "nome": "PLD diário e semanal",
+      "fonte": "F008",
+      "unidade": "R$/MWh",
+      "metodo": "Preservar submercado e período. Semanal exige agregação explícita de dados completos e método documentado; não renomear média diária como semanal"
+    },
+    {
+      "nome": "CMO",
+      "fonte": "F010",
+      "unidade": "R$/MWh",
+      "metodo": "Localizar PMO/revisão oficial exata, registrar semana e subsistema"
+    },
+    {
+      "nome": "Reservatórios SIN",
+      "fonte": "F001",
+      "unidade": "% EAR máximo",
+      "metodo": "Priorizar dado observado ONS por data/subsistema; projeções em série distinta e identificada"
+    },
+    {
+      "nome": "Henry Hub spot",
+      "fonte": "F012",
+      "unidade": "US$/MMBtu",
+      "metodo": "Data da observação distinta da divulgação; não confundir spot e futuro"
+    },
+    {
+      "nome": "Newcastle Coal",
+      "fonte": "F013",
+      "unidade": "US$/t",
+      "metodo": "Identificar contrato, vencimento, fechamento e atraso; preferir ICE/globalCOAL quando disponível"
+    },
+    {
+      "nome": "Brent",
+      "fonte": "F014",
+      "unidade": "US$/bbl",
+      "metodo": "Confirmar notícia/cotação exata, contrato e fechamento; não reaproveitar artigo antigo como preço atual"
+    },
+    {
+      "nome": "Preço médio da energia e curva futura",
+      "fonte": null,
+      "status": "pendente de definição de fonte verificável e produto",
+      "metodo": "Identificar produto, região, horizonte, unidade, data e acesso; não estimar nem inventar"
+    }
+  ],
+  "usinas": [
+    {
+      "nome": "Jorge Lacerda A1",
+      "codigo_ons": 26
+    },
+    {
+      "nome": "Jorge Lacerda A2",
+      "codigo_ons": 27
+    },
+    {
+      "nome": "Jorge Lacerda B",
+      "codigo_ons": 25
+    },
+    {
+      "nome": "Jorge Lacerda C",
+      "codigo_ons": 24
+    },
+    {
+      "nome": "Porto do Pecém I",
+      "codigo_ons": 167
+    },
+    {
+      "nome": "Porto do Pecém II",
+      "codigo_ons": 163
+    },
+    {
+      "nome": "Porto do Itaqui",
+      "codigo_ons": 176
+    }
+  ],
+  "regras": [
+    "Pecém II é código 163 P.PECEM2; nunca 162.",
+    "Excluir IPCA e IGP-M do painel.",
+    "Gás: Grupo Diamante atua como comercializadora; não presumir produção, distribuição ou transporte.",
+    "Preservar layout, correções manuais, sete CVUs e arquivo das edições.",
+    "Todo item deve explicar efeito para CTJL, Pecém I/II, Itaqui ou Comercializadora; 70% análise, 20% contexto, 10% notícia.",
+    "Distinguir proposta, decisão, vigência, data de publicação e período do dado.",
+    "Sem validação: preservar último dado datado, sinalizar pendência e motivo; nunca avançar data para simular atualização.",
+    "Página inicial/agenda é ponto de descoberta, não prova suficiente para notícia, prazo ou andamento.",
+    "Fontes novas precisam de cadastro, classificação e vínculo à evidência antes de publicação."
+  ],
+  "historico_evidencias": [],
+  "campos_obrigatorios_evidencia": [
+    "id",
+    "fonte_id",
+    "url_documento",
+    "titulo",
+    "data_publicacao",
+    "data_referencia_inicio",
+    "data_referencia_fim",
+    "coletado_em",
+    "unidade",
+    "valor_ou_resumo",
+    "status_validacao",
+    "metodo",
+    "edicao",
+    "substitui_id"
+  ],
+  "rotina": {
+    "dias": "segunda a sexta",
+    "hora": "09:00",
+    "fuso": "America/Sao_Paulo",
+    "passos": [
+      "Ler cadastro e site atual",
+      "Consultar fontes e documentos vinculados",
+      "Registrar evidências e pendências com data real",
+      "Atualizar somente conteúdo validado e relevante",
+      "Arquivar edição anterior antes de trocar edição",
+      "Publicar e verificar workflow sem filtro de pull request e comparar site ao commit"
+    ],
+    "ultima_coleta_completa": null
+  }
+}
