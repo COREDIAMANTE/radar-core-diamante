@@ -138,6 +138,76 @@
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
       "validacao": "revalidar disponibilidade, conteúdo, período e metodologia em cada execução"
+    },
+    {
+      "id": "F016",
+      "assunto": "Preços e volumes negociados por produto; boletins públicos",
+      "orgao": "BBCE",
+      "url": "https://www.bbce.com.br/boletins-bbce/",
+      "tipo": "primaria",
+      "acesso": "publico",
+      "metodo": "Usar somente números divulgados no boletim específico; registrar período, produto, submercado e metodologia; extrair imagem do boletim quando necessário.",
+      "validacao": "página/referência localizada em 16/10/2026; valores e andamentos individuais não validados"
+    },
+    {
+      "id": "F017",
+      "assunto": "Curvas futuras de energia",
+      "orgao": "BBCE",
+      "url": "https://www.bbce.com.br/bbce-curva-forward/",
+      "tipo": "primaria",
+      "acesso": "assinatura; sem acesso contratado confirmado",
+      "metodo": "Fonte primária do produto. Dados completos condicionados a acesso autorizado. Não anunciar coleta operacional habilitada.",
+      "validacao": "página/referência localizada em 16/10/2026; valores e andamentos individuais não validados"
+    },
+    {
+      "id": "F018",
+      "assunto": "Curvas futuras de energia; referência alternativa",
+      "orgao": "Dcide / Pool Denergia",
+      "url": "https://www.dcide.com.br/produtos/pool-denergia/",
+      "tipo": "primaria",
+      "acesso": "plataforma comercial; acesso aos valores não confirmado",
+      "metodo": "Curvas de consenso: metodologia diferente da BBCE; não juntar séries como equivalentes.",
+      "validacao": "página/referência localizada em 16/10/2026; valores e andamentos individuais não validados"
+    },
+    {
+      "id": "F019",
+      "assunto": "Processos e documentos públicos ANEEL",
+      "orgao": "ANEEL",
+      "url": "https://www.gov.br/aneel/pt-br/canais_atendimento/processo-eletronico/pesquisa-publica",
+      "tipo": "primaria",
+      "acesso": "publico; documentos restritos excluídos",
+      "metodo": "Seguir links oficiais SEI para documentos desde 02/01/2025 e Sicnet2 até 31/12/2024. Em processos antigos migrados, seguir instrução oficial de pesquisa com sexto dígito 9; não alterar silenciosamente identificação do processo.",
+      "validacao": "página/referência localizada em 16/10/2026; valores e andamentos individuais não validados"
+    },
+    {
+      "id": "F020",
+      "assunto": "Processos, acórdãos e decisões TCU",
+      "orgao": "TCU",
+      "url": "https://pesquisa.apps.tcu.gov.br/",
+      "tipo": "primaria",
+      "acesso": "consulta publica; interface dinâmica",
+      "metodo": "Pesquisar pelo número completo e conferir documento/data; ferramenta de busca disponível não equivale a andamento individual validado.",
+      "validacao": "página/referência localizada em 16/10/2026; valores e andamentos individuais não validados"
+    },
+    {
+      "id": "F021",
+      "assunto": "Contexto mensal do mercado e contratos",
+      "orgao": "CCEE / InfoMercado",
+      "url": "https://www.ccee.org.br/dados-e-analises/dados-mercado-mensal",
+      "tipo": "primaria",
+      "acesso": "publico",
+      "metodo": "Dados mensais; não presumir que existe preço médio universal ACL nem converter volume em preço. Usar preço somente quando explicitamente publicado.",
+      "validacao": "página/referência localizada em 16/10/2026; valores e andamentos individuais não validados"
+    },
+    {
+      "id": "F022",
+      "assunto": "Índices de curvas futuras; candidato a coleta pública",
+      "orgao": "Dcide / Denergia",
+      "url": "https://denergia.com.br/",
+      "tipo": "primaria",
+      "acesso": "dashboard dinâmico; valores não extraídos nesta verificação",
+      "metodo": "Confirmar leitura de valores, data, produto e metodologia a cada execução; não considerar extração automatizada validada.",
+      "validacao": "página/referência localizada em 16/10/2026; valores e andamentos individuais não validados"
     }
   ],
   "indicadores": [
@@ -185,10 +255,23 @@
       "metodo": "Confirmar notícia/cotação exata, contrato e fechamento; não reaproveitar artigo antigo como preço atual"
     },
     {
-      "nome": "Preço médio da energia e curva futura",
-      "fonte": null,
-      "status": "pendente de definição de fonte verificável e produto",
-      "metodo": "Identificar produto, região, horizonte, unidade, data e acesso; não estimar nem inventar"
+      "nome": "Referência de preço de energia negociada",
+      "fonte": "F016",
+      "fontes_complementares": [
+        "F021"
+      ],
+      "status": "fonte fixa cadastrada; disponibilidade de preço por produto depende da publicação",
+      "metodo": "Usar produto, submercado e período identificados. Não chamar um índice forward ou PLD de preço médio geral. Não preencher se publicação não trouxer número comparável."
+    },
+    {
+      "nome": "Curvas futuras / forward",
+      "fonte": "F017",
+      "fontes_alternativas": [
+        "F018",
+        "F022"
+      ],
+      "status": "fontes definidas; acesso à curva completa BBCE não confirmado e depende de assinatura",
+      "metodo": "Consultar publicação primária acessível ou acesso autorizado; registrar data de curva, horizonte, energia, submercado, unidade e provedor; não substituir por boletim antigo sem explicitar data."
     }
   ],
   "usinas": [
@@ -406,5 +489,10 @@
       "validacao": "cadastrada; revalidar conteúdo e data antes de usar",
       "exige_documento_especifico": true
     }
-  ]
+  ],
+  "processos_fontes": {
+    "aneel": "F019",
+    "tcu": "F020",
+    "regra": "Consultar canais fixos por número completo. Registrar evidência de andamento apenas quando efetivamente obtida; ausência de extração não significa ausência de movimentação."
+  }
 }
