@@ -214,6 +214,15 @@
       "metodo": "GET endpoint_publico. Ler data.indices_curva_forward_por_data: data_base, data_publicacao, descricao_semana e tabela. Tabela possui convencional_trimestre, convencional_longo_prazo, incentivada_50_trimestre e incentivada_50_longo_prazo. Converter indice para decimal. SE; Trimestre M+1 a M+3 e Longo Prazo A+1 a A+4. Não chamar de preço médio geral nem de curva completa BBCE.",
       "validacao": "extração direta validada em 16/10/2026; último registro retornado: data-base 12/10/2026, publicação 13/10/2026, semana 42",
       "endpoint_publico": "https://widget-api.denergia.com.br/indices-curva-forward"
+    },
+    {
+      "id": "F023",
+      "assunto": "Despachos e atos ANEEL com efeito direto sobre ativos Diamante",
+      "orgao": "ANEEL / DOU",
+      "url": "https://www.gov.br/aneel/pt-br/centrais-de-conteudos/legislacao",
+      "tipo": "primaria",
+      "metodo": "Pesquisar despacho específico por número, data e empresa; conferir íntegra, publicação, vigência e efeitos. Leis.org apenas auxiliar, jamais prova primária.",
+      "validacao": "Despacho 4008/2026 ainda não localizado em documento oficial na coleta de 16/10/2026"
     }
   ],
   "indicadores": [
@@ -700,6 +709,23 @@
       "valor_ou_resumo": "A rota pública respondeu HTTP 200, mas a interface dinâmica não entregou andamento atual verificável na coleta; último estado não foi alterado.",
       "status_validacao": "pendente_interface_dinamica_sem_andamento_extraido",
       "metodo": "Teste da URL específica do processo; resposta da página não equivale a confirmação de nova peça, despacho ou acórdão.",
+      "edicao": "2026-10-16",
+      "substitui_id": null
+    },
+    {
+      "id": "EVID-20261016-ALERTA-DESPACHO-4008",
+      "fonte_id": "F023",
+      "fonte_url_na_coleta": "https://www.gov.br/aneel/pt-br/centrais-de-conteudos/legislacao",
+      "url_documento": "https://megawhat.uol.com.br/destaques-do-diario/efeito-tributario-sobre-o-carvao-eleva-custos-de-geracao-de-jorge-lacerda/",
+      "titulo": "Alerta sobre Despacho ANEEL 4008/2026 e parâmetros CTJL",
+      "data_publicacao": "2026-10-16",
+      "data_referencia_inicio": "2026-10-15",
+      "data_referencia_fim": "2026-10-16",
+      "coletado_em": "2026-10-16T13:44:00-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "Fonte setorial noticia revisão de parâmetros econômicos CTJL. Inteiro teor do despacho e efeitos não confirmados em fonte primária; valores não inseridos no painel operacional.",
+      "status_validacao": "pendente_documento_primario",
+      "metodo": "Busca por despacho e cruzamento com notícia setorial; sem equiparar CVU homologado a CVU operacional ONS.",
       "edicao": "2026-10-16",
       "substitui_id": null
     }
