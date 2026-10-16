@@ -251,7 +251,7 @@
   ],
   "rotina": {
     "dias": "segunda a sexta",
-    "hora": "09:00",
+    "hora": "13:00",
     "fuso": "America/Sao_Paulo",
     "passos": [
       "Ler cadastro e site atual",
