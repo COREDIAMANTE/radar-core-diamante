@@ -177,7 +177,11 @@
       "tipo": "primaria",
       "acesso": "publico; documentos restritos excluídos",
       "metodo": "Seguir links oficiais SEI para documentos desde 02/01/2025 e Sicnet2 até 31/12/2024. Em processos antigos migrados, seguir instrução oficial de pesquisa com sexto dígito 9; não alterar silenciosamente identificação do processo.",
-      "validacao": "página/referência localizada em 16/10/2026; valores e andamentos individuais não validados"
+      "validacao": "Teste em 16/10/2026: portal explicativo acessível; SEI e Sicnet2 retornaram HTTP 403 na coleta direta; andamento dos processos individuais não obtido.",
+      "rotas": {
+        "sei": "https://sei.aneel.gov.br/sei/modulos/pesquisa/md_pesq_processo_pesquisar.php?acao_externa=protocolo_pesquisar&acao_origem_externa=protocolo_pesquisar&id_orgao_acesso_externo=0",
+        "sicnet2": "https://sicnet2.aneel.gov.br/sicnetweb/pesquisa.asp"
+      }
     },
     {
       "id": "F020",
@@ -187,7 +191,8 @@
       "tipo": "primaria",
       "acesso": "consulta publica; interface dinâmica",
       "metodo": "Pesquisar pelo número completo e conferir documento/data; ferramenta de busca disponível não equivale a andamento individual validado.",
-      "validacao": "página/referência localizada em 16/10/2026; valores e andamentos individuais não validados"
+      "validacao": "Página específica localizada; leitura direta requer JavaScript. Notícia oficial confirma vínculo do TC 008.289/2025-5 ao LRCAP; não confirma andamento atual.",
+      "processo_monitorado_url": "https://pesquisa.apps.tcu.gov.br/doc/processo/828920255"
     },
     {
       "id": "F021",
@@ -205,9 +210,10 @@
       "orgao": "Dcide / Denergia",
       "url": "https://denergia.com.br/",
       "tipo": "primaria",
-      "acesso": "dashboard dinâmico; valores não extraídos nesta verificação",
-      "metodo": "Confirmar leitura de valores, data, produto e metodologia a cada execução; não considerar extração automatizada validada.",
-      "validacao": "página/referência localizada em 16/10/2026; valores e andamentos individuais não validados"
+      "acesso": "público sem login; GET retornou HTTP 200 e JSON success=true em 16/10/2026",
+      "metodo": "GET endpoint_publico. Ler data.indices_curva_forward_por_data: data_base, data_publicacao, descricao_semana e tabela. Tabela possui convencional_trimestre, convencional_longo_prazo, incentivada_50_trimestre e incentivada_50_longo_prazo. Converter indice para decimal. SE; Trimestre M+1 a M+3 e Longo Prazo A+1 a A+4. Não chamar de preço médio geral nem de curva completa BBCE.",
+      "validacao": "extração direta validada em 16/10/2026; último registro retornado: data-base 12/10/2026, publicação 13/10/2026, semana 42",
+      "endpoint_publico": "https://widget-api.denergia.com.br/indices-curva-forward"
     }
   ],
   "indicadores": [
@@ -261,16 +267,17 @@
         "F021"
       ],
       "status": "fonte fixa cadastrada; disponibilidade de preço por produto depende da publicação",
-      "metodo": "Usar produto, submercado e período identificados. Não chamar um índice forward ou PLD de preço médio geral. Não preencher se publicação não trouxer número comparável."
+      "metodo": "Usar produto, submercado e período identificados. Não chamar um índice forward ou PLD de preço médio geral. Não preencher se publicação não trouxer número comparável.",
+      "observacao": "Para referência pública forward do painel, usar F022 com rótulo Índice Dcide Convencional Trimestre — SE (M+1 a M+3), sem equivaler a preço médio de negócios realizados. F016 permanece para preços explicitamente divulgados nos boletins."
     },
     {
       "nome": "Curvas futuras / forward",
-      "fonte": "F017",
+      "fonte": "F022",
       "fontes_alternativas": [
         "F018",
         "F022"
       ],
-      "status": "fontes definidas; acesso à curva completa BBCE não confirmado e depende de assinatura",
+      "status": "coleta direta dos quatro índices públicos Denergia validada; curva completa BBCE permanece condicionada a assinatura",
       "metodo": "Consultar publicação primária acessível ou acesso autorizado; registrar data de curva, horizonte, energia, submercado, unidade e provedor; não substituir por boletim antigo sem explicitar data."
     }
   ],
@@ -316,7 +323,93 @@
     "Fontes novas precisam de cadastro, classificação e vínculo à evidência antes de publicação.",
     "O cadastro fontes contém páginas fixas e bases recorrentes, nunca notícias de uma única edição. Links específicos devem ser guardados em historico_evidencias; referencias_edicoes preserva o cadastro inicial legado."
   ],
-  "historico_evidencias": [],
+  "historico_evidencias": [
+    {
+      "id": "TESTE-20261016-F022-1",
+      "fonte_id": "F022",
+      "fonte_url_na_coleta": "https://denergia.com.br/",
+      "url_documento": "https://widget-api.denergia.com.br/indices-curva-forward",
+      "titulo": "Convencional Trimestre",
+      "data_publicacao": "2026-10-13",
+      "data_referencia_inicio": "2026-10-12",
+      "data_referencia_fim": "2026-10-12",
+      "coletado_em": "2026-10-16",
+      "unidade": "R$/MWh",
+      "valor_ou_resumo": 151.82,
+      "status_validacao": "validado_extracao_direta_fonte_primaria",
+      "metodo": "GET público HTTP 200, success=true; índice e metadados conferidos contra tabela da resposta; semana 42; submercado SE",
+      "edicao": null,
+      "substitui_id": null
+    },
+    {
+      "id": "TESTE-20261016-F022-2",
+      "fonte_id": "F022",
+      "fonte_url_na_coleta": "https://denergia.com.br/",
+      "url_documento": "https://widget-api.denergia.com.br/indices-curva-forward",
+      "titulo": "Convencional Longo Prazo",
+      "data_publicacao": "2026-10-13",
+      "data_referencia_inicio": "2026-10-12",
+      "data_referencia_fim": "2026-10-12",
+      "coletado_em": "2026-10-16",
+      "unidade": "R$/MWh",
+      "valor_ou_resumo": 219.28,
+      "status_validacao": "validado_extracao_direta_fonte_primaria",
+      "metodo": "GET público HTTP 200, success=true; índice e metadados conferidos contra tabela da resposta; semana 42; submercado SE",
+      "edicao": null,
+      "substitui_id": null
+    },
+    {
+      "id": "TESTE-20261016-F022-3",
+      "fonte_id": "F022",
+      "fonte_url_na_coleta": "https://denergia.com.br/",
+      "url_documento": "https://widget-api.denergia.com.br/indices-curva-forward",
+      "titulo": "Incentivada 50% Trimestre",
+      "data_publicacao": "2026-10-13",
+      "data_referencia_inicio": "2026-10-12",
+      "data_referencia_fim": "2026-10-12",
+      "coletado_em": "2026-10-16",
+      "unidade": "R$/MWh",
+      "valor_ou_resumo": 178.9,
+      "status_validacao": "validado_extracao_direta_fonte_primaria",
+      "metodo": "GET público HTTP 200, success=true; índice e metadados conferidos contra tabela da resposta; semana 42; submercado SE",
+      "edicao": null,
+      "substitui_id": null
+    },
+    {
+      "id": "TESTE-20261016-F022-4",
+      "fonte_id": "F022",
+      "fonte_url_na_coleta": "https://denergia.com.br/",
+      "url_documento": "https://widget-api.denergia.com.br/indices-curva-forward",
+      "titulo": "Incentivada 50% Longo Prazo",
+      "data_publicacao": "2026-10-13",
+      "data_referencia_inicio": "2026-10-12",
+      "data_referencia_fim": "2026-10-12",
+      "coletado_em": "2026-10-16",
+      "unidade": "R$/MWh",
+      "valor_ou_resumo": 247.18,
+      "status_validacao": "validado_extracao_direta_fonte_primaria",
+      "metodo": "GET público HTTP 200, success=true; índice e metadados conferidos contra tabela da resposta; semana 42; submercado SE",
+      "edicao": null,
+      "substitui_id": null
+    },
+    {
+      "id": "TESTE-20261016-TCU",
+      "fonte_id": "F020",
+      "fonte_url_na_coleta": "https://pesquisa.apps.tcu.gov.br/",
+      "url_documento": "https://portal.tcu.gov.br/imprensa/noticias/tcu-acompanha-2%C2%BA-leilao-de-reserva-de-capacidade-de-energia-eletrica",
+      "titulo": "Vínculo oficial do TC 008.289/2025-5 ao acompanhamento do LRCAP",
+      "data_publicacao": "2026-06-23",
+      "data_referencia_inicio": "2026-06-17",
+      "data_referencia_fim": "2026-06-17",
+      "coletado_em": "2026-10-16",
+      "unidade": null,
+      "valor_ou_resumo": "Notícia oficial relaciona processo ao Acórdão 1525/2026-Plenário; referência histórica, não andamento atual.",
+      "status_validacao": "documento_historico_oficial_consultado",
+      "metodo": "Leitura direta da notícia do TCU; não usar resumo automático do buscador como prova de estado atual.",
+      "edicao": null,
+      "substitui_id": null
+    }
+  ],
   "campos_obrigatorios_evidencia": [
     "id",
     "fonte_id",
@@ -494,5 +587,23 @@
     "aneel": "F019",
     "tcu": "F020",
     "regra": "Consultar canais fixos por número completo. Registrar evidência de andamento apenas quando efetivamente obtida; ausência de extração não significa ausência de movimentação."
+  },
+  "validacao_operacional": {
+    "data": "2026-10-16",
+    "curvas_publicas": "GET público validado HTTP 200 com quatro índices e histórico; data-base 12/10, publicação 13/10/2026. Repetir a leitura em cada edição.",
+    "preco_energia": "usar índice forward identificado por nome e horizonte; não renomear como preço médio geral",
+    "aneel": "rotas oficiais identificadas; SEI/Sicnet2 HTTP 403; quatro processos sem andamento atual extraído",
+    "tcu": "rota do processo e notícia oficial verificadas; histórico atual do sistema dinâmico não extraído",
+    "teste_integral_automacao": "não executado neste teste de fontes",
+    "resultados_precos": {
+      "data_base": "2026-10-12",
+      "publicado_em": "2026-10-13",
+      "unidade": "R$/MWh",
+      "submercado": "SE",
+      "convencional_trimestre": 151.82,
+      "convencional_longo_prazo": 219.28,
+      "incentivada_50_trimestre": 178.9,
+      "incentivada_50_longo_prazo": 247.18
+    }
   }
 }
