@@ -250,17 +250,22 @@
     "substitui_id"
   ],
   "rotina": {
-    "dias": "segunda a sexta",
+    "dias": "a cada 2 dias corridos, incluindo fins de semana",
     "hora": "13:00",
     "fuso": "America/Sao_Paulo",
     "passos": [
-      "Ler cadastro e site atual",
-      "Consultar fontes e documentos vinculados",
-      "Registrar evidências e pendências com data real",
-      "Atualizar somente conteúdo validado e relevante",
-      "Arquivar edição anterior antes de trocar edição",
-      "Publicar e verificar workflow sem filtro de pull request e comparar site ao commit"
+      "Ler cadastro, edição atual e histórico",
+      "Buscar notícias relevantes desde o corte anterior nos portais das instituições cadastradas e validar documentos exatos",
+      "Consultar e conferir os dados de mercado e cada um dos sete CVUs nas fontes confiáveis cadastradas",
+      "Registrar evidências, períodos e pendências; sem novo valor, preservar valor e data de referência",
+      "Arquivar integralmente a edição anterior sem sobrescrever versões e atualizar Edições anteriores",
+      "Criar nova edição datada a cada execução bem-sucedida, mesmo sem novidade material, informando o resultado da revisão",
+      "Preservar layout e correções manuais",
+      "Publicar e verificar workflow geral e comparar site ao commit; em falha preservar última edição válida e informar"
     ],
-    "ultima_coleta_completa": null
+    "ultima_coleta_completa": null,
+    "intervalo_dias": 2,
+    "inicio": "2026-10-16",
+    "nova_edicao_por_execucao": true
   }
 }
