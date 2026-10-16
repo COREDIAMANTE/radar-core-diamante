@@ -1,9 +1,276 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "atualizado_em": "2026-10-16",
   "repositorio": "COREDIAMANTE/radar-core-diamante",
   "descricao": "Cadastro canônico de fontes, metodologia e histórico de evidências do Radar CORE. Cadastro não equivale a validação dos valores publicados.",
   "fontes": [
+    {
+      "id": "F001",
+      "assunto": "Reservatórios observados",
+      "orgao": "ONS",
+      "url": "https://dados.ons.org.br/dataset/ear-diario-por-subsistema",
+      "tipo": "primaria",
+      "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
+      "validacao": "revalidar disponibilidade, conteúdo, período e metodologia em cada execução"
+    },
+    {
+      "id": "F002",
+      "assunto": "Notícias MME / CMSE / política energética",
+      "orgao": "MME",
+      "url": "https://www.gov.br/mme/pt-br/assuntos/noticias",
+      "tipo": "primaria",
+      "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
+      "validacao": "revalidar disponibilidade, conteúdo, período e metodologia em cada execução"
+    },
+    {
+      "id": "F003",
+      "assunto": "Consultas públicas MME",
+      "orgao": "MME",
+      "url": "https://www.gov.br/mme/pt-br/servicos/consultas-publicas",
+      "tipo": "primaria",
+      "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
+      "validacao": "revalidar disponibilidade, conteúdo, período e metodologia em cada execução"
+    },
+    {
+      "id": "F004",
+      "assunto": "Consultas públicas ANEEL",
+      "orgao": "ANEEL",
+      "url": "https://www.gov.br/aneel/pt-br/acesso-a-informacao/participacao-social/consultas-publicas",
+      "tipo": "primaria",
+      "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
+      "validacao": "revalidar disponibilidade, conteúdo, período e metodologia em cada execução"
+    },
+    {
+      "id": "F005",
+      "assunto": "Consultas e audiências de gás",
+      "orgao": "ANP",
+      "url": "https://www.gov.br/anp/pt-br/assuntos/consultas-e-audiencias-publicas",
+      "tipo": "primaria",
+      "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
+      "validacao": "revalidar disponibilidade, conteúdo, período e metodologia em cada execução"
+    },
+    {
+      "id": "F006",
+      "assunto": "Agenda ANP",
+      "orgao": "ANP",
+      "url": "https://www.gov.br/anp/pt-br/acesso-a-informacao/agenda-eventos",
+      "tipo": "primaria",
+      "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
+      "validacao": "revalidar disponibilidade, conteúdo, período e metodologia em cada execução"
+    },
+    {
+      "id": "F007",
+      "assunto": "CVU das sete usinas/parcelas",
+      "orgao": "ONS",
+      "url": "https://dados.ons.org.br/dataset/cvu-usitermica",
+      "tipo": "primaria",
+      "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
+      "validacao": "revalidar disponibilidade, conteúdo, período e metodologia em cada execução"
+    },
+    {
+      "id": "F008",
+      "assunto": "PLD diário / base para média semanal",
+      "orgao": "CCEE",
+      "url": "https://dadosabertos.ccee.org.br/dataset/pld_media_diaria",
+      "tipo": "primaria",
+      "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
+      "validacao": "revalidar disponibilidade, conteúdo, período e metodologia em cada execução"
+    },
+    {
+      "id": "F009",
+      "assunto": "Conferência PLD",
+      "orgao": "CCEE",
+      "url": "https://www.ccee.org.br/login/pages/pld/",
+      "tipo": "primaria",
+      "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
+      "validacao": "revalidar disponibilidade, conteúdo, período e metodologia em cada execução"
+    },
+    {
+      "id": "F010",
+      "assunto": "PMO, CMO e notícias operativas",
+      "orgao": "ONS",
+      "url": "https://www.ons.org.br/paginas/imprensa/sala-de-imprensa",
+      "tipo": "primaria",
+      "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
+      "validacao": "revalidar disponibilidade, conteúdo, período e metodologia em cada execução"
+    },
+    {
+      "id": "F011",
+      "assunto": "Notícias setoriais complementares",
+      "orgao": "Paranoá Energia",
+      "url": "https://www.paranoaenergia.com.br/",
+      "tipo": "complementar",
+      "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
+      "validacao": "revalidar disponibilidade, conteúdo, período e metodologia em cada execução"
+    },
+    {
+      "id": "F012",
+      "assunto": "Henry Hub spot",
+      "orgao": "EIA",
+      "url": "https://www.eia.gov/dnav/ng/hist/rngwhhdd.htm",
+      "tipo": "primaria",
+      "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
+      "validacao": "revalidar disponibilidade, conteúdo, período e metodologia em cada execução"
+    },
+    {
+      "id": "F013",
+      "assunto": "Newcastle Coal futuros",
+      "orgao": "Investing.com",
+      "url": "https://br.investing.com/commodities/newcastle-coal-futures-historical-data",
+      "tipo": "complementar",
+      "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
+      "validacao": "revalidar disponibilidade, conteúdo, período e metodologia em cada execução"
+    },
+    {
+      "id": "F014",
+      "assunto": "Brent e notícias internacionais de energia",
+      "orgao": "Reuters",
+      "url": "https://www.reuters.com/business/energy/",
+      "tipo": "complementar",
+      "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
+      "validacao": "revalidar disponibilidade, conteúdo, período e metodologia em cada execução"
+    },
+    {
+      "id": "F015",
+      "assunto": "Notícias ANEEL",
+      "orgao": "ANEEL",
+      "url": "https://www.gov.br/aneel/pt-br/assuntos/noticias/",
+      "tipo": "primaria",
+      "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
+      "validacao": "revalidar disponibilidade, conteúdo, período e metodologia em cada execução"
+    }
+  ],
+  "indicadores": [
+    {
+      "nome": "CVU operacional",
+      "fonte": "F007",
+      "unidade": "R$/MWh",
+      "periodo": "semana operativa",
+      "metodo": "CSV ONS por código e início/fim da semana; não substituir por CVU conjuntural CCEE sem distinção explícita"
+    },
+    {
+      "nome": "PLD diário e semanal",
+      "fonte": "F008",
+      "unidade": "R$/MWh",
+      "metodo": "Preservar submercado e período. Semanal exige agregação explícita de dados completos e método documentado; não renomear média diária como semanal"
+    },
+    {
+      "nome": "CMO",
+      "fonte": "F010",
+      "unidade": "R$/MWh",
+      "metodo": "Localizar PMO/revisão oficial exata, registrar semana e subsistema"
+    },
+    {
+      "nome": "Reservatórios SIN",
+      "fonte": "F001",
+      "unidade": "% EAR máximo",
+      "metodo": "Priorizar dado observado ONS por data/subsistema; projeções em série distinta e identificada"
+    },
+    {
+      "nome": "Henry Hub spot",
+      "fonte": "F012",
+      "unidade": "US$/MMBtu",
+      "metodo": "Data da observação distinta da divulgação; não confundir spot e futuro"
+    },
+    {
+      "nome": "Newcastle Coal",
+      "fonte": "F013",
+      "unidade": "US$/t",
+      "metodo": "Identificar contrato, vencimento, fechamento e atraso; preferir ICE/globalCOAL quando disponível"
+    },
+    {
+      "nome": "Brent",
+      "fonte": "F014",
+      "unidade": "US$/bbl",
+      "metodo": "Confirmar notícia/cotação exata, contrato e fechamento; não reaproveitar artigo antigo como preço atual"
+    },
+    {
+      "nome": "Preço médio da energia e curva futura",
+      "fonte": null,
+      "status": "pendente de definição de fonte verificável e produto",
+      "metodo": "Identificar produto, região, horizonte, unidade, data e acesso; não estimar nem inventar"
+    }
+  ],
+  "usinas": [
+    {
+      "nome": "Jorge Lacerda A1",
+      "codigo_ons": 26
+    },
+    {
+      "nome": "Jorge Lacerda A2",
+      "codigo_ons": 27
+    },
+    {
+      "nome": "Jorge Lacerda B",
+      "codigo_ons": 25
+    },
+    {
+      "nome": "Jorge Lacerda C",
+      "codigo_ons": 24
+    },
+    {
+      "nome": "Porto do Pecém I",
+      "codigo_ons": 167
+    },
+    {
+      "nome": "Porto do Pecém II",
+      "codigo_ons": 163
+    },
+    {
+      "nome": "Porto do Itaqui",
+      "codigo_ons": 176
+    }
+  ],
+  "regras": [
+    "Pecém II é código 163 P.PECEM2; nunca 162.",
+    "Excluir IPCA e IGP-M do painel.",
+    "Gás: Grupo Diamante atua como comercializadora; não presumir produção, distribuição ou transporte.",
+    "Preservar layout, correções manuais, sete CVUs e arquivo das edições.",
+    "Todo item deve explicar efeito para CTJL, Pecém I/II, Itaqui ou Comercializadora; 70% análise, 20% contexto, 10% notícia.",
+    "Distinguir proposta, decisão, vigência, data de publicação e período do dado.",
+    "Sem validação: preservar último dado datado, sinalizar pendência e motivo; nunca avançar data para simular atualização.",
+    "Página inicial/agenda é ponto de descoberta, não prova suficiente para notícia, prazo ou andamento.",
+    "Fontes novas precisam de cadastro, classificação e vínculo à evidência antes de publicação.",
+    "O cadastro fontes contém páginas fixas e bases recorrentes, nunca notícias de uma única edição. Links específicos devem ser guardados em historico_evidencias; referencias_edicoes preserva o cadastro inicial legado."
+  ],
+  "historico_evidencias": [],
+  "campos_obrigatorios_evidencia": [
+    "id",
+    "fonte_id",
+    "url_documento",
+    "titulo",
+    "data_publicacao",
+    "data_referencia_inicio",
+    "data_referencia_fim",
+    "coletado_em",
+    "unidade",
+    "valor_ou_resumo",
+    "status_validacao",
+    "metodo",
+    "edicao",
+    "substitui_id",
+    "fonte_url_na_coleta"
+  ],
+  "rotina": {
+    "dias": "a cada 2 dias corridos, incluindo fins de semana",
+    "hora": "13:00",
+    "fuso": "America/Sao_Paulo",
+    "passos": [
+      "Ler cadastro, edição atual e histórico",
+      "Buscar notícias relevantes desde o corte anterior nos portais das instituições cadastradas e validar documentos exatos",
+      "Consultar e conferir os dados de mercado e cada um dos sete CVUs nas fontes confiáveis cadastradas",
+      "Registrar evidências, períodos e pendências; sem novo valor, preservar valor e data de referência",
+      "Arquivar integralmente a edição anterior sem sobrescrever versões e atualizar Edições anteriores",
+      "Criar nova edição datada a cada execução bem-sucedida, mesmo sem novidade material, informando o resultado da revisão",
+      "Preservar layout e correções manuais",
+      "Publicar e verificar workflow geral e comparar site ao commit; em falha preservar última edição válida e informar"
+    ],
+    "ultima_coleta_completa": null,
+    "intervalo_dias": 2,
+    "inicio": "2026-10-16",
+    "nova_edicao_por_execucao": true
+  },
+  "referencias_edicoes": [
     {
       "id": "F001",
       "url": "https://www.ons.org.br/",
@@ -139,133 +406,5 @@
       "validacao": "cadastrada; revalidar conteúdo e data antes de usar",
       "exige_documento_especifico": true
     }
-  ],
-  "indicadores": [
-    {
-      "nome": "CVU operacional",
-      "fonte": "F007",
-      "unidade": "R$/MWh",
-      "periodo": "semana operativa",
-      "metodo": "CSV ONS por código e início/fim da semana; não substituir por CVU conjuntural CCEE sem distinção explícita"
-    },
-    {
-      "nome": "PLD diário e semanal",
-      "fonte": "F008",
-      "unidade": "R$/MWh",
-      "metodo": "Preservar submercado e período. Semanal exige agregação explícita de dados completos e método documentado; não renomear média diária como semanal"
-    },
-    {
-      "nome": "CMO",
-      "fonte": "F010",
-      "unidade": "R$/MWh",
-      "metodo": "Localizar PMO/revisão oficial exata, registrar semana e subsistema"
-    },
-    {
-      "nome": "Reservatórios SIN",
-      "fonte": "F001",
-      "unidade": "% EAR máximo",
-      "metodo": "Priorizar dado observado ONS por data/subsistema; projeções em série distinta e identificada"
-    },
-    {
-      "nome": "Henry Hub spot",
-      "fonte": "F012",
-      "unidade": "US$/MMBtu",
-      "metodo": "Data da observação distinta da divulgação; não confundir spot e futuro"
-    },
-    {
-      "nome": "Newcastle Coal",
-      "fonte": "F013",
-      "unidade": "US$/t",
-      "metodo": "Identificar contrato, vencimento, fechamento e atraso; preferir ICE/globalCOAL quando disponível"
-    },
-    {
-      "nome": "Brent",
-      "fonte": "F014",
-      "unidade": "US$/bbl",
-      "metodo": "Confirmar notícia/cotação exata, contrato e fechamento; não reaproveitar artigo antigo como preço atual"
-    },
-    {
-      "nome": "Preço médio da energia e curva futura",
-      "fonte": null,
-      "status": "pendente de definição de fonte verificável e produto",
-      "metodo": "Identificar produto, região, horizonte, unidade, data e acesso; não estimar nem inventar"
-    }
-  ],
-  "usinas": [
-    {
-      "nome": "Jorge Lacerda A1",
-      "codigo_ons": 26
-    },
-    {
-      "nome": "Jorge Lacerda A2",
-      "codigo_ons": 27
-    },
-    {
-      "nome": "Jorge Lacerda B",
-      "codigo_ons": 25
-    },
-    {
-      "nome": "Jorge Lacerda C",
-      "codigo_ons": 24
-    },
-    {
-      "nome": "Porto do Pecém I",
-      "codigo_ons": 167
-    },
-    {
-      "nome": "Porto do Pecém II",
-      "codigo_ons": 163
-    },
-    {
-      "nome": "Porto do Itaqui",
-      "codigo_ons": 176
-    }
-  ],
-  "regras": [
-    "Pecém II é código 163 P.PECEM2; nunca 162.",
-    "Excluir IPCA e IGP-M do painel.",
-    "Gás: Grupo Diamante atua como comercializadora; não presumir produção, distribuição ou transporte.",
-    "Preservar layout, correções manuais, sete CVUs e arquivo das edições.",
-    "Todo item deve explicar efeito para CTJL, Pecém I/II, Itaqui ou Comercializadora; 70% análise, 20% contexto, 10% notícia.",
-    "Distinguir proposta, decisão, vigência, data de publicação e período do dado.",
-    "Sem validação: preservar último dado datado, sinalizar pendência e motivo; nunca avançar data para simular atualização.",
-    "Página inicial/agenda é ponto de descoberta, não prova suficiente para notícia, prazo ou andamento.",
-    "Fontes novas precisam de cadastro, classificação e vínculo à evidência antes de publicação."
-  ],
-  "historico_evidencias": [],
-  "campos_obrigatorios_evidencia": [
-    "id",
-    "fonte_id",
-    "url_documento",
-    "titulo",
-    "data_publicacao",
-    "data_referencia_inicio",
-    "data_referencia_fim",
-    "coletado_em",
-    "unidade",
-    "valor_ou_resumo",
-    "status_validacao",
-    "metodo",
-    "edicao",
-    "substitui_id"
-  ],
-  "rotina": {
-    "dias": "a cada 2 dias corridos, incluindo fins de semana",
-    "hora": "13:00",
-    "fuso": "America/Sao_Paulo",
-    "passos": [
-      "Ler cadastro, edição atual e histórico",
-      "Buscar notícias relevantes desde o corte anterior nos portais das instituições cadastradas e validar documentos exatos",
-      "Consultar e conferir os dados de mercado e cada um dos sete CVUs nas fontes confiáveis cadastradas",
-      "Registrar evidências, períodos e pendências; sem novo valor, preservar valor e data de referência",
-      "Arquivar integralmente a edição anterior sem sobrescrever versões e atualizar Edições anteriores",
-      "Criar nova edição datada a cada execução bem-sucedida, mesmo sem novidade material, informando o resultado da revisão",
-      "Preservar layout e correções manuais",
-      "Publicar e verificar workflow geral e comparar site ao commit; em falha preservar última edição válida e informar"
-    ],
-    "ultima_coleta_completa": null,
-    "intervalo_dias": 2,
-    "inicio": "2026-10-16",
-    "nova_edicao_por_execucao": true
-  }
+  ]
 }
