@@ -44,12 +44,12 @@ def main():
                 matches=[]
                 for row in rows:
                     combined=" ".join(str(v) for v in row.values())
-                    if any(re.search(r"(?<!\\d)"+code+r"(?!\\d)",combined) for code in CODES.values()):
+                    if any(re.search(r"(?<!\d)"+code+r"(?!\d)",combined) for code in CODES.values()):
                         matches.append(row)
                 record["linhas_candidatas_cvu"]=matches[-250:]
                 record["alerta"]="Linhas candidatas; confirmar coluna de codigo ONS, vigencia e revisao antes de publicar"
             elif slug=="pld_media_diaria":
-                dates=[row for row in rows if "21/10/2026" in " ".join(str(v) for v in row.values())]
+                dates=[row for row in rows if any(d in " ".join(str(v) for v in row.values()) for d in ("21/10/2026","2026-10-21","21-10-2026"))]
                 record["pld_21_10_candidatos"]=dates[:30]
                 record["alerta"]="Conferir quatro submercados e unidade antes de publicar"
             else:
@@ -63,6 +63,6 @@ def main():
     with open("dados/auditoria/coleta_2026-10-21.json","w",encoding="utf-8") as f:
         json.dump(out,f,ensure_ascii=False,indent=2)
     print(json.dumps({"status":out["status"],"fontes":[{"dataset":x["dataset"],"status":x["status"],"total_linhas":x.get("total_linhas")} for x in out["fontes"]],"alertas":out["alertas"]},ensure_ascii=False))
-    if all(x["status"]=="erro" for x in out["fontes"]): raise SystemExit(1)
+    if any(x["status"]=="erro" for x in out["fontes"]): raise SystemExit(1)
 
 if __name__=="__main__": main()
