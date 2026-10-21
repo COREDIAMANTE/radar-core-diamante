@@ -1,0 +1,26 @@
+name: Coleta e auditoria CORE
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 11 * * 1-5'
+permissions:
+  contents: read
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Coletar dados primarios e gerar relatorio
+        run: python scripts/coleta_core.py
+      - name: Disponibilizar relatorio para conferencia
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: auditoria-core
+          path: dados/auditoria/*.json
+          if-no-files-found: warn
+          retention-days: 30
