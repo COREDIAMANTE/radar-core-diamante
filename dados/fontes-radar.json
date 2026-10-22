@@ -1691,7 +1691,7 @@
     "preco_energia": "índice forward Dcide exibido por produto/horizonte/submercado; não renomeado como preço médio geral",
     "aneel": "SEI retornou HTTP 503 na coleta de 22/10; quatro processos preservados como não confirmados",
     "tcu": "rota específica respondeu HTTP 200 em 22/10, mas a interface dinâmica não forneceu andamento atual verificável",
-    "teste_integral_automacao": "executado em 22/10/2026: indicadores, sete CVUs, notícias, agenda, processos, arquivo da edição, cadastro e publicação; verificação do Pages a registrar após deploy",
+    "teste_integral_automacao": "executado em 22/10/2026: indicadores, sete CVUs, notícias, agenda, processos, arquivo da edição, cadastro e publicação; run geral 39811755205 concluído com sucesso e HTML servido conferido contra o blob 07ec498b6e51f27b326d763000792d445233e0dd",
     "resultados_precos": {
       "data_base": "2026-10-19",
       "publicado_em": "2026-10-20",
