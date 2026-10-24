@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "atualizado_em": "2026-10-22T13:00:00-03:00",
+  "atualizado_em": "2026-10-24T13:00:00-03:00",
   "repositorio": "COREDIAMANTE/radar-core-diamante",
   "descricao": "Cadastro canônico de fontes, metodologia e histórico de evidências do Radar CORE. Cadastro não equivale a validação dos valores publicados.",
   "fontes": [
@@ -11,7 +11,7 @@
       "url": "https://dados.ons.org.br/dataset/ear-diario-por-subsistema",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "CSV anual EAR_DIARIO_SUBSISTEMA_2026 extraído diretamente em 22/10/2026; última observação disponível 21/10/2026."
+      "validacao": "CSV anual EAR_DIARIO_SUBSISTEMA_2026 extraído diretamente em 24/10/2026; última observação disponível 23/10/2026."
     },
     {
       "id": "F002",
@@ -65,7 +65,7 @@
       "url": "https://dados.ons.org.br/dataset/cvu-usitermica",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "CSV anual CVU_USINA_TERMICA_2026 extraído diretamente em 22/10/2026; sete códigos conferidos na Revisão 3, semana 17–23/10."
+      "validacao": "CSV anual CVU_USINA_TERMICA_2026 extraído diretamente em 24/10/2026; sete códigos conferidos na Revisão 4, semana 24–30/10."
     },
     {
       "id": "F008",
@@ -74,7 +74,7 @@
       "url": "https://dadosabertos.ccee.org.br/dataset/pld_media_diaria",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "CSV oficial PLD média diária extraído diretamente em 22/10/2026; observações disponíveis até 22/10/2026."
+      "validacao": "CSV oficial PLD média diária extraído diretamente em 24/10/2026; observações disponíveis até 24/10/2026; semana 17–23/10 completa e agregada."
     },
     {
       "id": "F009",
@@ -92,7 +92,7 @@
       "url": "https://www.ons.org.br/paginas/imprensa/sala-de-imprensa",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "revalidar disponibilidade, conteúdo, período e metodologia em cada execução"
+      "validacao": "Relatório PMO 24–30/10/2026 localizado e lido em 24/10; CMO, projeção EAR e tabela de geração térmica conferidos no documento exato."
     },
     {
       "id": "F011",
@@ -110,7 +110,7 @@
       "url": "https://www.eia.gov/dnav/ng/hist/rngwhhdd.htm",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "Tabela diária EIA revalidada em 22/10/2026; divulgação de 21/10 contém spot até 20/10/2026."
+      "validacao": "Tabela diária EIA revalidada em 24/10/2026; divulgação de 21/10 contém spot até 20/10/2026; próxima divulgação indicada para 28/10."
     },
     {
       "id": "F013",
@@ -128,7 +128,7 @@
       "url": "https://www.reuters.com/business/energy/",
       "tipo": "complementar",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "Documento específico Reuters de 21/10/2026 consultado em 22/10; fechamento Brent de 21/10 confirmado."
+      "validacao": "Documento específico Reuters de 23/10/2026 consultado em 24/10; fechamento Brent de 23/10 confirmado."
     },
     {
       "id": "F015",
@@ -137,7 +137,7 @@
       "url": "https://www.gov.br/aneel/pt-br/assuntos/noticias/",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "Notícias específicas das CPs 038 e 039/2026 revalidadas em 22/10/2026, incluindo publicação e prazo de contribuições."
+      "validacao": "Notícia específica da REN 1.172/2026, publicada em 22/10, revalidada em 24/10; CPs 038/039 e prazos preservados com datas próprias."
     },
     {
       "id": "F016",
@@ -177,7 +177,7 @@
       "tipo": "primaria",
       "acesso": "publico; documentos restritos excluídos",
       "metodo": "Seguir links oficiais SEI para documentos desde 02/01/2025 e Sicnet2 até 31/12/2024. Em processos antigos migrados, seguir instrução oficial de pesquisa com sexto dígito 9; não alterar silenciosamente identificação do processo.",
-      "validacao": "Teste em 16/10/2026: portal explicativo acessível; SEI e Sicnet2 retornaram HTTP 403 na coleta direta; andamento dos processos individuais não obtido.",
+      "validacao": "Teste em 24/10/2026: rota SEI retornou HTTP 503; andamento dos processos individuais não obtido. Falha de acesso não indica ausência de movimento.",
       "rotas": {
         "sei": "https://sei.aneel.gov.br/sei/modulos/pesquisa/md_pesq_processo_pesquisar.php?acao_externa=protocolo_pesquisar&acao_origem_externa=protocolo_pesquisar&id_orgao_acesso_externo=0",
         "sicnet2": "https://sicnet2.aneel.gov.br/sicnetweb/pesquisa.asp"
@@ -191,7 +191,7 @@
       "tipo": "primaria",
       "acesso": "consulta publica; interface dinâmica",
       "metodo": "Pesquisar pelo número completo e conferir documento/data; ferramenta de busca disponível não equivale a andamento individual validado.",
-      "validacao": "Página específica localizada; leitura direta requer JavaScript. Notícia oficial confirma vínculo do TC 008.289/2025-5 ao LRCAP; não confirma andamento atual.",
+      "validacao": "Rota específica do TC 008.289/2025-5 respondeu HTTP 200 em 24/10, mas a interface requer JavaScript e não forneceu andamento atual extraível.",
       "processo_monitorado_url": "https://pesquisa.apps.tcu.gov.br/doc/processo/828920255"
     },
     {
@@ -212,7 +212,7 @@
       "tipo": "primaria",
       "acesso": "público sem login; GET retornou HTTP 200 e JSON success=true em 16/10/2026",
       "metodo": "GET endpoint_publico. Ler data.indices_curva_forward_por_data: data_base, data_publicacao, descricao_semana e tabela. Tabela possui convencional_trimestre, convencional_longo_prazo, incentivada_50_trimestre e incentivada_50_longo_prazo. Converter indice para decimal. SE; Trimestre M+1 a M+3 e Longo Prazo A+1 a A+4. Não chamar de preço médio geral nem de curva completa BBCE.",
-      "validacao": "extração direta revalidada em 22/10/2026; último registro retornado: data-base 19/10/2026, publicação 20/10/2026, semana 43",
+      "validacao": "Extração direta revalidada em 24/10/2026; último registro retornado permanece data-base 19/10/2026, publicação 20/10/2026, semana 43.",
       "endpoint_publico": "https://widget-api.denergia.com.br/indices-curva-forward"
     },
     {
@@ -222,7 +222,7 @@
       "url": "https://www.gov.br/aneel/pt-br/centrais-de-conteudos/legislacao",
       "tipo": "primaria",
       "metodo": "Pesquisar despacho específico por número, data e empresa; conferir íntegra, publicação, vigência e efeitos. Leis.org apenas auxiliar, jamais prova primária.",
-      "validacao": "Despacho 4008/2026 ainda não localizado em documento oficial nas coletas de 16 e 18/10/2026; conteúdo setorial permanece atribuído e pendente de validação primária"
+      "validacao": "Despacho 4008/2026 ainda não localizado em documento oficial na coleta de 24/10/2026; conteúdo permanece atribuído e pendente de validação primária."
     },
     {
       "id": "F024",
@@ -242,6 +242,16 @@
       "tipo": "complementar",
       "metodo": "Usar com atribuição, título, URL e data. Quando a matéria resumir ato regulatório, localizar e validar o documento primário antes de tratar valores, vigência ou comandos como oficiais.",
       "validacao": "matéria específica sobre o Despacho ANEEL 4008/2026 localizada e lida em 18/10/2026; números permanecem atribuídos por falta da íntegra oficial"
+    },
+    {
+      "id": "F026",
+      "assunto": "Futuros globalCOAL Newcastle por contrato e vencimento",
+      "orgao": "ICE Futures Europe",
+      "url": "https://www.ice.com/products/1137/globalCOAL-Newcastle-Coal-Futures/data?marketId=1361188",
+      "tipo": "primaria",
+      "acesso": "público; tabela de mercado com atraso",
+      "metodo": "Registrar contrato/vencimento, tipo de campo (last, settlement ou bid/offer), data/hora e volume. Não tratar último negócio como settlement nem como preço físico entregue.",
+      "validacao": "Página oficial do produto ICE consultada em 24/10/2026; negócios de 23/10 confirmados para out/26 e dez/26, com horários e volumes."
     }
   ],
   "indicadores": [
@@ -1504,6 +1514,210 @@
       "edicao": "2026-10-22",
       "substitui_id": "EVID-20261020-PROCESSOS",
       "fonte_url_na_coleta": "https://www.gov.br/aneel/pt-br/canais_atendimento/processo-eletronico/pesquisa-publica"
+    },
+    {
+      "id": "EVID-20261024-PLD",
+      "fonte_id": "F008",
+      "url_documento": "https://pda-download.ccee.org.br/T09SGpnfRN-2ZaeWfHgrMw/content",
+      "titulo": "PLD médio diário de 24/10 e semana completa 17–23/10",
+      "data_publicacao": "2026-10-24",
+      "data_referencia_inicio": "2026-10-17",
+      "data_referencia_fim": "2026-10-24",
+      "coletado_em": "2026-10-24T13:00:00-03:00",
+      "unidade": "R$/MWh",
+      "valor_ou_resumo": "PLD diário de 24/10: 57,31 nos quatro submercados. Semana completa 17–23/10: 70,63 nos quatro submercados.",
+      "status_validacao": "validado_fonte_primaria",
+      "metodo": "Download direto do CSV CCEE; parse por data e submercado. Média semanal calculada como média aritmética simples das sete médias diárias, uma observação por dia e submercado.",
+      "edicao": "2026-10-24",
+      "substitui_id": "EVID-20261022-PLD",
+      "fonte_url_na_coleta": "https://dadosabertos.ccee.org.br/dataset/pld_media_diaria"
+    },
+    {
+      "id": "EVID-20261024-CVU",
+      "fonte_id": "F007",
+      "url_documento": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/cvu_usitermica_se/CVU_USINA_TERMICA_2026.csv",
+      "titulo": "Sete CVUs operacionais ONS — Revisão 4, semana 24–30/10",
+      "data_publicacao": null,
+      "data_referencia_inicio": "2026-10-24",
+      "data_referencia_fim": "2026-10-30",
+      "coletado_em": "2026-10-24T13:00:00-03:00",
+      "unidade": "R$/MWh",
+      "valor_ou_resumo": "26 J.LAC. A1 522,87; 27 J.LAC. A2 419,92; 25 J.LACER. B 410,40; 24 J.LACER. C 350,34; 167 P.PECEM1 406,84; 163 P.PECEM2 412,32; 176 P. ITAQUI 403,73.",
+      "status_validacao": "validado_fonte_primaria",
+      "metodo": "Download direto do CSV anual ONS e filtro simultâneo por início 24/10, fim 30/10, Revisão 4 e cada um dos sete códigos. Código 163 mantido para Pecém II; 162 excluído.",
+      "edicao": "2026-10-24",
+      "substitui_id": "EVID-20261022-CVU",
+      "fonte_url_na_coleta": "https://dados.ons.org.br/dataset/cvu-usitermica"
+    },
+    {
+      "id": "EVID-20261024-CMO-PMO",
+      "fonte_id": "F010",
+      "url_documento": "https://www.ons.org.br/AcervoDigitalDocumentosEPublicacoes/RELATORIO-PMO-24_10_26%20a%2030_10_26.pdf",
+      "titulo": "PMO 24–30/10 — CMO, EAR projetado e indicação de geração térmica",
+      "data_publicacao": null,
+      "data_referencia_inicio": "2026-10-24",
+      "data_referencia_fim": "2026-10-31",
+      "coletado_em": "2026-10-24T13:00:00-03:00",
+      "unidade": "R$/MWh, MW e % EARmáx",
+      "valor_ou_resumo": "CMO médio: SE/CO 13,95; Sul 11,95; Nordeste 13,95; Norte 289,25. CTJL C 320 MW, B 220 MW e A2 105 MW por inflexibilidade; A1, Pecém I/II e Itaqui sem indicação. Projeção EAR em 31/10: 55,2%; 89,7%; 62,2%; 59,6%.",
+      "status_validacao": "validado_documento_primario",
+      "metodo": "Leitura do relatório PMO exato; CMO separado de PLD, projeção separada de observado e indicação semanal tratada como informativa.",
+      "edicao": "2026-10-24",
+      "substitui_id": "EVID-20261022-CMO-PMO",
+      "fonte_url_na_coleta": "https://www.ons.org.br/AcervoDigitalDocumentosEPublicacoes/RELATORIO-PMO-24_10_26%20a%2030_10_26.pdf"
+    },
+    {
+      "id": "EVID-20261024-EAR-OBS-PROJ",
+      "fonte_id": "F001",
+      "url_documento": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/ear_subsistema_di/EAR_DIARIO_SUBSISTEMA_2026.csv",
+      "titulo": "EAR observado de 23/10 e projeção PMO para 31/10",
+      "data_publicacao": null,
+      "data_referencia_inicio": "2026-10-23",
+      "data_referencia_fim": "2026-10-31",
+      "coletado_em": "2026-10-24T13:00:00-03:00",
+      "unidade": "% EARmáx",
+      "valor_ou_resumo": "Observado 23/10: SE/CO 54,3983%; Sul 79,4853%; Nordeste 62,6658%; Norte 64,2311%. Projeção PMO 31/10: 55,2%; 89,7%; 62,2%; 59,6%.",
+      "status_validacao": "observado_validado_projecao_documentada",
+      "metodo": "Download e filtro do CSV ONS pela última data disponível; projeção lida no PMO 24–30/10 e mantida separada.",
+      "edicao": "2026-10-24",
+      "substitui_id": "EVID-20261022-EAR-OBS-PROJ",
+      "fonte_url_na_coleta": "https://dados.ons.org.br/dataset/ear-diario-por-subsistema"
+    },
+    {
+      "id": "EVID-20261024-HENRY-HUB",
+      "fonte_id": "F012",
+      "url_documento": "https://www.eia.gov/dnav/ng/hist/rngwhhdd.htm",
+      "titulo": "Henry Hub Natural Gas Spot Price — divulgação de 21/10",
+      "data_publicacao": "2026-10-21",
+      "data_referencia_inicio": "2026-10-20",
+      "data_referencia_fim": "2026-10-20",
+      "coletado_em": "2026-10-24T13:00:00-03:00",
+      "unidade": "US$/MMBtu",
+      "valor_ou_resumo": "3,10 em 20/10; sem nova divulgação até a coleta. Próxima divulgação indicada: 28/10/2026.",
+      "status_validacao": "validado_fonte_primaria_sem_nova_publicacao",
+      "metodo": "Leitura direta da tabela EIA; spot separado de futuros NYMEX e data original preservada.",
+      "edicao": "2026-10-24",
+      "substitui_id": "EVID-20261022-HENRY-HUB",
+      "fonte_url_na_coleta": "https://www.eia.gov/dnav/ng/hist/rngwhhdd.htm"
+    },
+    {
+      "id": "EVID-20261024-NEWCASTLE-ICE",
+      "fonte_id": "F026",
+      "url_documento": "https://www.ice.com/products/1137/globalCOAL-Newcastle-Coal-Futures/data?marketId=1361188",
+      "titulo": "globalCOAL Newcastle Coal Futures — últimos negócios por vencimento",
+      "data_publicacao": "2026-10-23",
+      "data_referencia_inicio": "2026-10-23",
+      "data_referencia_fim": "2026-10-23",
+      "coletado_em": "2026-10-24T13:00:00-03:00",
+      "unidade": "US$/t",
+      "valor_ou_resumo": "Out/26: last 151,00 às 08:47 GMT, volume 3. Dez/26: last 156,70 às 15:26 GMT, volume 8.",
+      "status_validacao": "validado_fonte_primaria",
+      "metodo": "Leitura da tabela oficial ICE; contratos e vencimentos separados; campo last e volumes explicitados. Valores não tratados como settlement ou preço físico.",
+      "edicao": "2026-10-24",
+      "substitui_id": "EVID-20261022-NEWCASTLE-OUT26",
+      "fonte_url_na_coleta": "https://www.ice.com/products/1137/globalCOAL-Newcastle-Coal-Futures/data?marketId=1361188"
+    },
+    {
+      "id": "EVID-20261024-BRENT",
+      "fonte_id": "F014",
+      "url_documento": "https://www.reuters.com/business/energy/oil-little-changed-supply-concern-lingers-amid-houthi-attacks-saudi-arabia-2026-10-23/",
+      "titulo": "Brent crude futures — fechamento de 23/10",
+      "data_publicacao": "2026-10-23",
+      "data_referencia_inicio": "2026-10-23",
+      "data_referencia_fim": "2026-10-23",
+      "coletado_em": "2026-10-24T13:00:00-03:00",
+      "unidade": "US$/bbl",
+      "valor_ou_resumo": "Brent fechou a 116,72, alta de US$ 3,55 ou 3,14%.",
+      "status_validacao": "validado_fonte_complementar_atribuida",
+      "metodo": "Leitura do documento Reuters específico, usando fechamento; futuro separado de preço físico.",
+      "edicao": "2026-10-24",
+      "substitui_id": "EVID-20261022-BRENT",
+      "fonte_url_na_coleta": "https://www.reuters.com/business/energy/oil-little-changed-supply-concern-lingers-amid-houthi-attacks-saudi-arabia-2026-10-23/"
+    },
+    {
+      "id": "EVID-20261024-FORWARD-DCIDE",
+      "fonte_id": "F022",
+      "url_documento": "https://widget-api.denergia.com.br/indices-curva-forward",
+      "titulo": "Índices públicos da curva forward Dcide — semana 43",
+      "data_publicacao": "2026-10-20",
+      "data_referencia_inicio": "2026-10-19",
+      "data_referencia_fim": "2026-10-19",
+      "coletado_em": "2026-10-24T13:00:00-03:00",
+      "unidade": "R$/MWh",
+      "valor_ou_resumo": "SE: Convencional Trimestre M+1 a M+3 168,50; Convencional Longo A+1 a A+4 220,56; Incentivada 50% Trimestre 195,97; Incentivada 50% Longo 248,63. Endpoint sem registro posterior.",
+      "status_validacao": "validado_endpoint_publico_sem_nova_publicacao",
+      "metodo": "GET direto no endpoint público F022; datas, produto, horizonte e submercado preservados. Não tratado como preço médio universal nem curva BBCE completa.",
+      "edicao": "2026-10-24",
+      "substitui_id": "EVID-20261022-FORWARD-DCIDE",
+      "fonte_url_na_coleta": "https://widget-api.denergia.com.br/indices-curva-forward"
+    },
+    {
+      "id": "EVID-20261024-ANEEL-REN1172",
+      "fonte_id": "F015",
+      "url_documento": "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026-defeso-eleitoral/aneel-aprimora-regras-para-sustentacao-oral",
+      "titulo": "REN ANEEL 1.172/2026 — sustentação oral em Circuitos Deliberativos Públicos",
+      "data_publicacao": "2026-10-22",
+      "data_referencia_inicio": "2026-10-16",
+      "data_referencia_fim": "2026-10-22",
+      "coletado_em": "2026-10-24T13:00:00-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "REN 1.172/2026 altera a Norma de Organização 1: sustentação oral exclusivamente por vídeo nos Circuitos Deliberativos Públicos; pedido e vídeo até 16h do dia útil anterior à deliberação.",
+      "status_validacao": "validado_fonte_primaria",
+      "metodo": "Leitura da notícia específica ANEEL; data de publicação, número da norma e prazo processual preservados. Relevância limitada ao rito, sem presumir mudança de mérito.",
+      "edicao": "2026-10-24",
+      "substitui_id": null,
+      "fonte_url_na_coleta": "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026-defeso-eleitoral/aneel-aprimora-regras-para-sustentacao-oral"
+    },
+    {
+      "id": "EVID-20261024-NOTICIAS-OFICIAIS",
+      "fonte_id": "F002",
+      "url_documento": "https://www.gov.br/mme/pt-br/assuntos/noticias",
+      "titulo": "Varredura de notícias oficiais desde o corte de 23/10",
+      "data_publicacao": "2026-10-24",
+      "data_referencia_inicio": "2026-10-23",
+      "data_referencia_fim": "2026-10-24",
+      "coletado_em": "2026-10-24T13:00:00-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "Portais ANEEL, MME, ANP e ONS consultados. Não foi localizada notícia oficial nova posterior a 23/10, 14h, com efeito material verificável sobre CTJL, Pecém I, Pecém II, Itaqui ou Comercializadora. A REN 1.172, de 22/10, foi revalidada e preservada com data original.",
+      "status_validacao": "varredura_realizada_sem_novidade_material",
+      "metodo": "Consulta de portais e documentos cadastrados; ausência de notícia não usada para inferir ausência de movimentação processual.",
+      "edicao": "2026-10-24",
+      "substitui_id": "EVID-20261022-NOTICIAS-OFICIAIS",
+      "fonte_url_na_coleta": "https://www.gov.br/mme/pt-br/assuntos/noticias"
+    },
+    {
+      "id": "EVID-20261024-DESPACHO4008",
+      "fonte_id": "F023",
+      "url_documento": "https://www.gov.br/aneel/pt-br/centrais-de-conteudos/legislacao",
+      "titulo": "Busca da publicação primária do Despacho ANEEL 4.008/2026",
+      "data_publicacao": null,
+      "data_referencia_inicio": "2026-10-24",
+      "data_referencia_fim": "2026-10-24",
+      "coletado_em": "2026-10-24T13:00:00-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "Documento primário específico ainda não localizado. Transcrição Leis.org e matéria MegaWhat permanecem complementares e atribuídas; valores não promovidos a evidência primária.",
+      "status_validacao": "pendente_documento_primario",
+      "metodo": "Busca por número, data e CTJL nos canais oficiais ANEEL/DOU cadastrados; ausência de resultado não tratada como inexistência.",
+      "edicao": "2026-10-24",
+      "substitui_id": null,
+      "fonte_url_na_coleta": "https://www.gov.br/aneel/pt-br/centrais-de-conteudos/legislacao"
+    },
+    {
+      "id": "EVID-20261024-PROCESSOS",
+      "fonte_id": "F019",
+      "url_documento": "https://sei.aneel.gov.br/sei/modulos/pesquisa/md_pesq_processo_pesquisar.php?acao_externa=protocolo_pesquisar&acao_origem_externa=protocolo_pesquisar&id_orgao_acesso_externo=0",
+      "titulo": "Verificação de processos permanentes ANEEL e TCU",
+      "data_publicacao": null,
+      "data_referencia_inicio": "2026-10-24",
+      "data_referencia_fim": "2026-10-24",
+      "coletado_em": "2026-10-24T13:00:00-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "SEI ANEEL retornou HTTP 503. A rota específica do TCU respondeu HTTP 200, mas a interface exige JavaScript e não forneceu andamento atual extraível. Estados anteriores preservados.",
+      "status_validacao": "pendente_por_indisponibilidade_e_interface_dinamica",
+      "metodo": "Teste direto das rotas oficiais cadastradas. HTTP 503 e interface dinâmica não interpretados como ausência de movimentação.",
+      "edicao": "2026-10-24",
+      "substitui_id": "EVID-20261022-PROCESSOS",
+      "fonte_url_na_coleta": "https://www.gov.br/aneel/pt-br/canais_atendimento/processo-eletronico/pesquisa-publica"
     }
   ],
   "campos_obrigatorios_evidencia": [
@@ -1537,11 +1751,11 @@
       "Preservar layout e correções manuais",
       "Publicar e verificar workflow geral e comparar site ao commit; em falha preservar última edição válida e informar"
     ],
-    "ultima_coleta_completa": "2026-10-22T13:00:00-03:00",
+    "ultima_coleta_completa": "2026-10-24T13:00:00-03:00",
     "intervalo_dias": 2,
     "inicio": "2026-10-16",
     "nova_edicao_por_execucao": true,
-    "ultima_edicao": "2026-10-22"
+    "ultima_edicao": "2026-10-24"
   },
   "referencias_edicoes": [
     {
@@ -1686,12 +1900,12 @@
     "regra": "Consultar canais fixos por número completo. Registrar evidência de andamento apenas quando efetivamente obtida; ausência de extração não significa ausência de movimentação."
   },
   "validacao_operacional": {
-    "data": "2026-10-22",
-    "curvas_publicas": "GET público revalidado HTTP 200 em 22/10; último registro permanece data-base 19/10, publicação 20/10/2026; quatro índices preservados e rotulados.",
-    "preco_energia": "índice forward Dcide exibido por produto/horizonte/submercado; não renomeado como preço médio geral",
-    "aneel": "SEI retornou HTTP 503 na coleta de 22/10; quatro processos preservados como não confirmados",
-    "tcu": "rota específica respondeu HTTP 200 em 22/10, mas a interface dinâmica não forneceu andamento atual verificável",
-    "teste_integral_automacao": "executado em 22/10/2026: indicadores, sete CVUs, notícias, agenda, processos, arquivo da edição, cadastro e publicação; run geral 39811755205 concluído com sucesso e HTML servido conferido contra o blob 07ec498b6e51f27b326d763000792d445233e0dd",
+    "data": "2026-10-24",
+    "curvas_publicas": "GET público revalidado HTTP 200 em 24/10; último registro permanece data-base 19/10, publicação 20/10; quatro índices preservados e rotulados.",
+    "preco_energia": "índice forward Dcide exibido por produto, horizonte, submercado e datas; não renomeado como preço médio universal",
+    "aneel": "SEI retornou HTTP 503; quatro processos e o Despacho 4008 preservados como não confirmados",
+    "tcu": "rota específica respondeu HTTP 200, mas a interface dinâmica não forneceu andamento atual verificável",
+    "teste_integral_automacao": "execução de 24/10: indicadores, sete CVUs, notícias, atos, agenda, processos, arquivo integral da edição anterior e cadastro revisados; publicação e HTML a verificar após o commit",
     "resultados_precos": {
       "data_base": "2026-10-19",
       "publicado_em": "2026-10-20",
@@ -1703,15 +1917,14 @@
       "incentivada_50_longo_prazo": 248.63
     },
     "ultima_edicao": {
-      "edicao": "2026-10-22",
-      "corte": "2026-10-22T13:00:00-03:00",
-      "cobertura": "PLD diário e última semana completa, CMO e despacho térmico do PMO 17–23/10, EAR observado e projetado, Henry Hub, Newcastle, Brent, índices forward, sete CVUs, notícias ANEEL/MME/ANP/ONS, agenda e processos permanentes",
+      "edicao": "2026-10-24",
+      "corte": "2026-10-24T13:00:00-03:00",
+      "cobertura": "PLD diário e semana completa, CMO e despacho térmico do PMO 24–30/10, EAR observado e projetado, Henry Hub, Newcastle ICE, Brent, índices forward, sete CVUs, notícias ANEEL/MME/ANP/ONS, agenda e processos permanentes",
       "lacunas": [
         "andamentos ANEEL indisponíveis por HTTP 503",
         "andamento TCU não extraído da interface dinâmica",
         "curva completa BBCE condicionada a assinatura",
-        "publicação primária ANEEL/DOU do Despacho 4008/2026 não obtida diretamente",
-        "semana de PLD 17–23/10 incompleta no corte"
+        "publicação primária ANEEL/DOU do Despacho 4008/2026 não obtida diretamente"
       ],
       "noticias_novas_materiais": false
     }
