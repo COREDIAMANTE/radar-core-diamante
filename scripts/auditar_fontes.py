@@ -49,7 +49,11 @@ def inspect_csv(url, name):
         n += 1
         if name == "PLD diario CCEE" and {"DIA", "SUBMERCADO", "PLD_MEDIA_DIA"}.issubset(columns):
             try:
-                date = dt.datetime.strptime(row["DIA"].strip(), "%d/%m/%Y").date()
+                date_text = row["DIA"].strip()[:10]
+                try:
+                    date = dt.date.fromisoformat(date_text)
+                except ValueError:
+                    date = dt.datetime.strptime(date_text, "%d/%m/%Y").date()
                 sub = row["SUBMERCADO"].strip()
                 value = float(row["PLD_MEDIA_DIA"].strip().replace(",", "."))
                 if date <= today and (sub not in pld_latest or date > pld_latest[sub][0]):
