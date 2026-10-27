@@ -63,6 +63,8 @@ def inspect_csv(url, name):
             last.pop(0)
     computed = {}
     if name == "PLD diario CCEE":
+        if not {"DIA", "SUBMERCADO", "PLD_MEDIA_DIA"}.issubset(columns):
+            raise ValueError("Esquema PLD desconhecido: colunas obrigatorias ausentes")
         if len(pld_latest) != 4:
             raise ValueError("PLD: não foram encontrados os quatro submercados")
         if len(pld_week) != 4 or not all(len({d for d, _ in rows}) == 7 for rows in pld_week.values()):
