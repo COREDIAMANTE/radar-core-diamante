@@ -5,6 +5,9 @@ Não publica valores: descobre arquivos anuais, metadados e registra evidências
 import datetime as dt
 import json
 import os
+import csv
+import io
+import re
 import sys
 import urllib.parse
 import urllib.request
@@ -21,6 +24,30 @@ def get_json(url):
     req = urllib.request.Request(url, headers=HEADERS)
     with urllib.request.urlopen(req, timeout=35) as response:
         return json.load(response)
+def inspect_csv(url, name):
+    """Extrai cabeçalho e amostra final sem inferir valores com esquema desconhecido."""
+    req = urllib.request.Request(url, headers={"User-Agent": HEADERS["User-Agent"]})
+    with urllib.request.urlopen(req, timeout=90) as response:
+        raw = response.read(50_000_000)
+    if len(raw) >= 50_000_000:
+        raise ValueError("CSV excede limite de 50 MB; revisão manual necessária")
+    decoded = raw.decode("utf-8-sig", errors="replace")
+    delimiter = ";" if decoded[:10000].count(";") > decoded[:10000].count(",") else ","
+    reader = csv.DictReader(io.StringIO(decoded), delimiter=delimiter)
+    columns = reader.fieldnames or []
+    if len(columns) < 2:
+        raise ValueError("CSV sem colunas reconhecíveis")
+    n = 0
+    last = []
+    for row in reader:
+        n += 1
+        last.append(row)
+        if len(last) > 3:
+            last.pop(0)
+    return {"colunas": columns, "linhas": n, "amostra_final": last,
+            "validacao_numerica": "NAO_REALIZADA",
+            "observacao": "Amostra para diagnóstico; exige mapeamento de colunas e conferência dos sete códigos antes de publicar"}
+
 def run():
     report = {"executado_em_utc": dt.datetime.now(dt.timezone.utc).isoformat(), "fontes": {}, "status": "parcial"}
     ok = 0
@@ -42,17 +69,26 @@ def run():
                         "id": res.get("id"),
                     })
             item["status"] = "localizado" if item["recursos"] else "sem_recurso_anual"
-            if item["status"] == "localizado": ok += 1
+            if item["status"] == "localizado":
+                ok += 1
+                csv_resources = [r for r in item["recursos"] if r["formato"] == "CSV" and r.get("url")]
+                if csv_resources:
+                    try:
+                        item["diagnostico_csv"] = inspect_csv(csv_resources[-1]["url"], name)
+                        item["status"] = "csv_inspecionado_sem_validacao_numerica"
+                    except Exception as exc:
+                        item["erro_csv"] = str(exc)
+                        item["status"] = "csv_nao_inspecionado"
         except Exception as exc:
             item["erro"] = str(exc)
             item["status"] = "falha_consulta"
         report["fontes"][name] = item
-    report["status"] = "metadados_localizados" if ok == len(BASES) else "parcial"
+    report["status"] = "diagnostico_parcial_sem_validacao_numerica"
     out = Path("dados/auditoria-fontes-mais-recente.json")
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, ensure_ascii=False, indent=2))
     print("\nIMPORTANTE: metadados localizados NÃO significam valores numéricos validados.")
-    return 0 if ok == len(BASES) else 1
+    return 0 if all(v["status"] == "csv_inspecionado_sem_validacao_numerica" for v in report["fontes"].values()) else 1
 if __name__ == "__main__":
     sys.exit(run())
