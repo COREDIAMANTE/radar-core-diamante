@@ -41,7 +41,8 @@ def inspect_csv(url, name):
     n = 0
     last = []
     pld_latest = {}
-    pld_week = collections.defaultdict(list)
+    pld_week = collections.defaultdict(dict)
+    pld_invalid = 0
     today = dt.datetime.now(dt.timezone(dt.timedelta(hours=-3))).date()
     last_sunday = today - dt.timedelta(days=today.weekday()+1)
     first_monday = last_sunday - dt.timedelta(days=6)
@@ -59,9 +60,11 @@ def inspect_csv(url, name):
                 if date <= today and (sub not in pld_latest or date > pld_latest[sub][0]):
                     pld_latest[sub] = (date, value)
                 if first_monday <= date <= last_sunday:
-                    pld_week[sub].append((date, value))
+                    if date in pld_week[sub]:
+                        raise ValueError("Duplicata de PLD por dia e submercado")
+                    pld_week[sub][date] = value
             except (ValueError, KeyError, TypeError):
-                pass
+                pld_invalid += 1
         last.append(row)
         if len(last) > 3:
             last.pop(0)
@@ -69,13 +72,15 @@ def inspect_csv(url, name):
     if name == "PLD diario CCEE":
         if not {"DIA", "SUBMERCADO", "PLD_MEDIA_DIA"}.issubset(columns):
             raise ValueError("Esquema PLD desconhecido: colunas obrigatorias ausentes")
+        if pld_invalid:
+            raise ValueError(f"PLD: {pld_invalid} linhas invalidas ou duplicadas")
         if len(pld_latest) != 4:
             raise ValueError("PLD: não foram encontrados os quatro submercados")
-        if len(pld_week) != 4 or not all(len({d for d, _ in rows}) == 7 for rows in pld_week.values()):
+        if len(pld_week) != 4 or not all(len(rows) == 7 for rows in pld_week.values()):
             raise ValueError("PLD: semana anterior incompleta")
         computed = {
             "diario_por_submercado": {sub: {"data": d.isoformat(), "valor": v} for sub, (d, v) in pld_latest.items()},
-            "semanal_calculado_por_submercado": {sub: round(sum(v for _, v in rows)/7, 2) for sub, rows in pld_week.items()},
+            "semanal_calculado_por_submercado": {sub: round(sum(rows.values())/7, 2) for sub, rows in pld_week.items()},
             "semana": [first_monday.isoformat(), last_sunday.isoformat()],
             "metodologia": "media aritmetica de sete medias diarias, nao serie semanal oficial"
         }
