@@ -1,0 +1,24 @@
+name: Auditoria de fontes do Radar CORE
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 12 * * 2'
+permissions:
+  contents: read
+jobs:
+  conferir-fontes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Consultar metadados oficiais
+        run: python scripts/auditar_fontes.py
+      - name: Guardar evidências da execução
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: auditoria-fontes-core
+          path: dados/auditoria-fontes-mais-recente.json
+          if-no-files-found: warn
