@@ -43,6 +43,7 @@ def inspect_csv(url, name):
     pld_latest = {}
     pld_week = collections.defaultdict(dict)
     pld_invalid = 0
+    pld_dates = set()
     today = dt.datetime.now(dt.timezone(dt.timedelta(hours=-3))).date()
     last_sunday = today - dt.timedelta(days=today.weekday()+1)
     first_monday = last_sunday - dt.timedelta(days=6)
@@ -57,6 +58,7 @@ def inspect_csv(url, name):
                     date = dt.datetime.strptime(date_text, "%d/%m/%Y").date()
                 sub = row["SUBMERCADO"].strip()
                 value = float(row["PLD_MEDIA_DIA"].strip().replace(",", "."))
+                pld_dates.add(date)
                 if date <= today and (sub not in pld_latest or date > pld_latest[sub][0]):
                     pld_latest[sub] = (date, value)
                 if first_monday <= date <= last_sunday:
@@ -74,6 +76,8 @@ def inspect_csv(url, name):
             raise ValueError("Esquema PLD desconhecido: colunas obrigatorias ausentes")
         if pld_invalid:
             raise ValueError(f"PLD: {pld_invalid} linhas invalidas ou duplicadas")
+        if not pld_dates:
+            raise ValueError("PLD: nenhuma data valida")
         if len(pld_latest) != 4:
             raise ValueError("PLD: não foram encontrados os quatro submercados")
         if len(pld_week) != 4 or not all(len(rows) == 7 for rows in pld_week.values()):
@@ -82,7 +86,9 @@ def inspect_csv(url, name):
             "diario_por_submercado": {sub: {"data": d.isoformat(), "valor": v} for sub, (d, v) in pld_latest.items()},
             "semanal_calculado_por_submercado": {sub: round(sum(rows.values())/7, 2) for sub, rows in pld_week.items()},
             "semana": [first_monday.isoformat(), last_sunday.isoformat()],
-            "metodologia": "media aritmetica de sete medias diarias, nao serie semanal oficial"
+            "metodologia": "media aritmetica de sete medias diarias, nao serie semanal oficial",
+            "data_maxima_csv": max(pld_dates).isoformat(),
+            "linhas_invalidas": pld_invalid
         }
     return {"colunas": columns, "linhas": n, "indicadores_calculados": computed, "amostra_final": last,
             "validacao_numerica": "NAO_REALIZADA",
