@@ -2394,7 +2394,7 @@
     "preco_energia": "índice forward Dcide exibido por produto, horizonte, submercado e datas; PLD diário e média calculada de sete dias completos separados",
     "aneel": "SEI retornou HTTP 403; quatro processos e Despacho 4008 preservados como não confirmados; decisão Open Energy validada, publicação da resolução pendente",
     "tcu": "rota específica respondeu HTTP 200 e confirmou estado aberto, sem novo andamento individual verificável",
-    "teste_integral_automacao": "execução de 28/10: indicadores, sete CVUs, notícias, consultas, agenda, processos, arquivo integral da edição de 27/10 e cadastro revisados; publicação e HTML a verificar após o commit",
+    "teste_integral_automacao": "execução de 28/10 concluída: indicadores, sete CVUs, notícias, consultas, agenda, processos, arquivo integral da edição de 27/10 e cadastro revisados; GitHub Pages run 40723456052 concluído com sucesso e HTML, arquivo histórico e JSON conferidos na publicação ao vivo",
     "resultados_precos": {
       "data_base": "2026-10-26",
       "publicado_em": "2026-10-27",
