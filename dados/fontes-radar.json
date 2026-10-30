@@ -2256,7 +2256,7 @@
       "valor_ou_resumo": "CMO: SE/CO 13,95; Sul 11,95; NE 13,95; Norte 289,25. Geração por inflexibilidade: CTJL C 320 MW, B 220 MW, A2 105 MW; A1, Pecém I/II e Itaqui sem indicação. Documento 31/10–06/11 não disponível no corte.",
       "status_validacao": "validado_ultimo_documento_com_pendencia_nova_semana",
       "metodo": "Relatório oficial relido; tentativa do documento da semana seguinte retornou HTTP 404. Valores antigos preservados com datas.",
-      "substitui_id": "EVID-20261028-PMO",
+      "substitui_id": "EVID-20261028-CMO-PMO",
       "fonte_url_na_coleta": "https://www.ons.org.br/paginas/imprensa/sala-de-imprensa"
     },
     {
@@ -2273,7 +2273,7 @@
       "valor_ou_resumo": "Observado 29/10: SE/CO 55,0624%; Sul 79,8027%; NE 62,0851%; Norte 60,5841%. Projeção PMO para 31/10 mantida em campo separado.",
       "status_validacao": "validado_fonte_primaria",
       "metodo": "Última observação por subsistema no CSV anual oficial; sem combinar com projeções.",
-      "substitui_id": "EVID-20261028-EAR",
+      "substitui_id": "EVID-20261028-EAR-OBS-PROJ",
       "fonte_url_na_coleta": "https://dados.ons.org.br/dataset/ear-diario-por-subsistema"
     },
     {
@@ -2290,7 +2290,7 @@
       "valor_ou_resumo": "Spot: 2,52 em 26/10 e 2,76 em 27/10; observações de 28–30/10 ainda em branco no corte.",
       "status_validacao": "validado_fonte_primaria",
       "metodo": "Leitura da tabela oficial EIA; spot físico separado de futuros.",
-      "substitui_id": "EVID-20261028-HH",
+      "substitui_id": "EVID-20261028-HENRY-HUB",
       "fonte_url_na_coleta": "https://www.eia.gov/dnav/ng/hist/rngwhhdd.htm"
     },
     {
@@ -2307,7 +2307,7 @@
       "valor_ou_resumo": "Sem novo registro após 27/10. Base 26/10, semana 44, SE: convencional trimestre M+1–M+3 157,45; convencional longo A+1–A+4 224,06; incentivada 50% 186,93 e 251,94.",
       "status_validacao": "validado_sem_novo_registro",
       "metodo": "GET endpoint público; produtos, horizontes, submercado, data-base e publicação preservados. Não equivale a preço médio universal.",
-      "substitui_id": "EVID-20261028-F022",
+      "substitui_id": "EVID-20261028-FORWARD-DCIDE",
       "fonte_url_na_coleta": "https://widget-api.denergia.com.br/indices-curva-forward"
     },
     {
@@ -2324,7 +2324,7 @@
       "valor_ou_resumo": "Últimos negócios verificáveis preservados: out/26 151,00 às 08:47 GMT, volume 3; dez/26 156,70 às 15:26 GMT, volume 8. Página reconsultada sem tabela posterior extraível.",
       "status_validacao": "pendente_novo_valor_interface",
       "metodo": "Consulta da página oficial; contrato, vencimento, hora e volume preservados. Último negócio não tratado como settlement.",
-      "substitui_id": "EVID-20261028-ICE",
+      "substitui_id": "EVID-20261028-NEWCASTLE-ICE",
       "fonte_url_na_coleta": "https://www.ice.com/products/1137/globalCOAL-Newcastle-Coal-Futures/data?marketId=1361188"
     },
     {
@@ -2409,7 +2409,7 @@
       "valor_ou_resumo": "Listagem dinâmica retornou página de manutenção no corte. Notícia de 27/10 sobre Open Energy preservada; número e íntegra publicada da resolução não confirmados.",
       "status_validacao": "pendente_por_manutencao",
       "metodo": "Tentativa de listagem REST e acesso à área oficial. Manutenção não interpretada como ausência de atos.",
-      "substitui_id": "EVID-20261028-ANEEL",
+      "substitui_id": "EVID-20261028-NOTICIAS-OFICIAIS",
       "fonte_url_na_coleta": "https://www.gov.br/aneel/pt-br/assuntos/noticias/"
     },
     {
