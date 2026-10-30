@@ -1,0 +1,30 @@
+{
+  "fonte": "Leis.org (triagem); DOU/ANEEL para confirmação",
+  "timezone": "America/Sao_Paulo",
+  "ultima_execucao": null,
+  "dias": {
+    "2026-10-29": {
+      "data": "2026-10-29",
+      "executado_em": null,
+      "status": "registro_inicial_manual",
+      "candidatos_verificados": null,
+      "avisos": [
+        "Registro inicial fundamentado na publicação do DOU apresentada pelo usuário; não representa varredura exaustiva dos atos do dia."
+      ],
+      "atos": [
+        {
+          "titulo": "Despacho ANEEL nº 4.008, de 15 de outubro de 2026",
+          "url": "https://www.in.gov.br/web/dou/-/despacho-n-4.008-de-15-de-outubro-de-2026-%2A-741102368",
+          "publicado_leis_org": null,
+          "data_dou": "2026-10-29",
+          "ativos": [
+            "Diamante",
+            "CTJL"
+          ],
+          "status": "publicacao_dou_identificada_anexos_pendentes",
+          "resumo": "Homologa novos CVUs e Receita Fixa do CER CTJL 478/25. Conferir anexos e efeitos econômicos."
+        }
+      ]
+    }
+  }
+}
