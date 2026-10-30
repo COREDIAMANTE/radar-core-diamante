@@ -23,7 +23,7 @@ function render(day){
  }
 }
 fetch('./dados/atos-aneel.json?atualizacao='+Math.floor(Date.now()/300000),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(data=>{
- window.dias=data.dias||{};const dates=Object.keys(window.dias).sort().reverse();select.replaceChildren();
+ window.dias=data.dias||{};const dates=Object.keys(window.dias).filter(key => window.dias[key].atos?.length).sort().reverse();select.replaceChildren();
  if(!dates.length){estado.textContent='Ainda não há coletas registradas.';return}
  for(const d of dates){const opt=node('option','',d.split('-').reverse().join('/'));opt.value=d;select.append(opt)}
  select.addEventListener('change',()=>render(select.value));render(dates[0])
