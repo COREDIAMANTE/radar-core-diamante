@@ -13,7 +13,6 @@ function render(day){
  area.replaceChildren();const d=window.dias[day];if(!d)return;
  const count=d.atos?.length||0;
  estado.textContent='Data: '+day.split('-').reverse().join('/')+' | Situação: '+d.status.replaceAll('_',' ')+' | Atos identificados: '+count+(d.executado_em?' | Coleta: '+new Date(d.executado_em).toLocaleString('pt-BR'):'');
- if(d.avisos?.length){const p=node('p','warn','Atenção: '+d.avisos.join(' '));area.append(p)}
  if(!count){area.append(node('div','empty','Nenhum ato identificado nesta coleta. Isso não comprova ausência de publicações.'));return}
  for(const ato of d.atos){
   const card=node('article','item');card.append(node('div','status',(ato.status||'pendente').replaceAll('_',' ')),node('h3','',ato.titulo));
