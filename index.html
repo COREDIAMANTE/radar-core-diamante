@@ -148,20 +148,7 @@ const obs=new IntersectionObserver(entries=>{
 sections.forEach(s=>obs.observe(s));
 </script>
 <!-- pages-redeploy-core-2026-10-06 -->
-<script>
-(function(){
-  const menu=document.querySelector('.edition-menu');
-  if(!menu)return;
-  const dates=['28','27','20','13','06'];
-  const current=location.pathname.match(/2026-10-(\d{2})\.html/)?.[1]||'28';
-  const base='https://corediamante.github.io/radar-core-diamante/';
-  menu.innerHTML='<span class="edition-menu-title">EDIÇÕES DISPONÍVEIS</span>'+dates.map(d=>{
-    const url=d==='28'?base+'?rev=20261029-menu-final-3':base+'edicoes/2026-10-'+d+'.html?rev=20261029-menu-final-3';
-    const label=d+' out 2026'+(d==='28'?' <strong style="color:#c62828;font-weight:900;margin-left:5px">TESTE</strong>':'');
-    return '<a href="'+url+'"'+(current===d?' aria-current="page"':'')+'><span>'+label+'</span><small>'+(current===d?'Visualizando':'Abrir')+'</small></a>';
-  }).join('');
-})();
-</script>
+
 </body>
 </html>
 
