@@ -24,4 +24,4 @@ Consultar primeiro o cadastro canônico, validar fontes e indicadores, preservar
 - `scripts/monitorar_atos_aneel.py`: triagem por Diamante, CTJL, Pecém I/II, Itaqui, CER 478/25 e processo CTJL.
 - `.github/workflows/atos-aneel-diario.yml`: execução agendada diariamente às 13h UTC (10h de Brasília, UTC-3), inclusive finais de semana; o GitHub Actions pode iniciar com atraso.
 - A lista pública do Leis.org pode ser parcial ou exigir JavaScript; coletas incompletas são identificadas como inconclusivas/parciais. A ausência de resultado não comprova ausência de ato. Sempre conferir o DOU e os anexos antes de tratar valores como definitivos.
-- A rotina diária não altera o conteúdo analítico nem a periodicidade das edições completas do Radar.
+- A rotina diária não altera o conteúdo analítico nem a periodicidade das edições completas do Radar. A edição principal é atualizada às terças-feiras às 13h (Brasília), pela automação própria. O botão **Atos do dia** fica imediatamente ao lado do seletor **Edições**, abrindo a área específica de atos, com seleção de datas e registros vazios quando nenhum ato relevante for identificado.
