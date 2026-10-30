@@ -91,7 +91,7 @@ def main():
     if not found and status!="coleta_executada_listagem_nao_exaustiva": status="inconclusivo"
     if found:
         days[today]={"data":today,"executado_em":now.isoformat(),"status":status,"candidatos_verificados":checked,"atos":found,"avisos":failures[:15],"nota":"Nenhum resultado não prova ausência de atos. Listagem do Leis.org pode ser parcial e dinâmica; confirmar DOU."}
-    prior["dias"]=dict(sorted(days.items(),reverse=True)[:120])
+    prior["dias"]=dict(sorted(((day, record) for day, record in days.items() if record.get("atos")), reverse=True)[:120])
     prior["ultima_execucao"]=now.isoformat()
     prior["fonte"]="Leis.org (triagem); DOU/ANEEL para confirmação"
     prior["timezone"]="America/Sao_Paulo"
