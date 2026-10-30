@@ -89,7 +89,8 @@ def main():
     # Não apagar uma coleta anterior quando a fonte está indisponível.
     status="parcial" if failures or not index_ok else "coleta_executada_listagem_nao_exaustiva"
     if not found and status!="coleta_executada_listagem_nao_exaustiva": status="inconclusivo"
-    days[today]={"data":today,"executado_em":now.isoformat(),"status":status,"candidatos_verificados":checked,"atos":found,"avisos":failures[:15],"nota":"Nenhum resultado não prova ausência de atos. Listagem do Leis.org pode ser parcial e dinâmica; confirmar DOU."}
+    if found:
+        days[today]={"data":today,"executado_em":now.isoformat(),"status":status,"candidatos_verificados":checked,"atos":found,"avisos":failures[:15],"nota":"Nenhum resultado não prova ausência de atos. Listagem do Leis.org pode ser parcial e dinâmica; confirmar DOU."}
     prior["dias"]=dict(sorted(days.items(),reverse=True)[:120])
     prior["ultima_execucao"]=now.isoformat()
     prior["fonte"]="Leis.org (triagem); DOU/ANEEL para confirmação"
