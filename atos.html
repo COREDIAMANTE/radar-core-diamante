@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atos atualizados | Radar CORE</title>
+<style>
+:root{font-family:Inter,Arial,sans-serif;color:#183047;background:#f4f7fa}*{box-sizing:border-box}body{margin:0}header{background:#102a44;color:white;padding:24px max(24px,calc((100% - 1100px)/2))}header small{letter-spacing:.12em;color:#bacbda}header h1{margin:8px 0 5px;font-size:29px}header p{color:#d4e1ec;margin:0}main{max-width:1100px;margin:28px auto;padding:0 20px}a{color:#13558c}header a{color:#d9edff}.top{display:flex;gap:16px;justify-content:space-between;align-items:center;flex-wrap:wrap}.panel,.item{background:#fff;border:1px solid #dae2eb;border-radius:12px;padding:22px;margin:16px 0;box-shadow:0 2px 8px #132e4510}.controls{display:flex;gap:14px;flex-wrap:wrap;align-items:end}label{display:block;font-weight:700;margin-bottom:7px}select{padding:12px;border:1px solid #aab9c7;border-radius:8px;min-width:230px;font:inherit}.status{font-size:14px;color:#5e7183;margin-top:15px}.item h3{margin:5px 0 10px}.item p{line-height:1.55}.tag{display:inline-block;background:#e9f0f7;color:#244f73;border-radius:6px;padding:5px 8px;font-size:12px;font-weight:700;margin:3px 4px 3px 0}.warn{color:#8d5a19}.empty{padding:28px;color:#5e7183;background:#fff;border-radius:12px}.foot{font-size:13px;color:#5e7183;margin:24px 0 50px}
+</style></head><body>
+<header><div class="top"><div><small>GRUPO DIAMANTE · CORE</small><h1>Atos atualizados da ANEEL</h1><p>Monitor diário às 10h · Horário de Brasília</p></div><a href="./index.html">Voltar ao Radar CORE</a></div></header>
+<main><div class="panel"><div class="controls"><div><label for="dia">Selecionar edição dos atos</label><select id="dia" aria-label="Data da coleta"><option>Carregando...</option></select></div><div><strong>Ativos monitorados</strong><div>Diamante · CTJL · Pecém I/II · Itaqui</div></div></div><div id="estado" class="status" role="status">Consultando o histórico...</div></div><div id="resultados" aria-live="polite"></div><div class="foot">O Leis.org é fonte de triagem. A validade e o teor definitivo dos atos devem ser conferidos no DOU e na ANEEL. Ausência de resultado não significa ausência de publicação, especialmente em caso de falha ou cobertura parcial da coleta. As edições completas do Radar permanecem independentes.</div></main>
+<script>
+const select=document.getElementById('dia'),estado=document.getElementById('estado'),area=document.getElementById('resultados');
+const node=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e};
+function render(day){
+ area.replaceChildren();const d=window.dias[day];if(!d)return;
+ const count=d.atos?.length||0;
+ estado.textContent='Data: '+day.split('-').reverse().join('/')+' | Situação: '+d.status.replaceAll('_',' ')+' | Atos identificados: '+count+(d.executado_em?' | Coleta: '+new Date(d.executado_em).toLocaleString('pt-BR'):'');
+ if(d.avisos?.length){const p=node('p','warn','Atenção: '+d.avisos.join(' '));area.append(p)}
+ if(!count){area.append(node('div','empty','Nenhum ato identificado nesta coleta. Isso não comprova ausência de publicações.'));return}
+ for(const ato of d.atos){
+  const card=node('article','item');card.append(node('div','status',(ato.status||'pendente').replaceAll('_',' ')),node('h3','',ato.titulo));
+  for(const t of ato.ativos||[])card.append(node('span','tag',t));
+  card.append(node('p','',ato.resumo||'Conferir íntegra e anexos.'));
+  if(/^https:\/\//.test(ato.url||'')){const a=node('a','','Abrir documento');a.href=ato.url;a.target='_blank';a.rel='noopener noreferrer';card.append(a)}
+  area.append(card)
+ }
+}
+fetch('./dados/atos-aneel.json?atualizacao='+Math.floor(Date.now()/300000),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(data=>{
+ window.dias=data.dias||{};const dates=Object.keys(window.dias).sort().reverse();select.replaceChildren();
+ if(!dates.length){estado.textContent='Ainda não há coletas registradas.';return}
+ for(const d of dates){const opt=node('option','',d.split('-').reverse().join('/'));opt.value=d;select.append(opt)}
+ select.addEventListener('change',()=>render(select.value));render(dates[0])
+}).catch(err=>{select.replaceChildren();estado.textContent='Não foi possível carregar as edições dos atos: '+err.message});
+</script></body></html>
