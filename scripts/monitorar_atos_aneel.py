@@ -7,7 +7,6 @@ import re
 import sys
 import urllib.parse
 import urllib.request
-import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from pathlib import Path
 from zoneinfo import ZoneInfo
