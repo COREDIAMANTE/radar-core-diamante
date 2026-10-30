@@ -3,6 +3,16 @@
   "timezone": "America/Sao_Paulo",
   "ultima_execucao": null,
   "dias": {
+    "2026-10-30": {
+      "data": "2026-10-30",
+      "executado_em": null,
+      "status": "verificacao_manual_parcial",
+      "candidatos_verificados": null,
+      "atos": [],
+      "avisos": [
+        "Busca manual em fontes públicas em 30/10/2026 não identificou novo ato com impacto direto confirmado sobre Diamante, CTJL, Pecém I/II ou Itaqui. Cobertura não exaustiva; não substitui a coleta diária automatizada nem a conferência do DOU."
+      ]
+    },
     "2026-10-29": {
       "data": "2026-10-29",
       "executado_em": null,
