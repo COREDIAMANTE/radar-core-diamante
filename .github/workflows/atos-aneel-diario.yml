@@ -1,0 +1,32 @@
+name: Atos ANEEL - monitor diário 10h BRT
+on:
+  schedule:
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: atos-aneel-diario
+  cancel-in-progress: false
+jobs:
+  monitorar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verificar atos da ANEEL publicados no Leis.org
+        run: python scripts/monitorar_atos_aneel.py
+      - name: Persistir relatório e avisos de indisponibilidade
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dados/atos-aneel.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Monitor ANEEL: atos do dia e status da coleta"
+            git push origin HEAD:main
+          fi
