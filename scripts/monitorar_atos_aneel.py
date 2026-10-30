@@ -17,7 +17,7 @@ DEST = ROOT / "dados" / "atos-aneel.json"
 BASE = "https://leis.org/aneel/lei/2026"
 HEADERS = {"User-Agent": "RadarCORE-Monitor/1.0 (monitoramento regulatorio)", "Accept": "text/html,application/xml,*/*"}
 TERMS = {
-    "Diamante": [r"diamante\s+gera[cç][aã]o", r"grupo\s+diamante", r"29\.079\.977/0001-57"],
+    "Diamante": [r"diamante\s+gera[cç][aã]o", r"grupo\s+diamante", r"27\.093\.977/0001-57"],
     "CTJL": [r"jorge\s+lacerda", r"complexo\s+termel[eé]trico\s+jorge", r"\bctjl\b", r"\b478/25\b", r"48500\.011033/2026-18"],
     "Pecém I/II": [r"pec[eé]m", r"porto\s+do\s+pec[eé]m"],
     "Itaqui": [r"itaqui", r"porto\s+do\s+itaqui"],
