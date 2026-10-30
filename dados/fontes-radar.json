@@ -2632,7 +2632,7 @@
     "preco_energia": "PLD diário 30/10 e média calculada de 23–29/10 separados; Dcide por produto, horizonte, submercado e datas; BBCE completa condicionada a assinatura.",
     "aneel": "Listagem dinâmica em manutenção; SEI sem extração utilizável; processos e Despacho 4008 preservados como não confirmados; norma publicada do Open Energy pendente.",
     "tcu": "Rota específica reconsultada sem novo andamento individual verificável.",
-    "teste_integral_automacao": "Edição de 30/10 preparada com revisão de indicadores, sete CVUs, notícias, consultas, agenda, processos e arquivo integral de 28/10; publicação e verificação ao vivo pendentes.",
+    "teste_integral_automacao": "Execução de 30/10 concluída: indicadores, sete CVUs, notícias, consultas, agenda, processos, arquivo integral de 28/10 e cadastro revisados; GitHub Pages run 41087763733 concluído com sucesso e HTML ao vivo conferido em https://corediamante.github.io/radar-core-diamante/?v=core.",
     "resultados_precos": {
       "data_base": "2026-10-26",
       "publicado_em": "2026-10-27",
