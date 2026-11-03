@@ -13,7 +13,7 @@ function render(day){
  area.replaceChildren();const d=window.dias[day];if(!d)return;
  const count=d.atos?.length||0;
  estado.textContent='Data: '+day.split('-').reverse().join('/')+' | Situação: '+d.status.replaceAll('_',' ')+' | Atos identificados: '+count+(d.executado_em?' | Coleta: '+new Date(d.executado_em).toLocaleString('pt-BR'):'');
- if(!count){area.append(node('div','empty','Nenhum ato identificado nesta coleta. Isso não comprova ausência de publicações.'));return}
+ if(!count){const msg=d.status==='inconclusivo'?'Coleta inconclusiva: a fonte pode estar indisponível ou incompleta. Não é possível afirmar que não houve atos.':'Nenhum ato correspondente aos ativos foi identificado na triagem desta coleta. Isso não comprova ausência de publicações.';area.append(node('div','empty',msg));if(d.avisos?.length){const warnings=node('p','warn','Avisos da coleta: '+d.avisos.slice(0,3).join(' | '));area.append(warnings)}return}
  for(const ato of d.atos){
   const card=node('article','item');card.append(node('div','status',(ato.status||'pendente').replaceAll('_',' ')),node('h3','',ato.titulo));
   for(const t of ato.ativos||[])card.append(node('span','tag',t));
@@ -23,7 +23,7 @@ function render(day){
  }
 }
 fetch('./dados/atos-aneel.json?atualizacao='+Math.floor(Date.now()/300000),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(data=>{
- window.dias=data.dias||{};const dates=Object.keys(window.dias).filter(key => window.dias[key].atos?.length).sort().reverse();select.replaceChildren();
+ window.dias=data.dias||{};const dates=Object.keys(window.dias).sort().reverse();select.replaceChildren();
  if(!dates.length){estado.textContent='Ainda não há coletas registradas.';return}
  for(const d of dates){const opt=node('option','',d.split('-').reverse().join('/'));opt.value=d;select.append(opt)}
  select.addEventListener('change',()=>render(select.value));render(dates[0])
