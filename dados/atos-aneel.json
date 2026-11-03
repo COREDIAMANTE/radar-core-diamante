@@ -1,8 +1,19 @@
 {
   "fonte": "Leis.org (triagem); DOU/ANEEL para confirmação",
   "timezone": "America/Sao_Paulo",
-  "ultima_execucao": "2026-11-02T10:57:18.088669-03:00",
+  "ultima_execucao": "2026-11-03T10:58:27.471684-03:00",
   "dias": {
+    "2026-11-03": {
+      "data": "2026-11-03",
+      "executado_em": "2026-11-03T10:58:27.471684-03:00",
+      "status": "inconclusivo",
+      "candidatos_verificados": 0,
+      "atos": [],
+      "avisos": [
+        "Listagem Leis.org indisponível: HTTP Error 403: Forbidden"
+      ],
+      "nota": "Nenhum resultado não prova ausência de atos. Listagem do Leis.org pode ser parcial e dinâmica; confirmar DOU."
+    },
     "2026-10-29": {
       "data": "2026-10-29",
       "executado_em": null,
