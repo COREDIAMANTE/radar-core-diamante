@@ -1,19 +1,8 @@
 {
-  "fonte": "Leis.org (triagem); DOU/ANEEL para confirmação",
+  "fonte": "DOU (prioritária); ANEEL Atos do Dia (encaminhamento); Leis.org (complementar)",
   "timezone": "America/Sao_Paulo",
   "ultima_execucao": "2026-11-04T10:57:17.549023-03:00",
   "dias": {
-    "2026-11-04": {
-      "data": "2026-11-04",
-      "executado_em": "2026-11-04T10:57:17.549023-03:00",
-      "status": "inconclusivo",
-      "candidatos_verificados": 0,
-      "atos": [],
-      "avisos": [
-        "Listagem Leis.org indisponível: HTTP Error 403: Forbidden"
-      ],
-      "nota": "Nenhum resultado não prova ausência de atos. Listagem do Leis.org pode ser parcial e dinâmica; confirmar DOU."
-    },
     "2026-10-29": {
       "data": "2026-10-29",
       "executado_em": null,
@@ -37,5 +26,14 @@
         }
       ]
     }
-  }
+  },
+  "ultimo_status": "inconclusivo",
+  "fontes_status": {
+    "dou": "aguardando_primeira_execucao",
+    "aneel": "aguardando_primeira_execucao",
+    "leis_org": "bloqueio_403_na_ultima_execucao"
+  },
+  "avisos_ultima_execucao": [
+    "Última coleta anterior: Leis.org retornou 403; nova estratégia ainda não executada."
+  ]
 }
