@@ -122,9 +122,9 @@ def main():
             pub=publication_date(page) if origin=="Leis.org" else None
             if origin=="DOU":
                 date_patterns=[
-                    r"Publicado em:\\s*(\\d{2}/\\d{2}/\\d{4})",
-                    r"Publicado em\\s*(\\d{2}/\\d{2}/\\d{4})",
-                    r"Publicado em\\s*(\\d{2}\\s+de\\s+[a-zç]+\\s+de\\s+\\d{4})"
+                    r"Publicado em:\s*(\d{2}/\d{2}/\d{4})",
+                    r"Publicado em\s*(\d{2}/\d{2}/\d{4})",
+                    r"Publicado em\s*(\d{2}\s+de\s+[a-zç]+\s+de\s+\d{4})"
                 ]
                 for pat in date_patterns[:2]:
                     m=re.search(pat,raw,re.I)
@@ -136,7 +136,7 @@ def main():
             tags=[name for name,patterns in TERMS.items() if any(re.search(p,raw,re.I) for p in patterns)]
             if not tags:continue
             h=re.search(r"(?is)<h[12][^>]*>(.*?)</h[12]>",page)
-            title=re.sub(r"\\s+"," ",textify(h.group(1))).strip() if h else url.rsplit("/",1)[-1]
+            title=re.sub(r"\s+"," ",textify(h.group(1))).strip() if h else url.rsplit("/",1)[-1]
             found.append({"titulo":title[:230],"url":url,"publicado_leis_org":pub if origin=="Leis.org" else None,"data_dou":pub if origin=="DOU" else None,"fonte_coleta":origin,"ativos":tags,"status":"triagem_automatica_pendente_validacao","resumo":"Correspondência textual detectada. Conferir ato, anexos e impacto antes de concluir."})
         except Exception as ex:
             failures.append("Falha ao verificar "+url[:90]+": "+str(ex)[:90])
@@ -153,7 +153,7 @@ def main():
     prior["fonte"]="DOU (prioritária); ANEEL Atos do Dia (encaminhamento); Leis.org (complementar)"
     prior["timezone"]="America/Sao_Paulo"
     DEST.parent.mkdir(parents=True,exist_ok=True)
-    DEST.write_text(json.dumps(prior,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+    DEST.write_text(json.dumps(prior,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps({"data":today,"status":prior["ultimo_status"],"fontes":sources,"candidatos_verificados":checked,"atos":len(found)},ensure_ascii=False))
     return 0
 
