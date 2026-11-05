@@ -64,7 +64,7 @@ def main():
         try: prior=json.loads(DEST.read_text(encoding="utf-8"))
         except (ValueError,OSError): pass
     days=prior.get("dias",{})
-    failures=[]; sources={}; discovered=[]
+    failures=[]; sources={}; discovered=[]; found=[]; checked=0
 
     # INLABS: XML oficial da Imprensa Nacional. Credenciais exclusivamente
     # em GitHub Actions Secrets, nunca gravadas no repositorio.
@@ -188,7 +188,7 @@ def main():
         except Exception as ex:
             failures.append("Busca indexada indisponível: "+str(ex)[:110])
     sources["busca_indexada"]="candidatos_extraidos" if indexed else "sem_links_oficiais"
-    checked=locals().get("checked",0);found=locals().get("found",[]);seen=set()
+    seen=set()
     for origin,url in discovered[:MAX_CANDIDATES]:
         if url in seen: continue
         seen.add(url)
