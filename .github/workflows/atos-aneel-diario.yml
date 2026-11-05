@@ -23,7 +23,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Preparar cliente oficial INLABS
+        run: python -m pip install requests
       - name: Verificar atos ANEEL no DOU e fontes complementares
+        env:
+          INLABS_EMAIL: ${{ secrets.INLABS_EMAIL }}
+          INLABS_PASSWORD: ${{ secrets.INLABS_PASSWORD }}
         run: python scripts/monitorar_atos_aneel.py
       - name: Persistir relatório e avisos de indisponibilidade
         run: |
