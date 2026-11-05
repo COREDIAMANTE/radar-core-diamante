@@ -3,6 +3,10 @@ on:
   schedule:
     - cron: '0 13 * * *'
   workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/monitorar_atos_aneel.py'
+      - '.github/workflows/atos-aneel-diario.yml'
 permissions:
   contents: write
 concurrency:
