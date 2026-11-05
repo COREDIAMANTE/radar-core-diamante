@@ -66,6 +66,58 @@ def main():
     days=prior.get("dias",{})
     failures=[]; sources={}; discovered=[]
 
+    # INLABS: XML oficial da Imprensa Nacional. Credenciais exclusivamente
+    # em GitHub Actions Secrets, nunca gravadas no repositorio.
+    import os, io, zipfile, requests, xml.etree.ElementTree as ET
+    email=os.getenv("INLABS_EMAIL")
+    password=os.getenv("INLABS_PASSWORD")
+    if not email or not password:
+        sources["inlabs"]="credenciais_ausentes"
+        failures.append("INLABS não configurado: cadastrar INLABS_EMAIL e INLABS_PASSWORD em Actions Secrets.")
+    else:
+        try:
+            session=requests.Session()
+            auth=session.post("https://inlabs.in.gov.br/logar.php",
+                data={"email":email,"password":password},timeout=35)
+            cookie=session.cookies.get("inlabs_session_cookie")
+            if not cookie:
+                raise RuntimeError("Login INLABS não retornou sessão válida (HTTP "+str(auth.status_code)+")")
+            official_count=0
+            for section in ("DO1","DO2","DO3","DO1E","DO2E","DO3E"):
+                archive=session.get("https://inlabs.in.gov.br/index.php",
+                    params={"p":today,"dl":today+"-"+section+".zip"},
+                    headers={"origem":"736372697074"},timeout=90)
+                if archive.status_code==404:continue
+                archive.raise_for_status()
+                if not zipfile.is_zipfile(io.BytesIO(archive.content)):
+                    raise RuntimeError("Resposta INLABS não é ZIP válido: "+section)
+                with zipfile.ZipFile(io.BytesIO(archive.content)) as z:
+                    for name in z.namelist():
+                        if not name.lower().endswith(".xml"):continue
+                        try:
+                            root=ET.fromstring(z.read(name))
+                            raw=" ".join(t.strip() for t in root.itertext() if t and t.strip())
+                            tags=[key for key,patterns in TERMS.items() if any(re.search(p,raw,re.I) for p in patterns)]
+                            if not tags:continue
+                            article=root.find(".//article")
+                            attrs=article.attrib if article is not None else root.attrib
+                            title=attrs.get("name") or attrs.get("artType") or name
+                            # Arquivo oficial por seção; sem inventar URL individual.
+                            found.append({"titulo":title[:230],"url":"https://inlabs.in.gov.br/",
+                                "data_dou":today,"secao_dou":section,"arquivo_xml":name,
+                                "fonte_coleta":"INLABS","ativos":tags,
+                                "status":"triagem_xml_oficial_pendente_validacao",
+                                "resumo":raw[:500]})
+                            official_count+=1
+                        except ET.ParseError:
+                            failures.append("XML inválido no INLABS: "+name[:100])
+                checked+=1
+            sources["inlabs"]="secoes_processadas" if checked else "nenhuma_secao_disponivel"
+            if not checked:failures.append("INLABS sem seções acessíveis na data consultada.")
+        except Exception as ex:
+            sources["inlabs"]="indisponivel"
+            failures.append("INLABS: "+str(ex)[:170])
+
     # ANEEL aponta oficialmente para a busca do DOU. A página de encaminhamento
     # não é, por si só, evidência de que os atos do dia foram consultados.
     try:
@@ -136,7 +188,7 @@ def main():
         except Exception as ex:
             failures.append("Busca indexada indisponível: "+str(ex)[:110])
     sources["busca_indexada"]="candidatos_extraidos" if indexed else "sem_links_oficiais"
-    found=[];checked=0;seen=set()
+    checked=locals().get("checked",0);found=locals().get("found",[]);seen=set()
     for origin,url in discovered[:MAX_CANDIDATES]:
         if url in seen: continue
         seen.add(url)
@@ -172,7 +224,7 @@ def main():
         days[today]={"data":today,"executado_em":now.isoformat(),"status":"triagem_com_resultados","candidatos_verificados":checked,"atos":found,"avisos":failures[:15],"nota":"Resultados preliminares; verificar DOU e documentos integrais."}
     prior["dias"]=dict(sorted(((k,v) for k,v in days.items() if v.get("atos")),reverse=True)[:120])
     prior["ultima_execucao"]=now.isoformat()
-    prior["ultimo_status"]="resultados_preliminares" if found else "inconclusivo" if sources.get("dou")!="candidatos_extraidos" else "sem_correspondencias_na_amostra"
+    prior["ultimo_status"]="resultados_preliminares" if found else "sem_correspondencias_na_amostra" if sources.get("inlabs")=="secoes_processadas" else "inconclusivo"
     prior["fontes_status"]=sources
     prior["avisos_ultima_execucao"]=failures[:15]
     prior["candidatos_verificados_ultima_execucao"]=checked
