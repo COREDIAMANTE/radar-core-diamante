@@ -110,6 +110,32 @@ def main():
         sources["leis_org"]="indisponivel"
         failures.append("Leis.org indisponível: "+str(ex)[:150])
 
+    # Busca indexada complementar: descobre links oficiais mesmo quando o DOU
+    # nao disponibiliza a listagem em HTML. Nao garante cobertura exaustiva.
+    import xml.etree.ElementTree as ET
+    queries=[
+        'site:in.gov.br/web/dou/-/ "Jorge Lacerda"',
+        'site:in.gov.br/web/dou/-/ "Diamante Geração"',
+        'site:in.gov.br/web/dou/-/ "Pecém"',
+        'site:in.gov.br/web/dou/-/ "Itaqui" "ANEEL"'
+    ]
+    indexed=0
+    for query in queries:
+        try:
+            feed="https://www.google.com/search?"+urllib.parse.urlencode({"q":query,"tbm":"nws","output":"rss"})
+            body=fetch(feed)
+            if "<rss" not in body[:1000]:
+                failures.append("Busca indexada não retornou RSS verificável: "+query[:65])
+                continue
+            root=ET.fromstring(body)
+            for item in root.findall(".//item"):
+                link=(item.findtext("link") or "").strip()
+                if urllib.parse.urlparse(link).hostname in ("www.in.gov.br","in.gov.br") and "/web/dou/-/" in link:
+                    discovered.append(("DOU",link))
+                    indexed+=1
+        except Exception as ex:
+            failures.append("Busca indexada indisponível: "+str(ex)[:110])
+    sources["busca_indexada"]="candidatos_extraidos" if indexed else "sem_links_oficiais"
     found=[];checked=0;seen=set()
     for origin,url in discovered[:MAX_CANDIDATES]:
         if url in seen: continue
