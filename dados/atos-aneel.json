@@ -1,7 +1,7 @@
 {
   "fonte": "DOU (prioritária); ANEEL Atos do Dia (encaminhamento); Leis.org (complementar)",
   "timezone": "America/Sao_Paulo",
-  "ultima_execucao": "2026-11-05T09:05:40.841959-03:00",
+  "ultima_execucao": "2026-11-05T09:09:10.368150-03:00",
   "dias": {
     "2026-10-29": {
       "data": "2026-10-29",
@@ -29,14 +29,15 @@
   },
   "ultimo_status": "inconclusivo",
   "fontes_status": {
-    "aneel": "indisponivel",
-    "dou": "listagem_nao_extraivel",
+    "inlabs": "credenciais_ausentes",
+    "aneel": "pagina_de_encaminhamento_acessivel",
+    "dou": "indisponivel",
     "leis_org": "indisponivel",
     "busca_indexada": "sem_links_oficiais"
   },
   "avisos_ultima_execucao": [
-    "Página ANEEL Atos do Dia: HTTP Error 404: ",
-    "Busca oficial do DOU sem links de atos extraíveis; resultado não é uma varredura validada.",
+    "INLABS não configurado: cadastrar INLABS_EMAIL e INLABS_PASSWORD em Actions Secrets.",
+    "Busca oficial do DOU indisponível: The read operation timed out",
     "Leis.org indisponível: HTTP Error 403: Forbidden",
     "Busca indexada não retornou RSS verificável: site:in.gov.br/web/dou/-/ \"Jorge Lacerda\"",
     "Busca indexada não retornou RSS verificável: site:in.gov.br/web/dou/-/ \"Diamante Geração\"",
