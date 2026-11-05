@@ -23,7 +23,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Verificar atos da ANEEL publicados no Leis.org
+      - name: Verificar atos ANEEL no DOU e fontes complementares
         run: python scripts/monitorar_atos_aneel.py
       - name: Persistir relatório e avisos de indisponibilidade
         run: |
@@ -34,3 +34,16 @@ jobs:
             git commit -m "Monitor ANEEL: atos do dia e status da coleta"
             git push origin HEAD:main
           fi
+
+      - name: Validar qualidade da coleta
+        run: |
+          python - <<'PY'
+          import json,sys
+          with open('dados/atos-aneel.json',encoding='utf-8') as f: d=json.load(f)
+          status=d.get('ultimo_status')
+          checked=d.get('candidatos_verificados_ultima_execucao',0)
+          print('Status:',status,'Atos examinados:',checked)
+          if status=='inconclusivo' or not checked:
+              print('ERRO: nenhuma verificação válida; não afirmar ausência de atos.')
+              sys.exit(1)
+          PY
