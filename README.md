@@ -21,7 +21,7 @@ Consultar primeiro o cadastro canônico, validar fontes e indicadores, preservar
 ## Atos atualizados (diário)
 - `atos.html`: página independente com seleção da data de coleta.
 - `dados/atos-aneel.json`: histórico de datas com atos pertinentes e metadados da última execução. Datas sem ocorrências não são exibidas nem registradas como edições.
-- `scripts/monitorar_atos_aneel.py`: triagem por Diamante, CTJL, Pecém I/II, Itaqui, CER 478/25 e processo CTJL.
-- `.github/workflows/atos-aneel-diario.yml`: execução agendada diariamente às 13h UTC (10h de Brasília, UTC-3), inclusive finais de semana; o GitHub Actions pode iniciar com atraso.
-- A lista pública do Leis.org pode ser parcial ou exigir JavaScript; a rotina pode ter cobertura incompleta; resultados precisam de validação editorial. A ausência de resultado não comprova ausência de ato. Sempre conferir o DOU e os anexos antes de tratar valores como definitivos.
+- A pesquisa editorial e atualização de `dados/atos-aneel.json` são executadas por duas automações do ChatGPT, diariamente às 10h e às 17h (horário de Brasília), inclusive finais de semana. A segunda execução confere possíveis omissões da primeira. Ambas priorizam Leis.org e verificam fontes oficiais antes de registrar atos.
+- O monitor experimental antigo do GitHub Actions foi removido por redundância e falhas de coleta; o histórico regulatório foi preservado.
+- A listagem do Leis.org pode ter acesso automatizado limitado; a pesquisa indexada complementa a coleta, que pode ter cobertura incompleta. Resultados precisam de validação editorial. A ausência de resultado não comprova ausência de ato. Sempre conferir o DOU e os anexos antes de tratar valores como definitivos.
 - A rotina diária não altera o conteúdo analítico nem a periodicidade das edições completas do Radar. A edição principal é atualizada às terças-feiras às 13h (Brasília), pela automação própria. O botão **Atos do dia** fica imediatamente ao lado do seletor **Edições**, abrindo a área específica de atos, com seleção somente das datas em que foram encontrados atos pertinentes.
