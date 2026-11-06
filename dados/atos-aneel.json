@@ -25,6 +25,29 @@
           "resumo": "Homologa novos CVUs e Receita Fixa do CER CTJL 478/25. Conferir anexos e efeitos econômicos."
         }
       ]
+    },
+    "2026-11-04": {
+      "data": "2026-11-04",
+      "executado_em": null,
+      "status": "publicacao_oficial_conferida",
+      "candidatos_verificados": null,
+      "avisos": [
+        "Registro conferido diretamente na página 92 do DOU, Seção 1, nº 207, de 04/11/2026."
+      ],
+      "atos": [
+        {
+          "titulo": "Despacho ANEEL nº 4.133, de 27 de outubro de 2026",
+          "url": "https://pesquisa.in.gov.br/imprensa/jsp/visualiza/index.jsp?data=04%2F11%2F2026&jornal=515&pagina=92",
+          "publicado_leis_org": null,
+          "data_dou": "2026-11-04",
+          "ativos": [
+            "Diamante",
+            "CTJL"
+          ],
+          "status": "publicacao_dou_conferida",
+          "resumo": "Aprova minuta de Termo Aditivo ao CER CTJL nº 478/2025 para retificar a subcláusula 8.2, estabelecendo dezembro de 2024 como mês de referência do reajuste anual da Receita Fixa. Determina à CCEE reapurar a Receita Fixa de 2026 em até 30 dias após a celebração do termo aditivo. Processo nº 48500.011030/2026-84. DOU Seção 1, nº 207, p. 92, de 04/11/2026."
+        }
+      ]
     }
   },
   "ultimo_status": "inconclusivo",
