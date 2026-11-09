@@ -5,7 +5,7 @@ Painel executivo de inteligência regulatória e de mercado.
 **Site:** https://corediamante.github.io/radar-core-diamante/
 
 ## Estrutura
-- `index.html`: edição principal vigente (27/10/2026, terça-feira). Atualizar somente nas terças-feiras.
+- `index.html`: edição principal vigente, atualizada exclusivamente nas terças-feiras. Confirmar a data exibida no próprio painel antes de divulgar.
 - `edicoes/`: histórico oficial das terças-feiras (06, 13, 20 e 27/10/2026). Os arquivos históricos não devem ser alterados em seu conteúdo analítico; ajustes de navegação são permitidos.
 - `dados/fontes-radar.json`: cadastro canônico de fontes, métodos e evidências. Preservar histórico.
 - `scripts/`: rotinas auxiliares de coleta e auditoria. Não publicam valores automaticamente.
@@ -21,7 +21,7 @@ Consultar primeiro o cadastro canônico, validar fontes e indicadores, preservar
 ## Atos atualizados (diário)
 - `atos.html`: página independente com seleção da data de coleta.
 - `dados/atos-aneel.json`: histórico de datas com atos pertinentes e metadados da última execução. Datas sem ocorrências não são exibidas nem registradas como edições.
-- A pesquisa editorial e atualização de `dados/atos-aneel.json` são executadas por duas automações do ChatGPT, diariamente às 10h e às 17h (horário de Brasília), inclusive finais de semana. A segunda execução confere possíveis omissões da primeira. Ambas priorizam Leis.org e verificam fontes oficiais antes de registrar atos.
+- A pesquisa editorial e atualização de `dados/atos-aneel.json` são executadas por duas automações do ChatGPT, diariamente às 10h e às 17h (horário de Brasília), inclusive finais de semana. A segunda execução confere possíveis omissões da primeira. Ambas cruzam DOU, CEDOC, notícias oficiais da ANEEL, Leis.org (inclusive pesquisa indexada), CanalEnergia, MegaWhat e TCU. Notícias e acórdãos são fontes de alerta, não atos da ANEEL; somente atos com publicação documental confirmada entram no histórico.
 - O monitor experimental antigo do GitHub Actions foi removido por redundância e falhas de coleta; o histórico regulatório foi preservado.
-- A listagem do Leis.org pode ter acesso automatizado limitado; a pesquisa indexada complementa a coleta, que pode ter cobertura incompleta. Resultados precisam de validação editorial. A ausência de resultado não comprova ausência de ato. Sempre conferir o DOU e os anexos antes de tratar valores como definitivos.
+- A listagem do Leis.org pode ter acesso automatizado limitado; a integração estruturada do INLABS ainda depende de credenciais e testes reais. O último diagnóstico registrado no JSON pode ser histórico e não deve ser confundido com o resultado das automações atuais; a pesquisa indexada complementa a coleta, que pode ter cobertura incompleta. Resultados precisam de validação editorial. A ausência de resultado não comprova ausência de ato. Sempre conferir o DOU e os anexos antes de tratar valores como definitivos.
 - A rotina diária não altera o conteúdo analítico nem a periodicidade das edições completas do Radar. A edição principal é atualizada às terças-feiras às 13h (Brasília), pela automação própria. O botão **Atos do dia** fica imediatamente ao lado do seletor **Edições**, abrindo a área específica de atos, com seleção somente das datas em que foram encontrados atos pertinentes.
