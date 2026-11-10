@@ -1,19 +1,22 @@
-# Radar CORE | Grupo Diamante
+# Radar CORE | Diamante Geração de Energia
 
-Painel executivo de inteligência regulatória e de mercado.
+Painel executivo de Comercialização e Regulação (CORE), com edição semanal e arquivo histórico.
 
 **Site:** https://corediamante.github.io/radar-core-diamante/
 
 ## Estrutura
 - `index.html`: edição principal vigente, atualizada exclusivamente nas terças-feiras. Confirmar a data exibida no próprio painel antes de divulgar.
-- `edicoes/`: histórico oficial das terças-feiras (06, 13, 20 e 27/10/2026). Os arquivos históricos não devem ser alterados em seu conteúdo analítico; ajustes de navegação são permitidos.
+- `edicoes/`: histórico oficial das terças-feiras (06, 13, 20 e 27/10 e 03/11/2026). Os arquivos históricos não devem ser alterados em seu conteúdo analítico; ajustes de navegação são permitidos.
 - `dados/fontes-radar.json`: cadastro canônico de fontes, métodos e evidências. Preservar histórico.
 - `scripts/`: rotinas auxiliares de coleta e auditoria. Não publicam valores automaticamente.
 - `.github/workflows/pages.yml`: publicação do site por GitHub Pages.
 - `.github/workflows/coleta-core.yml` e `auditoria-fontes.yml`: conferências auxiliares.
 
 ## Regra do menu Edições
-Mostrar somente as terças-feiras oficiais: 27, 20, 13 e 06/10/2026, incluindo as próximas edições oficiais quando forem publicadas. A edição atual de 27/10 aponta para `index.html`; o histórico de 27/10 permanece disponível. Não mostrar edições TESTE, nem incluir datas não oficiais. Cada página deve indicar corretamente a edição visualizada. Manter o botão `Atos do dia` imediatamente ao lado de `Edições`, em todas as páginas oficiais. Não usar scripts que reescrevam `.edition-menu`.
+Exibir somente edições oficiais existentes no repositório. A edição atual é sempre `index.html`; as anteriores ficam em `edicoes/`, com datas históricas preservadas. Não criar edições TESTE, datas fictícias ou links inexistentes. O botão de atos abre `atos.html`. O visual das edições usa `assets/core-theme.css`, sem substituir os fatos publicados em cada data.
+
+## Verificação e publicação
+A cada push na `main`, `.github/workflows/pages.yml` executa `scripts/validar_site.py` antes de publicar. A validação confere HTML básico, IDs, links internos, CSS compartilhado e JSON local. O pacote do GitHub Pages inclui apenas `index.html`, `atos.html`, `assets/`, `edicoes/` e `dados/`; scripts, documentação e workflows ficam fora do site público. A validação não substitui checagem de fontes, acessibilidade, links externos nem conferência visual após o deploy.
 
 ## Atualizações futuras
 Consultar primeiro o cadastro canônico, validar fontes e indicadores, preservar as evidências e registrar pendências. Arquivar a edição anterior antes de substituir o `index.html`. Verificar o deploy e o HTML público antes de declarar publicação concluída. Para novas edições, respeitar a política editorial vigente e atualizar conscientemente a lista de edições visíveis.
