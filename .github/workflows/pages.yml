@@ -31,6 +31,13 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
+      - name: Diagnosticar artefato do Pages
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "Verificando artefatos desta execução:"
+          gh api "repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" --jq '.artifacts[] | [.name, .size_in_bytes, .expired] | @tsv'
       - name: Publicar
         id: deployment
         uses: actions/deploy-pages@v4
