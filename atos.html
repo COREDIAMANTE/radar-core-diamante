@@ -4,8 +4,33 @@
 <style>
 :root{font-family:Inter,Arial,sans-serif;color:#183047;background:#f4f7fa}*{box-sizing:border-box}body{margin:0}header{background:#102a44;color:white;padding:24px max(24px,calc((100% - 1100px)/2))}header small{letter-spacing:.12em;color:#bacbda}header h1{margin:8px 0 5px;font-size:29px}header p{color:#d4e1ec;margin:0}main{max-width:1100px;margin:28px auto;padding:0 20px}a{color:#13558c}header a{color:#d9edff}.top{display:flex;gap:16px;justify-content:space-between;align-items:center;flex-wrap:wrap}.panel,.item{background:#fff;border:1px solid #dae2eb;border-radius:12px;padding:22px;margin:16px 0;box-shadow:0 2px 8px #132e4510}.controls{display:flex;gap:14px;flex-wrap:wrap;align-items:end}label{display:block;font-weight:700;margin-bottom:7px}select{padding:12px;border:1px solid #aab9c7;border-radius:8px;min-width:230px;font:inherit}.status{font-size:14px;color:#5e7183;margin-top:15px}.item h3{margin:5px 0 10px}.item p{line-height:1.55}.tag{display:inline-block;background:#e9f0f7;color:#244f73;border-radius:6px;padding:5px 8px;font-size:12px;font-weight:700;margin:3px 4px 3px 0}.warn{color:#8d5a19}.empty{padding:28px;color:#5e7183;background:#fff;border-radius:12px}.foot{font-size:13px;color:#5e7183;margin:24px 0 50px}
 </style><style>
-/* Atos CORE: identidade visual alinhada às edições, sem alterar a estrutura da página */
-:root{color:#eaf5ff;background:#091c30}body{background:radial-gradient(ellipse at 90% 0%,#163d5a 0%,transparent 55%),linear-gradient(145deg,#07182b,#12324e 65%,#081b30);min-height:100vh;color:#eaf5ff}header{background:rgba(6,27,55,.82);border-bottom:1px solid rgba(192,226,255,.22)}header small{color:#c5d9e9}header p{color:#c9e1f6}.panel,.item,.empty{background:rgba(26,57,82,.64);border:1px solid rgba(192,226,255,.22);color:#eaf5ff;box-shadow:0 8px 28px rgba(0,9,29,.16);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}.status,.foot{color:#c9e1f6}a{color:#9ed2f2}select{background:#102b44;color:#eaf5ff;border-color:rgba(192,226,255,.38)}.tag{background:rgba(98,194,174,.14);color:#9fe1d4}.warn{color:#efb87e}
+/* Visual CORE: aplicado ao mesmo seletor de ambas as edições de atos; dados e JS intactos */
+:root{color-scheme:dark;color:#eaf5ff;background:#091c30;--core-line:rgba(192,226,255,.24);--core-muted:#c9e1f6;--core-orange:#d78b43}
+html{background:#091c30}
+body{min-height:100vh;color:#eaf5ff;background:radial-gradient(ellipse 850px 650px at 90% 4%,rgba(42,102,151,.34),transparent 72%),radial-gradient(ellipse 720px 750px at 3% 45%,rgba(26,80,125,.29),transparent 76%),linear-gradient(140deg,#07182b,#12324e 40%,#102a43 70%,#081b30);background-attachment:fixed}
+header{padding:22px max(24px,calc((100% - 1180px)/2));background:rgba(6,27,55,.77);border-bottom:1px solid var(--core-line);box-shadow:0 9px 34px rgba(0,9,29,.25);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+header small{font-size:11px;letter-spacing:.13em;color:#c5d9e9;font-weight:800}
+header h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(29px,4vw,43px);letter-spacing:-.025em;color:#eaf5ff;margin:12px 0 8px}
+header p{color:var(--core-muted);font-size:12px;line-height:1.6}
+header a{display:inline-block;text-decoration:none;color:#d9edff;font-size:12px;font-weight:700;padding:11px 15px;border:1px solid var(--core-line);border-radius:9px;background:rgba(137,193,240,.07)}
+header a:hover{border-color:rgba(215,139,67,.8);color:#fff}
+main{max-width:1180px;margin:32px auto;padding:0 26px}
+.panel,.item,.empty{background:rgba(21,53,79,.69);border:1px solid var(--core-line);border-radius:12px;box-shadow:0 8px 28px rgba(0,9,29,.16);backdrop-filter:blur(20px) saturate(155%);-webkit-backdrop-filter:blur(20px) saturate(155%);color:#eaf5ff}
+.panel{padding:25px 28px}.item{padding:26px 28px;border-left:3px solid #d6a15b}
+.controls{gap:26px;align-items:center}.controls>div{min-width:0}.controls strong,label{font-size:12px;color:#eaf5ff}.controls>div>div{color:var(--core-muted);font-size:12px;margin-top:8px}
+select{width:100%;min-width:min(280px,100%);max-width:380px;padding:12px 14px;background:#102b44;color:#eaf5ff;border:1px solid rgba(192,226,255,.38);border-radius:9px;cursor:pointer}
+select:focus-visible,header a:focus-visible,a:focus-visible{outline:2px solid var(--core-orange);outline-offset:3px}
+.status{font-size:11px;color:var(--core-muted);line-height:1.7;letter-spacing:.015em}
+.panel .status{border-top:1px solid rgba(192,226,255,.15);padding-top:16px;margin-top:20px}
+.item>.status{text-transform:uppercase;letter-spacing:.09em;color:#d6a15b;font-size:10px;font-weight:800}
+.item h3{font-family:Georgia,"Times New Roman",serif;font-size:clamp(21px,3vw,27px);font-weight:500;line-height:1.22;margin:12px 0 16px;color:#eaf5ff}
+.item p{font-size:13px;line-height:1.75;color:#c9e1f6;margin:15px 0}
+.tag{display:inline-block;background:rgba(98,194,174,.11);color:#9fe1d4;border:1px solid rgba(98,194,174,.27);border-radius:6px;padding:5px 9px;font-size:10px;letter-spacing:.03em}
+a{color:#a9cfe9}.item>a{display:inline-block;color:#e5a767;font-weight:750;font-size:12px;margin-top:4px;text-underline-offset:4px}
+.warn{color:#efb87e}.empty{padding:28px;color:var(--core-muted)}
+.foot{color:#a9c3d7;font-size:11px;line-height:1.7;border-top:1px solid var(--core-line);padding-top:18px;margin:30px 0 50px}
+@media(max-width:640px){header{padding:22px 18px}main{padding:0 15px;margin:20px auto}.panel,.item{padding:20px}.controls{align-items:stretch;flex-direction:column;gap:18px}select{max-width:none}.top{align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 </style></head><body>
 <header><div class="top"><div><small>DIAMANTE GERAÇÃO DE ENERGIA · CORE</small><h1>Atos atualizados da ANEEL</h1><p>Histórico de triagens · consulte a data e o status de cada coleta</p></div><a href="./index.html">Voltar ao Radar CORE</a></div></header>
 <main><div class="panel"><div class="controls"><div><label for="dia">Selecionar edição dos atos</label><select id="dia" aria-label="Data da coleta"><option>Carregando...</option></select></div><div><strong>Ativos monitorados</strong><div>Diamante · CTJL · Pecém I/II · Itaqui</div></div></div><div id="estado" class="status" role="status">Consultando o histórico...</div></div><div id="resultados" aria-live="polite"></div><div class="foot">O Leis.org é fonte de triagem. A validade e o teor definitivo dos atos devem ser conferidos no DOU e na ANEEL. Ausência de resultado não significa ausência de publicação, especialmente em caso de falha ou cobertura parcial da coleta. As edições completas do Radar permanecem independentes.</div></main>
