@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="radar-edition-revision" content="core-20261110-edicao-16">
+<meta name="radar-edition-revision" content="core-20261110-edicao-17">
 <title>Radar Regulatório e de Mercado | Grupo Diamante</title>
 <meta name="description" content="Radar Regulatório e de Mercado do CORE do Grupo Diamante">
 <style>
@@ -98,6 +98,34 @@ details.tech{margin-top:17px;overflow:hidden}details.tech summary{padding:20px 2
 @media(max-width:620px){.topbar{height:auto;min-height:76px;padding:13px 15px}.layout{padding:22px 14px 55px}.actions{gap:7px}.hero-title{font-size:42px}.hero-copy{font-size:14px}.highlight{padding:24px;min-height:0}.highlight h2{font-size:25px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.metric{padding:13px!important}.metric .num{font-size:23px}.metric .label{font-size:10px}.market-grid,.processes,.tech-inner{grid-template-columns:1fr}.decision{grid-template-columns:1fr;padding:23px}.decision .next{grid-column:auto}.insight-main,.asset-list,.monitor,.agenda,.actions-list{padding:22px}.market{min-height:0!important}.section{margin-top:58px;scroll-margin-top:150px}.section-title{font-size:29px}.cvu-card{padding:17px}.process{padding:20px}}
 @media print{body{background:white}.highlight,.panel,.insight,.market,.energy-card,.cvu-card,.monitor,.agenda,.actions-list,.process,details.tech{background:#fff!important;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}.topbar,.sidebar{display:none}}
 @media(prefers-reduced-motion:reduce){.btn,.market,.process{transition:none!important}.market:hover,.process:hover,.btn:hover{transform:none}}
+
+
+/* CORE Executive Glass Blue | revisão 17 */
+:root{--bg:#e7f0fa;--blue:#092d57;--blue2:#1765ad;--ink:#16324e;--line:#c6d9ed;--line2:#dfebf6;--softblue:#e4f1ff}
+body{background:radial-gradient(ellipse 860px 620px at 95% 4%,rgba(35,112,195,.25),transparent 74%),radial-gradient(ellipse 720px 560px at 2% 42%,rgba(33,112,192,.14),transparent 76%),linear-gradient(135deg,#e7f1fc 0%,#dceaf9 47%,#eff6fd 100%);background-attachment:fixed}
+.topbar{background:rgba(237,246,255,.74);border-bottom-color:rgba(156,193,228,.65);box-shadow:0 8px 32px rgba(14,72,132,.09)}
+.highlight,.panel,.insight,.market,.energy-card,.cvu-card,.monitor,.agenda,.actions-list,.process,details.tech{
+ background:linear-gradient(135deg,rgba(255,255,255,.72),rgba(221,238,255,.43))!important;
+ border:1px solid rgba(255,255,255,.91)!important;
+ box-shadow:0 10px 34px rgba(15,75,139,.105),inset 0 1px 0 rgba(255,255,255,.95),inset 0 -1px 0 rgba(112,162,211,.12);
+ backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);
+ position:relative;isolation:isolate;
+}
+.highlight::before,.market::before,.energy-card::before,.cvu-card::before,.monitor::before,.agenda::before,.process::before,.actions-list::before{
+ content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;
+ background:radial-gradient(ellipse 75% 55% at 0% 0%,rgba(255,255,255,.66),transparent 83%);
+}
+.highlight:hover,.market:hover,.energy-card:hover,.cvu-card:hover,.monitor:hover,.agenda:hover,.process:hover{
+ border-color:rgba(149,199,247,.9)!important;
+ box-shadow:0 15px 40px rgba(15,78,143,.14),0 0 24px rgba(77,155,239,.13),inset 0 1px 0 rgba(255,255,255,1);
+}
+.metric{background:linear-gradient(140deg,rgba(255,255,255,.72),rgba(212,233,255,.5));border:1px solid rgba(255,255,255,.86)!important;box-shadow:0 7px 25px rgba(15,77,139,.07),inset 0 1px 0 white}
+.side-item.active{background:linear-gradient(90deg,rgba(207,231,255,.86),rgba(255,255,255,.54));box-shadow:0 5px 22px rgba(29,95,158,.09)}
+.edition-menu{background:rgba(239,247,255,.94);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.section-kicker,.market .name{color:#1a67aa}
+.section-title,.highlight h2,.decision h3,.monitor-item h3,.process h3{color:#0a315d}
+@media print{body{background:#fff}.highlight,.panel,.insight,.market,.energy-card,.cvu-card,.monitor,.agenda,.actions-list,.process,details.tech{background:#fff!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}}
+@media(prefers-reduced-motion:reduce){.highlight,.market,.energy-card,.cvu-card,.monitor,.agenda,.process{transition:none}}
 
 </style>
 </head>
