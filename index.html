@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="radar-edition-revision" content="core-20261110-edicao-26">
+<meta name="radar-edition-revision" content="core-20261110-edicao-27">
 <title>Radar Regulatório e de Mercado | Diamante Geração de Energia</title>
 <meta name="description" content="Radar Regulatório e de Mercado do CORE do Diamante Geração de Energia">
 <style>
@@ -120,21 +120,16 @@ details.tech summary{color:#fff}.tech-inner{gap:14px}
 
 
 
-/* CORE: organização editorial discreta, sem ícones nem etiquetas repetidas */
-.decision{position:relative;padding-left:17px!important;border-left:3px solid rgba(156,179,199,.45)}
-.decision[data-core-topic="consulta"]{border-left-color:#7aa9e8}
-.decision[data-core-topic="decisao"]{border-left-color:#d6a15b}
-.decision[data-core-topic="mercado"]{border-left-color:#62c2ae}
-.decision[data-core-topic="operacao"]{border-left-color:#a99ce3}
-.decision[data-core-topic="prazo"]{border-left-color:#d77c76}
-.monitor-item{border-left:3px solid rgba(156,179,199,.45)!important}
-.monitor-item[data-core-topic="consulta"]{border-left-color:#7aa9e8!important}
-.monitor-item[data-core-topic="decisao"]{border-left-color:#d6a15b!important}
-.monitor-item[data-core-topic="mercado"]{border-left-color:#62c2ae!important}
-.monitor-item[data-core-topic="operacao"]{border-left-color:#a99ce3!important}
-.monitor-item[data-core-topic="prazo"]{border-left-color:#d77c76!important}
+/* CORE: categorias por uma única linha lateral, sem repetição visual */
+.decision,.monitor-item{--core-accent:#91a5b7;border-left:3px solid var(--core-accent)!important}
+.decision{padding-left:16px!important}
+.decision[data-core-topic="consulta"],.monitor-item[data-core-topic="consulta"]{--core-accent:#7aa9e8}
+.decision[data-core-topic="decisao"],.monitor-item[data-core-topic="decisao"]{--core-accent:#d6a15b}
+.decision[data-core-topic="mercado"],.monitor-item[data-core-topic="mercado"]{--core-accent:#62c2ae}
+.decision[data-core-topic="operacao"],.monitor-item[data-core-topic="operacao"]{--core-accent:#a99ce3}
+.decision[data-core-topic="prazo"],.monitor-item[data-core-topic="prazo"]{--core-accent:#d77c76}
 .market,.energy-card,.cvu-card{border-left:3px solid #62c2ae!important}
-.decision .type,.monitor-item .level{font-size:11px!important;letter-spacing:.055em!important;line-height:1.5!important}
+.decision .type,.monitor-item .level{font-size:11px!important;letter-spacing:.045em!important}
 </style>
 </head>
 <body>
@@ -273,7 +268,7 @@ sections.forEach(s=>obs.observe(s));
 
 
 <script>
-/* Cor editorial por assunto: sem logotipos, badges ou elementos extras. */
+/* Classificação pelo assunto principal, sem criar etiquetas ou duplicar títulos. */
 (function(){
  const classify=(text)=>{
   const t=text.toLowerCase();
