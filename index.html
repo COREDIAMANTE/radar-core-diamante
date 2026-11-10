@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="radar-edition-revision" content="core-20261110-edicao-23">
+<meta name="radar-edition-revision" content="core-20261110-edicao-24">
 <title>Radar Regulatório e de Mercado | Diamante Geração de Energia</title>
 <meta name="description" content="Radar Regulatório e de Mercado do CORE do Diamante Geração de Energia">
 <style>
@@ -115,6 +115,14 @@ details.tech summary{color:#fff}.tech-inner{gap:14px}
 .metric .num,.market .value,.energy-card .value{font-family:Inter,Segoe UI,Arial,sans-serif;font-weight:700;letter-spacing:-.035em}
 .market .value,.energy-card .value{color:#e0a46e}.market .name,.section-kicker{color:#b8d3e6}
 .monitor-grid .monitor-item:hover{transform:translateY(-1px)}
+
+/* Identificação institucional: logotipos documentados, sem substituir siglas */
+.org-identity{display:inline-flex;align-items:center;gap:9px;vertical-align:middle;max-width:100%;margin-right:7px}
+.org-logo{width:56px;height:34px;object-fit:contain;flex:none;padding:5px;background:rgba(255,255,255,.94);border-radius:8px;border:1px solid rgba(211,228,239,.8)}
+.org-identity .org-code{font-weight:750;letter-spacing:.045em}
+.org-identity .org-code:only-child{display:inline-block;padding:6px 9px;border:1px solid rgba(198,225,245,.3);border-radius:8px;background:rgba(185,216,239,.12)}
+.org-identity + .org-identity{margin-left:4px}
+@media(max-width:620px){.org-logo{width:48px;height:31px}.org-identity{gap:5px;margin-right:5px}}
 </style>
 </head>
 <body>
@@ -247,5 +255,34 @@ sections.forEach(s=>obs.observe(s));
 </script>
 
 
+
+<script>
+/* Logos institucionais: arquivos identificados em fontes públicas; sem marcas inventadas. */
+(function(){
+  const logos={
+    ANEEL:'https://commons.wikimedia.org/wiki/Special:FilePath/Aneel.png',
+    ONS:'https://commons.wikimedia.org/wiki/Special:FilePath/Logo.ons.jpg',
+    CCEE:'https://commons.wikimedia.org/wiki/Special:FilePath/C%C3%A2mara_de_Comercializa%C3%A7%C3%A3o_de_Energia_El%C3%A9trica_Logo.png'
+  };
+  const orgs=['ANEEL','ANP','MME','ONS','CCEE','EPE','CNPE'];
+  const pattern=new RegExp('\\b('+orgs.join('|')+')\\b','g');
+  const nodes=document.querySelectorAll('.decision .type,.monitor-item .level,.monitor-item h3,.process h3,.market .name,.highlight .badge,.agenda-row div');
+  nodes.forEach(node=>{
+    const text=node.textContent||'';
+    const matched=[...new Set(text.match(pattern)||[])];
+    if(!matched.length)return;
+    const bar=document.createElement('span');bar.className='org-identity-row';
+    matched.forEach(org=>{
+      const el=document.createElement('span');el.className='org-identity';el.title=org;
+      if(logos[org]){
+        const img=document.createElement('img');img.className='org-logo';img.src=logos[org];img.alt='Logotipo '+org;img.loading='lazy';img.referrerPolicy='no-referrer';
+        img.onerror=()=>img.remove();el.appendChild(img);
+      }
+      const label=document.createElement('span');label.className='org-code';label.textContent=org;el.appendChild(label);bar.appendChild(el);
+    });
+    node.parentNode.insertBefore(bar,node);
+  });
+})();
+</script>
 </body>
 </html>
