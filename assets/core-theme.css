@@ -80,3 +80,12 @@ details.tech summary{color:#fff}.tech-inner{gap:14px}
 .market,.energy-card,.cvu-card{border-left:3px solid #62c2ae!important}
 .decision .type,.monitor-item .level{font-size:11px!important;letter-spacing:.045em!important}
 
+
+/* CORE | Restauracao da escala compacta dos cards de acompanhamento */
+.processes{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:11px!important;align-items:stretch!important}
+.processes>.process{min-width:0!important;min-height:0!important;padding:15px 16px!important;margin:0!important;transform:none}
+.processes>.process code{display:block;font-size:10px!important;line-height:1.45!important;letter-spacing:.02em}
+.processes>.process h3{font-size:16px!important;line-height:1.25!important;margin:7px 0!important;font-weight:650!important;overflow-wrap:anywhere}
+.processes>.process p{font-size:11px!important;line-height:1.5!important;margin:5px 0 0!important;font-weight:400!important;overflow-wrap:anywhere}
+.processes>.process .state{font-size:12px!important;line-height:1.5!important;margin-top:10px!important;font-weight:700!important;overflow-wrap:anywhere}
+@media(max-width:700px){.processes{grid-template-columns:minmax(0,1fr)!important}.processes>.process{padding:15px!important}}
