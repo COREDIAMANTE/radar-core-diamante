@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="radar-edition-revision" content="core-20261110-edicao-19">
+<meta name="radar-edition-revision" content="core-20261110-edicao-20">
 <title>Radar Regulatório e de Mercado | Grupo Diamante</title>
 <meta name="description" content="Radar Regulatório e de Mercado do CORE do Grupo Diamante">
 <style>
@@ -49,155 +49,62 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 @media(max-width:620px){.topbar{height:auto;min-height:82px;padding:12px 16px;gap:12px;flex-wrap:wrap}.actions{flex-wrap:wrap;gap:6px}.actions .btn{font-size:11px;padding:8px 9px}.layout{padding:20px 15px 48px}.highlight h2{font-size:25px}.section-title{font-size:29px}.market{min-height:0}.edition-menu{max-width:calc(100vw - 32px)}.section{scroll-margin-top:155px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side-item,.edition-picker>summary{transition:none}}
 
-/* CORE Executive Glass | experimento visual 2026-11-10
-   Somente apresentação: dados, fontes, conteúdo e navegação preservados. */
-:root{--bg:#eef3f9;--paper:#fff;--blue:#102e52;--blue2:#246eac;--orange:#ec861e;--orange2:#ffb55e;--ink:#1b2e44;--muted:#62748a;--line:#d8e4f0;--line2:#e9eff6;--soft:#f5f9fe;--softblue:#eaf4ff;--softorange:#fff5e9}
-html{scroll-padding-top:115px}
-body{background:radial-gradient(ellipse 620px 440px at 100% 3%,rgba(53,133,209,.13),transparent 75%),radial-gradient(ellipse 460px 340px at 4% 21%,rgba(242,157,67,.075),transparent 80%),linear-gradient(180deg,#f3f7fc 0%,#eaf1f8 100%);background-attachment:fixed}
-.topbar{height:76px;background:rgba(255,255,255,.82);backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);border-bottom:1px solid rgba(195,211,228,.75);box-shadow:0 6px 26px rgba(17,48,81,.045)}
-.brand-name{letter-spacing:.105em;font-size:16px}.brand-sub{letter-spacing:.09em;color:#6f849a}
-.btn,.edition-picker>summary{border:1px solid rgba(184,204,226,.8);border-radius:12px;background:rgba(255,255,255,.8);box-shadow:0 2px 7px rgba(19,53,85,.035);transition:background .2s,transform .2s,border-color .2s,box-shadow .2s}
-.btn:hover,.edition-picker>summary:hover{background:#fff;transform:translateY(-1px);border-color:#96b5d3;box-shadow:0 6px 18px rgba(24,71,115,.10)}
-.edition-menu{border-radius:16px;box-shadow:0 20px 55px rgba(19,49,81,.17);border:1px solid #d7e4f0;padding:9px}
-.edition-menu a{border-radius:9px}.edition-menu a[aria-current="page"]{background:linear-gradient(100deg,#eaf4ff,#fff5e9)}
-.layout{max-width:1340px;grid-template-columns:178px minmax(0,1fr);gap:36px;padding:35px 36px 80px}
-.sidebar{top:88px;padding-top:42px}.side-item{border-radius:0 10px 10px 0;color:#667f97;font-weight:600;padding:13px 10px 13px 14px}
-.side-item:hover{background:rgba(255,255,255,.65);color:var(--blue)}.side-item.active{background:rgba(255,255,255,.82);border-left-width:3px;box-shadow:0 3px 15px rgba(25,68,111,.055)}
-.issue-row{padding-bottom:27px;color:#70839a}.eyebrow,.section-kicker{font-weight:700;letter-spacing:.16em}
-.hero-title{font-size:clamp(43px,5.3vw,68px);line-height:1.03;letter-spacing:-.035em;margin:17px 0 14px}.hero-title em{font-style:normal}
-.hero-copy{font-size:15px;line-height:1.85;max-width:780px}.rule{margin:40px 0 22px;border-color:#d5e2ee}
-.edition-row{padding:4px 0 8px}.edition-row .left{font-weight:700}
-.highlights{gap:18px;border:0;background:transparent;margin-top:25px}
-.highlight,.panel,.insight,.market,.energy-card,.cvu-card,.monitor,.agenda,.actions-list,.process,details.tech{background:rgba(255,255,255,.78)!important;backdrop-filter:blur(14px) saturate(135%);-webkit-backdrop-filter:blur(14px) saturate(135%);border:1px solid rgba(207,222,238,.85)!important;border-radius:19px;box-shadow:0 9px 30px rgba(24,63,105,.055),inset 0 1px 0 rgba(255,255,255,.8)}
-.highlight{padding:31px;min-height:260px}.highlight+.highlight{border-left:1px solid rgba(207,222,238,.85);border-top:1px solid rgba(207,222,238,.85)}
-.highlight h2{font-size:28px;line-height:1.22;margin:20px 0 14px}.highlight p{font-size:13px;line-height:1.85}
-.badge{border-radius:100px;font-weight:750}.read{font-size:12px}
-.metrics{margin:27px 0 65px;gap:12px;grid-template-columns:repeat(4,minmax(0,1fr))}
-.metric{padding:19px!important;border:1px solid #dbe7f2!important;border-radius:15px;background:rgba(255,255,255,.58);min-width:0}
-.metric .num{font-size:29px}.metric .label{font-size:11px;line-height:1.6}
-.section{margin-top:79px;scroll-margin-top:115px}.section-title{font-size:clamp(27px,3vw,38px);letter-spacing:-.025em;margin:9px 0 25px}
-.panel{overflow:hidden}.decision{grid-template-columns:132px minmax(0,1fr) 180px;gap:24px;padding:27px 26px;border-bottom:1px solid #e5edf5}
-.decision h3{font-size:22px;line-height:1.28}.decision p,.next{font-size:12px;line-height:1.85}.type{line-height:1.6}
-.insight{overflow:hidden}.insight-main{padding:36px}.insight-main h3{line-height:1.22}.insight-main p{line-height:1.9}
-.impact,.action{border-radius:0 12px 12px 0;line-height:1.8;padding:18px}
-.asset-list{padding:29px}.asset{padding:17px 0}.asset span{line-height:1.75}
-.market-grid{gap:17px}.market{padding:23px!important;min-height:190px!important;transition:transform .2s,box-shadow .2s}
-.market:hover,.process:hover{transform:translateY(-2px);box-shadow:0 14px 35px rgba(22,65,105,.095)}
-.market .name{font-size:11px;line-height:1.6;font-weight:700}.market .value{font-size:28px;margin:14px 0 11px}.market .note{font-size:11px;line-height:1.8}
-.market-bottom{gap:17px;margin-top:17px}.energy-card,.cvu-card{padding:25px}
-.energy-card .value{font-size:34px}.market-reading{font-size:12px;line-height:1.85}
-.cvu-table{font-size:12px}.cvu-table th{font-size:10px;padding:12px}.cvu-table td{padding:12px}
-details.tech{margin-top:17px;overflow:hidden}details.tech summary{padding:20px 23px;font-size:13px}.tech-inner{padding:0 23px 22px;gap:15px}.tech-item{line-height:1.8;padding:15px 0}
-.monitor-grid{gap:18px;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}.monitor,.agenda{padding:27px}.monitor-item{padding:20px 0}.monitor-item h3{font-size:21px;line-height:1.32;margin:7px 0 10px}.monitor-item p{font-size:12px;line-height:1.85}
-.agenda-row{grid-template-columns:65px minmax(0,1fr);padding:17px 0;gap:13px}.agenda-row div{font-size:12px;line-height:1.75}.agenda-row time{font-weight:800;font-size:11px}
-.actions-list{padding:26px;margin-top:18px}.action-row{padding:16px 0;gap:15px;font-size:12px;line-height:1.8}.action-row b{font-size:21px}
-.processes{gap:16px}.process{padding:23px;transition:transform .2s,box-shadow .2s}.process h3{font-size:19px;line-height:1.35}.process p{font-size:12px;line-height:1.8}
-.footer{margin-top:75px;line-height:1.7}
-@media(max-width:1100px){.layout{grid-template-columns:145px minmax(0,1fr);gap:22px;padding:27px 22px 65px}.decision{grid-template-columns:105px minmax(0,1fr);gap:17px}.decision .next{grid-column:2}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:940px){.layout{grid-template-columns:1fr}.sidebar{display:none}.highlights,.insight,.monitor-grid{grid-template-columns:1fr}.highlight+.highlight{border-left:1px solid rgba(207,222,238,.85)}.insight-main{border-right:0;border-bottom:1px solid #e5edf5}.market-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.decision{grid-template-columns:125px minmax(0,1fr)}}
-@media(max-width:620px){.topbar{height:auto;min-height:76px;padding:13px 15px}.layout{padding:22px 14px 55px}.actions{gap:7px}.hero-title{font-size:42px}.hero-copy{font-size:14px}.highlight{padding:24px;min-height:0}.highlight h2{font-size:25px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.metric{padding:13px!important}.metric .num{font-size:23px}.metric .label{font-size:10px}.market-grid,.processes,.tech-inner{grid-template-columns:1fr}.decision{grid-template-columns:1fr;padding:23px}.decision .next{grid-column:auto}.insight-main,.asset-list,.monitor,.agenda,.actions-list{padding:22px}.market{min-height:0!important}.section{margin-top:58px;scroll-margin-top:150px}.section-title{font-size:29px}.cvu-card{padding:17px}.process{padding:20px}}
-@media print{body{background:white}.highlight,.panel,.insight,.market,.energy-card,.cvu-card,.monitor,.agenda,.actions-list,.process,details.tech{background:#fff!important;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}.topbar,.sidebar{display:none}}
-@media(prefers-reduced-motion:reduce){.btn,.market,.process{transition:none!important}.market:hover,.process:hover,.btn:hover{transform:none}}
 
-
-/* CORE Executive Glass Blue | revisão 17 */
-:root{--bg:#e7f0fa;--blue:#092d57;--blue2:#1765ad;--ink:#16324e;--line:#c6d9ed;--line2:#dfebf6;--softblue:#e4f1ff}
-body{background:radial-gradient(ellipse 860px 620px at 95% 4%,rgba(35,112,195,.25),transparent 74%),radial-gradient(ellipse 720px 560px at 2% 42%,rgba(33,112,192,.14),transparent 76%),linear-gradient(135deg,#e7f1fc 0%,#dceaf9 47%,#eff6fd 100%);background-attachment:fixed}
-.topbar{background:rgba(237,246,255,.74);border-bottom-color:rgba(156,193,228,.65);box-shadow:0 8px 32px rgba(14,72,132,.09)}
-.highlight,.panel,.insight,.market,.energy-card,.cvu-card,.monitor,.agenda,.actions-list,.process,details.tech{
- background:linear-gradient(135deg,rgba(255,255,255,.72),rgba(221,238,255,.43))!important;
- border:1px solid rgba(255,255,255,.91)!important;
- box-shadow:0 10px 34px rgba(15,75,139,.105),inset 0 1px 0 rgba(255,255,255,.95),inset 0 -1px 0 rgba(112,162,211,.12);
- backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);
- position:relative;isolation:isolate;
+/* CORE SAPPHIRE LIQUID GLASS — tema consolidado, revisão 20 */
+:root{--bg:#071d3b;--paper:#102f55;--blue:#a8d8ff;--blue2:#8bcfff;--orange:#ffad58;--orange2:#ffc17e;--ink:#eaf5ff;--muted:#c9e1f6;--line:rgba(192,226,255,.25);--line2:rgba(193,227,255,.17);--soft:rgba(142,200,255,.1);--softblue:rgba(73,155,235,.16);--softorange:rgba(246,153,61,.13)}
+html{background:#061a36}
+body{color:#eaf5ff;background:radial-gradient(ellipse 850px 650px at 90% 4%,rgba(39,124,219,.55),transparent 72%),radial-gradient(ellipse 720px 750px at 3% 45%,rgba(21,99,181,.42),transparent 76%),radial-gradient(ellipse 680px 540px at 85% 91%,rgba(24,85,161,.35),transparent 76%),linear-gradient(140deg,#06182f,#0d3766 40%,#09284f 70%,#061a35);background-attachment:fixed}
+.topbar{background:rgba(6,27,55,.77);border-bottom:1px solid rgba(181,221,255,.22);box-shadow:0 9px 34px rgba(0,9,29,.25);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+.brand-name,.hero-title,.section-title{color:#fff}.brand-sub,.use,.issue-row,.cut{color:#c5dff5}
+.btn,.edition-picker>summary{color:#f4faff;background:rgba(139,199,255,.12);border:1px solid rgba(201,229,255,.32);border-radius:12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.13)}
+.btn:hover,.edition-picker>summary:hover,.edition-picker[open]>summary{background:rgba(143,205,255,.23);border-color:rgba(219,240,255,.65)}
+.edition-picker{color:#fff}.edition-picker-icon,.eyebrow,.section-kicker,.hero-title em{color:#ffb563}.edition-chevron{color:#c6e2fa}
+.edition-menu{background:rgba(12,42,79,.96);border-color:rgba(196,227,255,.35);backdrop-filter:blur(24px);box-shadow:0 18px 42px rgba(0,9,29,.4)}
+.edition-menu-title,.edition-menu a small{color:#b6d2eb}.edition-menu a{color:#fff}.edition-menu a:hover,.edition-menu a[aria-current="page"]{background:rgba(145,204,255,.19)}
+.layout{max-width:1370px;grid-template-columns:185px minmax(0,1fr);gap:28px}
+.sidebar{top:92px}.side-item{color:#c5dbf0;border-left-color:rgba(188,222,255,.25);border-radius:0 12px 12px 0}.side-item:hover{background:rgba(146,204,255,.1);color:#fff}.side-item.active{color:#ffb35f;background:rgba(145,201,255,.17);border-left:3px solid #ffa64d}
+.hero-copy,.edition-row .left{color:#d7eaff}.rule{border-color:rgba(193,224,255,.25)}
+.section{margin-top:52px}.section-title{font-size:33px}.highlights{border:0;background:none;gap:16px}.highlight{min-height:0}.highlight+.highlight{border-left:1px solid rgba(190,226,255,.3);border-top:1px solid rgba(190,226,255,.3)}
+.metrics{gap:12px;margin:20px 0 48px}.metric{padding:18px 20px!important;border:1px solid rgba(198,230,255,.25)!important;border-radius:17px;background:linear-gradient(145deg,rgba(139,204,255,.18),rgba(27,91,156,.13));box-shadow:inset 0 1px 0 rgba(255,255,255,.17)}.metric .num,.market .value,.energy-card .value{color:#ffb46a}.metric .label{color:#d6e8fa}
+.highlights,.market-grid,.market-bottom,.monitor-grid,.processes{align-items:start}
+.highlight,.panel,.insight,.market,.energy-card,.cvu-card,details.tech,.agenda,.actions-list,.process{
+ position:relative;isolation:isolate;overflow:hidden;border-radius:20px!important;
+ background:linear-gradient(135deg,rgba(174,219,255,.22),rgba(68,142,216,.12) 52%,rgba(14,65,123,.26))!important;
+ border:1px solid rgba(200,231,255,.33)!important;
+ box-shadow:0 14px 42px rgba(0,11,39,.27),inset 0 1px 0 rgba(255,255,255,.27),inset 0 -1px 0 rgba(155,210,255,.09)!important;
+ backdrop-filter:blur(26px) saturate(165%)!important;-webkit-backdrop-filter:blur(26px) saturate(165%)!important;
+ color:#eaf5ff!important;
+ transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
 }
-.highlight::before,.market::before,.energy-card::before,.cvu-card::before,.monitor::before,.agenda::before,.process::before,.actions-list::before{
- content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;
- background:radial-gradient(ellipse 75% 55% at 0% 0%,rgba(255,255,255,.66),transparent 83%);
+.highlight::before,.panel::before,.insight::before,.market::before,.energy-card::before,.cvu-card::before,details.tech::before,.agenda::before,.actions-list::before,.process::before{
+ content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;border-radius:inherit;background:radial-gradient(ellipse 78% 48% at 5% 0%,rgba(235,248,255,.16),transparent 83%);
 }
-.highlight:hover,.market:hover,.energy-card:hover,.cvu-card:hover,.monitor:hover,.agenda:hover,.process:hover{
- border-color:rgba(149,199,247,.9)!important;
- box-shadow:0 15px 40px rgba(15,78,143,.14),0 0 24px rgba(77,155,239,.13),inset 0 1px 0 rgba(255,255,255,1);
-}
-.metric{background:linear-gradient(140deg,rgba(255,255,255,.72),rgba(212,233,255,.5));border:1px solid rgba(255,255,255,.86)!important;box-shadow:0 7px 25px rgba(15,77,139,.07),inset 0 1px 0 white}
-.side-item.active{background:linear-gradient(90deg,rgba(207,231,255,.86),rgba(255,255,255,.54));box-shadow:0 5px 22px rgba(29,95,158,.09)}
-.edition-menu{background:rgba(239,247,255,.94);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
-.section-kicker,.market .name{color:#1a67aa}
-.section-title,.highlight h2,.decision h3,.monitor-item h3,.process h3{color:#0a315d}
-@media print{body{background:#fff}.highlight,.panel,.insight,.market,.energy-card,.cvu-card,.monitor,.agenda,.actions-list,.process,details.tech{background:#fff!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}}
-@media(prefers-reduced-motion:reduce){.highlight,.market,.energy-card,.cvu-card,.monitor,.agenda,.process{transition:none}}
-
-
-/* CORE Premium Sapphire | revisão 18: fundo azul profundo com shading */
-:root{--bg:#071e3c;--paper:#f6faff;--blue:#0a315d;--blue2:#1b6eae;--orange:#ef912b;--ink:#193550;--line:#b9d3ed;--line2:#d9e8f5}
-html{background:#071e3c}
-body{
- background:
- radial-gradient(ellipse 900px 660px at 92% 0%,rgba(38,122,209,.56),transparent 72%),
- radial-gradient(ellipse 760px 700px at 0% 44%,rgba(23,90,163,.43),transparent 74%),
- radial-gradient(ellipse 680px 520px at 76% 90%,rgba(16,75,151,.36),transparent 72%),
- linear-gradient(145deg,#061b36 0%,#0b315c 38%,#082549 68%,#051a35 100%);
- background-attachment:fixed;color:#e8f2ff;
-}
-.topbar{background:rgba(8,33,66,.79);border-bottom:1px solid rgba(153,200,247,.22);box-shadow:0 9px 35px rgba(0,9,29,.28)}
-.brand-name{color:#fff}.brand-sub,.use{color:#b8d4ee}
-.btn,.edition-picker>summary{background:rgba(218,237,255,.11);border-color:rgba(196,224,255,.31);color:#f5faff;box-shadow:inset 0 1px 0 rgba(255,255,255,.13)}
-.btn:hover,.edition-picker>summary:hover{background:rgba(219,238,255,.22);border-color:rgba(207,232,255,.55)}
-.edition-picker{color:#fff}.edition-picker-icon{color:#ffb55e}.edition-chevron{color:#b8d4ee}
-.edition-menu{background:rgba(238,247,255,.97);color:#0a315d}
-.side-item{color:#aecbe7;border-left-color:rgba(177,216,255,.2)}.side-item:hover{color:#fff;background:rgba(213,236,255,.12)}.side-item.active{color:#ffb45a;background:rgba(209,232,255,.14);border-left-color:#ff9b37}
-.issue-row,.cut{color:#b2cce6}.eyebrow,.section-kicker{color:#ffae50}
-.hero-title,.section-title{color:#fff}.hero-title em{color:#ffab4b}.hero-copy{color:#d2e3f4}
-.rule{border-color:rgba(194,223,255,.2)}.edition-row .left{color:#d7eaff}
-.highlight,.panel,.insight,.market,.energy-card,.cvu-card,.monitor,.agenda,.actions-list,.process,details.tech{
- background:linear-gradient(135deg,rgba(244,250,255,.92) 0%,rgba(218,237,255,.83) 100%)!important;
- border:1px solid rgba(255,255,255,.7)!important;
- box-shadow:0 16px 45px rgba(0,11,37,.28),0 0 24px rgba(68,156,255,.09),inset 0 1px 0 rgba(255,255,255,.85);
- backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);
- color:#173550;
-}
-.highlight:hover,.market:hover,.energy-card:hover,.cvu-card:hover,.monitor:hover,.agenda:hover,.process:hover{
- box-shadow:0 20px 52px rgba(0,12,40,.35),0 0 30px rgba(86,169,255,.20),inset 0 1px 0 #fff;
- border-color:#fff!important
-}
-.metric{background:linear-gradient(135deg,rgba(227,242,255,.17),rgba(137,191,245,.10));border:1px solid rgba(208,231,255,.27)!important;box-shadow:0 12px 28px rgba(0,12,39,.14),inset 0 1px 0 rgba(255,255,255,.12)}
-.metric .num{color:#ffb15b}.metric .label{color:#d3e5f6}
-.highlight h2,.decision h3,.insight-main h3,.monitor-item h3,.process h3{color:#0a315d}
-.highlight p,.decision p,.next,.monitor-item p,.process p,.asset span,.market .note,.market-reading,.agenda-row div,.action-row{color:#405d79}
-.footer{color:#b3cde5;border-color:rgba(191,220,249,.2)}
-.footer a{color:#d5e9ff}
-@media print{html,body{background:#fff!important;color:#1b2e44!important}.hero-title,.section-title{color:#0a315d!important}.metric .label{color:#405d79!important}.metric{background:#fff!important}.topbar,.sidebar{display:none}}
-
-
-/* CORE Sapphire Glass | revisão 19: cartões independentes e contraste */
-.monitor-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;align-items:start!important;gap:16px!important}
-.monitor-grid>.monitor{display:contents!important}
-.monitor-grid .monitor-item{position:relative;min-width:0;margin:0!important;padding:22px 24px!important;border:1px solid rgba(198,227,255,.36)!important;border-radius:20px!important;overflow:hidden;background:linear-gradient(135deg,rgba(36,100,166,.45),rgba(9,44,88,.58))!important;box-shadow:0 12px 32px rgba(0,12,38,.22),inset 0 1px 0 rgba(255,255,255,.19),inset 1px 0 0 rgba(255,255,255,.07)!important;backdrop-filter:blur(22px) saturate(145%);-webkit-backdrop-filter:blur(22px) saturate(145%);color:#eaf5ff}
-.monitor-grid .monitor-item::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 90% 75% at 0% 0%,rgba(145,206,255,.17),transparent 75%);border-radius:inherit}
-.monitor-grid .monitor-item:hover{border-color:rgba(204,235,255,.62)!important;box-shadow:0 16px 40px rgba(0,10,37,.30),0 0 24px rgba(88,165,245,.12),inset 0 1px 0 rgba(255,255,255,.26)!important;transform:translateY(-2px)}
-.monitor-grid .monitor-item h3{color:#fff!important;font-size:20px;line-height:1.3}
-.monitor-grid .monitor-item p{color:#d7e9fa!important;font-size:13px;line-height:1.7}
-.monitor-grid .monitor-item a{color:#9fd5ff!important;text-decoration-color:rgba(159,213,255,.6)}
-.monitor-grid .monitor-item .level.med{color:#ffbd71!important}
-.monitor-grid .monitor-item .level.high{color:#ffaaa0!important}
-.monitor-grid .monitor-item .level.low{color:#9bd4ff!important}
-.highlight,.panel,.insight,.market,.energy-card,.cvu-card,.agenda,.actions-list,.process,details.tech{
- background:linear-gradient(138deg,rgba(224,240,255,.25),rgba(112,174,237,.12) 46%,rgba(15,64,118,.28))!important;
- border:1px solid rgba(199,227,255,.32)!important;
- box-shadow:0 14px 42px rgba(0,10,34,.24),inset 0 1px 0 rgba(255,255,255,.20)!important;
- backdrop-filter:blur(25px) saturate(145%)!important;-webkit-backdrop-filter:blur(25px) saturate(145%)!important;
- color:#eaf4ff!important;
-}
-.highlight h2,.decision h3,.insight h3,.market h3,.energy-card h3,.cvu-card h3,.process h3,.agenda h3{color:#fff!important}
-.highlight p,.decision p,.next,.process p,.asset span,.market .note,.agenda-row div,.action-row,.energy-card p,.cvu-card p,.insight p{color:#d7e8f8!important}
-.highlight a,.panel a,.insight a,.market a,.energy-card a,.cvu-card a,.agenda a,.actions-list a,.process a,details.tech a{color:#a6d9ff!important}
-.monitor-grid .monitor-item .level{letter-spacing:.12em}
-.market-reading{background:rgba(25,78,135,.38)!important;color:#e0efff!important;border-radius:14px!important;border:1px solid rgba(173,214,255,.28)!important;border-left:3px solid #ffac53!important;backdrop-filter:blur(16px)}
-.market-reading strong{color:#fff!important}.market-reading a{color:#9dd4ff!important}
-.agenda-row{border-color:rgba(198,226,255,.19)!important}.agenda-row time,.agenda strong{color:#fff!important}
-.monitor-grid .monitor-item p,.monitor-grid .monitor-item h3{position:relative}
-@media(max-width:720px){.monitor-grid{grid-template-columns:1fr!important}.monitor-grid .monitor-item{padding:19px!important}}
-@media print{.monitor-grid .monitor-item,.highlight,.panel,.insight,.market,.energy-card,.cvu-card,.agenda,.actions-list,.process,details.tech{background:#fff!important;color:#173550!important;box-shadow:none!important;border:1px solid #c5d5e5!important}.monitor-grid .monitor-item h3,.highlight h2,.decision h3,.process h3{color:#0a315d!important}.monitor-grid .monitor-item p,.highlight p,.decision p,.process p{color:#405d79!important}}
+.highlight:hover,.market:hover,.energy-card:hover,.cvu-card:hover,.process:hover{transform:translateY(-3px);border-color:rgba(222,243,255,.6)!important;box-shadow:0 19px 46px rgba(0,10,36,.35),0 0 26px rgba(72,155,245,.14),inset 0 1px 0 rgba(255,255,255,.38)!important}
+.highlight h2,.decision h3,.insight-main h3,.monitor-item h3,.process h3,.asset strong,.next strong,details.tech summary,.tech-item strong{color:#fff}
+.highlight p,.decision p,.next,.insight-main p,.asset span,.market .note,.market-reading,.monitor-item p,.agenda-row div,.action-row,.process p,.tech-item{color:#dcecff}
+.highlight .mini,.market-source,.reservoir-head{color:#b8d7f1}
+.source,.highlight a,.panel a,.insight a,.market a,.energy-card a,.cvu-card a,.agenda a,.actions-list a,.process a,details.tech a{color:#a8dcff;text-decoration-color:rgba(168,220,255,.6)}
+.source:hover,a:hover{color:#fff}
+.badge.orange{background:rgba(255,172,82,.16);color:#ffd1a1;border-color:rgba(255,191,116,.45)}.badge.green{background:rgba(76,199,161,.15);color:#a8f0d5;border-color:rgba(138,228,193,.4)}.badge.blue{background:rgba(107,188,255,.15);color:#c3e8ff;border-color:rgba(163,216,255,.4)}
+.decision,.monitor-item,.agenda-row,.action-row,.asset,.tech-item{border-color:rgba(192,226,255,.2)}
+.type,.level.med,.agenda-row time,.action-row b{color:#ffc080}.level.high{color:#ffb0a6}.level.low{color:#9ed9ff}
+.insight-main{border-color:rgba(196,227,255,.2)}.impact,.action{color:#f0f8ff;background:rgba(92,166,236,.14);border-radius:11px}.action{background:rgba(239,149,60,.13)}.asset-list{min-width:0}
+.market-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.market{min-height:155px;border-radius:18px;padding:20px}.market .name,.cvu-table th{color:#b6dfff}.market .note{border-color:rgba(193,226,255,.2)}.reservoir-track{background:rgba(200,231,255,.18)}.reservoir-fill{background:linear-gradient(90deg,#409fea,#9bd8ff)}
+.cvu-table th,.cvu-table td{border-color:rgba(193,225,255,.2);color:#e7f3ff}.cvu-table td:last-child{color:#ffbd78}
+details.tech summary{color:#fff}.tech-inner{gap:14px}
+.monitor-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}.monitor-grid>.monitor{display:contents}
+.monitor-grid .monitor-item{position:relative;min-width:0;overflow:hidden;margin:0;padding:22px 24px;border:1px solid rgba(202,231,255,.35);border-radius:19px;background:linear-gradient(145deg,rgba(171,219,255,.23),rgba(40,111,187,.16) 60%,rgba(10,53,108,.3));box-shadow:0 13px 36px rgba(0,12,39,.24),inset 0 1px 0 rgba(255,255,255,.25);backdrop-filter:blur(26px) saturate(165%);-webkit-backdrop-filter:blur(26px) saturate(165%);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.monitor-grid .monitor-item::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 75% 55% at 0 0,rgba(231,248,255,.15),transparent 80%)}
+.monitor-grid .monitor-item:hover{transform:translateY(-3px);border-color:rgba(228,244,255,.66);box-shadow:0 18px 44px rgba(0,12,40,.32),0 0 22px rgba(102,186,255,.13),inset 0 1px 0 rgba(255,255,255,.35)}
+.monitor-grid .monitor-item h3{font-size:21px;line-height:1.3;color:#fff}.monitor-grid .monitor-item p{font-size:13px;line-height:1.68;color:#dcecff}.monitor-grid .monitor-item a{color:#a8dcff}
+.agenda-row time{color:#ffc080}.agenda-row div{color:#e0efff}.agenda-row strong{color:#fff}
+.market-reading{background:rgba(73,139,206,.17)!important;color:#e1efff!important;border:1px solid rgba(190,226,255,.24)!important;border-left:3px solid #ffad58!important;border-radius:13px!important;padding:13px 15px!important;backdrop-filter:blur(16px)}.market-reading strong{color:#fff}.market-reading a{color:#a8dcff}
+.process code{color:#acdfff}.process .state{color:#ffd0a0}
+.footer{color:#c0dbf2;border-color:rgba(190,226,255,.25)}
+@media(max-width:940px){.layout{grid-template-columns:1fr}.sidebar{display:none}.market-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.monitor-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.highlights,.insight{grid-template-columns:1fr}.insight-main{border-right:0;border-bottom:1px solid rgba(190,226,255,.2)}}
+@media(max-width:700px){.monitor-grid,.market-grid,.highlights,.metrics,.processes,.tech-inner{grid-template-columns:1fr}.highlight+.highlight{border-left:1px solid rgba(190,226,255,.3)}.metric{padding:15px!important}.topbar{height:auto;min-height:82px;flex-wrap:wrap;gap:10px;padding:12px 16px}.actions{flex-wrap:wrap}.layout{padding:20px 15px 50px}.hero-title{font-size:39px}.section-title{font-size:28px}.decision{grid-template-columns:1fr}.edition-menu{max-width:calc(100vw - 32px)}}
+@media(prefers-reduced-motion:reduce){.highlight,.market,.energy-card,.cvu-card,.process,.monitor-item{transition:none!important;transform:none!important}}
+@media print{html,body{background:#fff!important;color:#173550!important}.hero-title,.section-title,.highlight h2,.decision h3,.monitor-item h3,.process h3{color:#173550!important}.highlight,.panel,.insight,.market,.energy-card,.cvu-card,details.tech,.agenda,.actions-list,.process,.monitor-grid .monitor-item,.metric{background:#fff!important;color:#173550!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border:1px solid #cbd9e7!important}.highlight p,.decision p,.monitor-item p,.process p,.agenda-row div{color:#405b73!important}.topbar,.sidebar{display:none!important}}
 
 </style>
 </head>
