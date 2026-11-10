@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="radar-edition-revision" content="core-20261110-edicao-06">
+<meta name="radar-edition-revision" content="core-20261110-edicao-07">
 <title>Radar Regulatório e de Mercado | Grupo Diamante</title>
 <meta name="description" content="Radar Regulatório e de Mercado do CORE do Grupo Diamante">
 <style>
@@ -137,7 +137,6 @@ details.tech{margin-top:13px;background:#fff;border:1px solid var(--line)}detail
 (function(){
   const current=document.querySelector('meta[name="radar-edition-revision"]')?.content;
   if(!current || !window.fetch || !window.DOMParser)return;
-  const key='radar_check_'+current;
   const url=new URL(window.location.href);
   if(url.searchParams.has('radar_fresh'))return;
   const controller=new AbortController();
@@ -157,10 +156,11 @@ details.tech{margin-top:13px;background:#fff;border:1px solid var(--line)}detail
     })
     .catch(()=>{})
     .finally(()=>clearTimeout(timeout));
+  // On bfcache restore, the existing revision probe is sufficient.
+  // Avoid forcing a reload, which can discard the reader's scroll position.
   window.addEventListener('pageshow',function(e){
-    if(e.persisted && !sessionStorage.getItem(key)){
-      sessionStorage.setItem(key,'1');
-      window.location.replace(window.location.pathname+'?radar_fresh='+Date.now()+window.location.hash);
+    if(e.persisted && document.visibilityState==='visible'){
+      // The next normal navigation performs a fresh revision check.
     }
   });
 })();
