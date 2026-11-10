@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="radar-edition-revision" content="core-20261110-edicao-42">
+<meta name="radar-edition-revision" content="core-20261110-edicao-43">
 <title>Radar Regulatório e de Mercado | Diamante Geração de Energia</title>
 <meta name="description" content="Radar Regulatório e de Mercado do CORE do Diamante Geração de Energia">
 <style>
@@ -52,6 +52,21 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 
 </style>
 <link rel="stylesheet" href="assets/core-theme.css?v=42">
+<style id="core-emergency-layout-fix">
+/* Correção de entrega: largura controlada, sem depender de CSS em cache. */
+html,body{max-width:100%;overflow-x:hidden}
+body>.layout{box-sizing:border-box!important;width:100%!important;max-width:1180px!important;margin:0 auto!important;padding:24px 20px 55px!important;display:grid!important;grid-template-columns:165px minmax(0,1fr)!important;gap:24px!important}
+body>.layout>main{display:block!important;width:100%!important;min-width:0!important;max-width:100%!important}
+body>.layout>.sidebar{display:block!important;min-width:0!important}
+body>.layout main section,body>.layout main .market-grid,body>.layout main .market-bottom,body>.layout main .monitor-grid,body>.layout main .processes{min-width:0!important;max-width:100%!important}
+body>.layout main .market,body>.layout main .process,body>.layout main .monitor-item,body>.layout main .cvu-card{box-sizing:border-box!important;min-width:0!important;max-width:100%!important}
+body>.layout .market-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+body>.layout .market-bottom{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+body>.layout .processes,body>.layout .monitor-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+@media(max-width:940px){body>.layout{max-width:860px!important;grid-template-columns:minmax(0,1fr)!important}body>.layout>.sidebar{display:none!important}body>.layout .market-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:650px){body>.layout{padding:18px 14px 40px!important}body>.layout .market-grid,body>.layout .market-bottom,body>.layout .processes,body>.layout .monitor-grid{grid-template-columns:minmax(0,1fr)!important}}
+@media print{body>.layout{display:block!important;max-width:none!important}body>.layout>.sidebar{display:none!important}}
+</style>
 </head>
 <body>
 <header class="topbar">
