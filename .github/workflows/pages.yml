@@ -27,17 +27,17 @@ jobs:
         uses: actions/configure-pages@v5
         with:
           enablement: true
+      - name: Validar site antes do envio
+        run: python3 scripts/validar_site.py
+      - name: Preparar somente arquivos publicados
+        run: |
+          mkdir -p _site
+          cp index.html atos.html _site/
+          cp -R assets edicoes dados _site/
       - name: Preparar artefato
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
-      - name: Diagnosticar artefato do Pages
-        continue-on-error: true
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          echo "Verificando artefatos desta execução:"
-          gh api "repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" --jq '.artifacts[] | [.name, .size_in_bytes, .expired] | @tsv'
+          path: _site
       - name: Publicar
         id: deployment
         uses: actions/deploy-pages@v4
