@@ -103,3 +103,11 @@ details.tech summary{color:#fff}.tech-inner{gap:14px}
 .processes>.process p{font-size:10.5px!important;line-height:1.48!important;margin:5px 0 0!important;font-weight:400!important;overflow-wrap:anywhere}
 .processes>.process .state{font-size:11.5px!important;line-height:1.45!important;margin-top:9px!important;font-weight:700!important;overflow-wrap:anywhere}
 @media(max-width:700px){.processes{grid-template-columns:minmax(0,1fr)!important}.processes>.process{padding:14px!important}.section-title{font-size:24px!important}.highlight h2{font-size:23px!important}}
+
+/* CORE: largura editorial original; evita cartões esticados em monitores grandes */
+.layout{width:100%;max-width:1180px!important;margin-left:auto!important;margin-right:auto!important;grid-template-columns:165px minmax(0,1fr)!important;gap:24px!important}
+.layout>main,.layout>.content,.layout>.main-content{min-width:0}
+.market-grid,.market-bottom,.monitor-grid,.processes{width:100%;min-width:0}
+.market,.energy-card,.cvu-card,.process,.monitor-item{min-width:0}
+@media(max-width:940px){.layout{grid-template-columns:minmax(0,1fr)!important;max-width:920px!important}}
+@media(max-width:700px){.layout{max-width:100%!important;padding:18px 15px 44px!important}}
