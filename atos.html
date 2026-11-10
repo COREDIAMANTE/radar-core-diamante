@@ -31,6 +31,17 @@ a{color:#a9cfe9}.item>a{display:inline-block;color:#e5a767;font-weight:750;font-
 .foot{color:#a9c3d7;font-size:11px;line-height:1.7;border-top:1px solid var(--core-line);padding-top:18px;margin:30px 0 50px}
 @media(max-width:640px){header{padding:22px 18px}main{padding:0 15px;margin:20px auto}.panel,.item{padding:20px}.controls{align-items:stretch;flex-direction:column;gap:18px}select{max-width:none}.top{align-items:flex-start}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+/* Contraste editorial: faixa laranja no cabeçalho, sem poluir os cartões */
+header{position:relative;border-bottom:3px solid #d78b43;background:linear-gradient(115deg,rgba(8,31,56,.98),rgba(24,56,79,.94) 72%,rgba(85,54,31,.56));box-shadow:0 12px 35px rgba(0,9,29,.28)}
+header::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:#d78b43}
+header small{color:#f0b46c}
+header h1{color:#fff}
+header a{border-color:rgba(229,167,103,.55);background:rgba(215,139,67,.14);color:#ffe0b6}
+header a:hover{background:rgba(215,139,67,.24)}
+.panel{border-top:2px solid rgba(215,139,67,.82)}
+label{color:#e5a767}
+.item{border-left-color:#d78b43}
+.item>.status{color:#e5a767}
 </style></head><body>
 <header><div class="top"><div><small>DIAMANTE GERAÇÃO DE ENERGIA · CORE</small><h1>Atos atualizados da ANEEL</h1><p>Histórico de triagens · consulte a data e o status de cada coleta</p></div><a href="./index.html">Voltar ao Radar CORE</a></div></header>
 <main><div class="panel"><div class="controls"><div><label for="dia">Selecionar edição dos atos</label><select id="dia" aria-label="Data da coleta"><option>Carregando...</option></select></div><div><strong>Ativos monitorados</strong><div>Diamante · CTJL · Pecém I/II · Itaqui</div></div></div><div id="estado" class="status" role="status">Consultando o histórico...</div></div><div id="resultados" aria-live="polite"></div><div class="foot">O Leis.org é fonte de triagem. A validade e o teor definitivo dos atos devem ser conferidos no DOU e na ANEEL. Ausência de resultado não significa ausência de publicação, especialmente em caso de falha ou cobertura parcial da coleta. As edições completas do Radar permanecem independentes.</div></main>
