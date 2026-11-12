@@ -9,7 +9,8 @@
       "status": "registro_inicial_manual",
       "candidatos_verificados": null,
       "avisos": [
-        "Registro inicial fundamentado na publicação do DOU apresentada pelo usuário; não representa varredura exaustiva dos atos do dia."
+        "Registro inicial fundamentado na publicação do DOU apresentada pelo usuário; não representa varredura exaustiva dos atos do dia.",
+        "Inclusão retrospectiva em 12/11/2026 do aviso de prorrogação da CP 034/2026, identificado em índice público do DOU; texto integral e novo prazo ainda não conferidos."
       ],
       "atos": [
         {
@@ -23,6 +24,19 @@
           ],
           "status": "publicacao_dou_identificada_anexos_pendentes",
           "resumo": "Homologa novos CVUs e Receita Fixa do CER CTJL 478/25. Conferir anexos e efeitos econômicos."
+        },
+        {
+          "titulo": "Aviso de Prorrogação da Consulta Pública ANEEL nº 034/2026",
+          "url": "https://atlaspublico.com.br/orgao/ministerio-de-minas-e-energia/agencia-nacional-de-energia-eletrica/superintendencia-de-mediacao-administrativa-e-das-relacoes-de-consumo",
+          "publicado_leis_org": null,
+          "data_dou": "2026-10-29",
+          "ativos": [
+            "Diamante",
+            "Geração",
+            "Procedimentos de Rede"
+          ],
+          "status": "aviso_identificado_prazo_final_pendente_de_conferencia_oficial",
+          "resumo": "Aviso de prorrogação publicado em 29/10/2026 relativo à CP 034/2026 (processo 48500.033896/2025-65), sobre classificação das modalidades de operação de usinas do SIN e alterações em 22 submódulos dos Procedimentos de Rede. Prazo original: 02/11/2026. Nova data de encerramento: conferir na íntegra do aviso oficial antes de comunicar prazo definitivo. Relevância preliminar média para a Diamante; avaliar eventual impacto operacional com a área técnica."
         }
       ]
     },
