@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Triagem diária ANEEL: descobertas públicas, sem atribuir validade jurídica a snippets."""
+"""Triagem diaria de atos DIRETOS aos ativos CORE; pauta setorial fica no Radar semanal."""
 import datetime as dt
 import html
 import json
@@ -25,7 +25,7 @@ SOURCES={
  "paranoa_energia":"https://www.paranoaenergia.com.br/",
  "leis_org":"https://leis.org/aneel",
 }
-DIRECT=re.compile(r"diamante|jorge lacerda|ctjl|pec[eé]m|itaqui",re.I)
+DIRECT=re.compile(r"diamante(?: gera[cç][aã]o)?|jorge lacerda|ctjl|pec[eé]m(?: i| ii| 1| 2)?|porto do itaqui",re.I)
 SECTOR=re.compile(r"energia|gera[cç][aã]o|ANEEL|ONS|MME|consulta p[uú]blica|tomada de subs[ií]dios|prorroga|retifica|prazo|procedimentos de rede|modalidade.{0,20}opera|termel[eé]tric|receita fixa|cvu|inflexibilidade|reserva de capacidade|lrcap|reequil[ií]brio|comercializa|recontabiliza",re.I)
 DOC=re.compile(r"despacho|resolu[cç][aã]o|aviso|consulta|audi[eê]ncia|reuni[aã]o|diretoria|procedimentos de rede",re.I)
 class Links(HTMLParser):
@@ -53,11 +53,11 @@ def main():
    for title,href in p.items:
     link=urllib.parse.urljoin(url,html.unescape(href))
     if not link.startswith("https://") or not title or len(title)<12:continue
-    if not (DIRECT.search(title) or SECTOR.search(title) or DOC.search(title)):continue
+    if not DIRECT.search(title):continue
     if link in seen:continue
     seen.add(link)
-    priority="alta_para_triagem" if DIRECT.search(title) or re.search(r"prorroga|retifica|prazo|consulta p[uú]blica",title,re.I) else "media_para_triagem"
-    report["candidatos"].append({"titulo":title[:240],"url":link,"origem":name,"prioridade":priority,"situacao":"candidato_sem_conferencia_da_integra"})
+    priority="verificar_vinculo_direto"
+    report["candidatos"].append({"titulo":title[:240],"url":link,"origem":name,"prioridade":priority,"situacao":"mencao_nominal_candidata_verificar_integra_e_titularidade"})
     count+=1
    report["fontes"][name]={"status":"acessivel","links_candidatos":count}
   except Exception as exc:
@@ -76,6 +76,8 @@ def main():
   report["avisos"].append("Cadastro de prazos indisponivel: "+str(exc))
  report["candidatos"]=report["candidatos"][:250]
  report["avisos"].append("Lista de links não é varredura exaustiva do DOU; avisos de prorrogação podem não constar nas páginas indexadas.")
+ report["avisos"].append("ATOS DO DIA: publicar apenas atos com vínculo direto confirmado à Diamante ou ativos; consultas setoriais e temas potenciais pertencem exclusivamente à edição semanal de terça-feira.")
+ report["avisos"].append("Menção nominal é apenas candidato: Pecém e Itaqui podem designar outras instalações; validar titularidade e objeto no documento oficial.")
  report["avisos"].append("Prazos e efeitos jurídicos somente após conferência do aviso oficial e documentos anexos.")
  out=Path("dados/auditoria/triagem-aneel.json");out.parent.mkdir(parents=True,exist_ok=True)
  out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
