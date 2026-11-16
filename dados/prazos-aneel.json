@@ -1,0 +1,4 @@
+{
+  "descricao": "Somente prazos confirmados no documento oficial geram alerta. Campos: consulta, prazo_final ISO, status_validacao, url_documento_oficial.",
+  "consultas": []
+}
