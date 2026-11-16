@@ -41,7 +41,8 @@
       "url": "https://www.gov.br/aneel/pt-br/acesso-a-informacao/participacao-social/consultas-publicas",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "Consultas ANEEL revisadas em 10/11/2026; CPs 040 e 041 preservadas em monitoramento com prazos originais."
+      "validacao": "Consultas ANEEL revisadas em 10/11/2026; CPs 040 e 041 preservadas em monitoramento com prazos originais.",
+      "metodo": "Aplicar monitoramento_atos_aneel: buscar também avisos de prorrogação e retificação de CPs por assunto, mesmo sem citar ativos nominalmente; registrar prazo e fonte oficial."
     },
     {
       "id": "F005",
@@ -224,7 +225,7 @@
       "orgao": "ANEEL / DOU",
       "url": "https://www.gov.br/aneel/pt-br/centrais-de-conteudos/legislacao",
       "tipo": "primaria",
-      "metodo": "Pesquisar despacho específico por número, data e empresa; conferir íntegra, publicação, vigência e efeitos. Leis.org apenas auxiliar, jamais prova primária.",
+      "metodo": "Pesquisar despacho específico por número, data e empresa; conferir íntegra, publicação, vigência e efeitos. Leis.org apenas auxiliar, jamais prova primária. Aplicar monitoramento_atos_aneel: buscar também avisos de prorrogação e retificação de CPs por assunto, mesmo sem citar ativos nominalmente; registrar prazo e fonte oficial.",
       "validacao": "Despacho ANEEL nº 4.133/2026 identificado na edição do DOU de 04/11/2026, Seção 1, p. 92; efeitos contratuais dependem de assinatura do aditivo e memória de cálculo."
     },
     {
@@ -273,7 +274,7 @@
       "url": "https://dadosabertos.aneel.gov.br/dataset/pautas-e-atas-das-reunioes-publicas-da-diretoria",
       "tipo": "primaria",
       "acesso": "público; CSV e portal institucional",
-      "metodo": "Consultar calendário, página de pautas/atas e CSV oficial. Registrar tipo de deliberação, número, data e documento específico. Calendário não equivale a pauta, voto ou resultado.",
+      "metodo": "Consultar calendário, página de pautas/atas e CSV oficial. Registrar tipo de deliberação, número, data e documento específico. Calendário não equivale a pauta, voto ou resultado. Aplicar monitoramento_atos_aneel: buscar também avisos de prorrogação e retificação de CPs por assunto, mesmo sem citar ativos nominalmente; registrar prazo e fonte oficial.",
       "validacao": "Calendário e portal reconsultados em 10/11/2026; 19º Circuito Deliberativo Público confirmado, mas pauta e decisões individuais não foram extraídas no corte."
     },
     {
@@ -2920,5 +2921,34 @@
       ],
       "noticias_novas_materiais": true
     }
+  },
+  "monitoramento_atos_aneel": {
+    "versao": 1,
+    "atualizado_em": "2026-11-16",
+    "objetivo": "Identificar atos ANEEL com impacto direto ou potencial na Diamante e ativos, inclusive atos setoriais que não mencionam nominalmente a empresa.",
+    "escopo": [
+      "Despachos, resoluções, avisos, decisões, pautas e resultados de reuniões de diretoria",
+      "Abertura, prorrogação, retificação, suspensão, reabertura e encerramento de consultas públicas e tomadas de subsídios",
+      "Procedimentos de Rede ONS, modalidades de operação, despacho termelétrico, CVU e inflexibilidade",
+      "CER, receita fixa, reequilíbrio econômico-financeiro, reajustes, CCEE e recontabilização",
+      "LRCAP, leilões, segurança energética, combustíveis, transmissão e acesso com possível efeito nos ativos"
+    ],
+    "ativos": [
+      "Diamante Geração de Energia",
+      "Complexo Termelétrico Jorge Lacerda",
+      "Pecém I",
+      "Pecém II",
+      "Itaqui"
+    ],
+    "regra_relevancia": "Triar pelo objeto e efeitos sobre geração térmica e comercialização, não apenas por correspondência literal do nome da empresa.",
+    "prioridades": {
+      "alta": "Ato com efeito direto em contrato, receita, CVU, obrigação, leilão ou prazo aberto para contribuição relevante.",
+      "media": "Alteração setorial potencialmente aplicável, dependente de avaliação técnica.",
+      "baixa": "Sem impacto material identificável; registrar apenas se necessário."
+    },
+    "controle_prazos": "Registrar publicação, prazo anterior, novo prazo, fonte oficial, data de verificação, dias restantes e situação; avisar antes do encerramento. Nunca afirmar nova data sem documento oficial.",
+    "historico": "Atribuir cada ato à data efetiva de publicação; inclusões retroativas devem ser identificadas.",
+    "validacao": "Validar documento primário ANEEL/DOU. Falha de acesso ou ausência em coleta parcial não significa ausência de publicação.",
+    "estado_operacional": "Regras editoriais cadastradas; coleta automática de atos e alertas de prazo ainda dependem de implementação e validação."
   }
 }
