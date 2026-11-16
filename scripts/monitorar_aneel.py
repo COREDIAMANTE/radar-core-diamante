@@ -16,9 +16,17 @@ SOURCES={
  "noticias_aneel":"https://www.gov.br/aneel/pt-br/assuntos/noticias",
  "legislacao_aneel":"https://www.gov.br/aneel/pt-br/centrais-de-conteudos/legislacao",
  "dou_portal":"https://www.in.gov.br/leiturajornal",
+ "dados_abertos_aneel":"https://dadosabertos.aneel.gov.br/dataset/audiencias-e-consultas-publicas",
+ "mme_consultas":"https://consultas-publicas.mme.gov.br/home",
+ "ons_noticias":"https://www.ons.org.br/paginas/imprensa/sala-de-imprensa",
+ "ccee_noticias":"https://www.ccee.org.br/portal/faces/pages_publico/noticias-opiniao",
+ "epe_noticias":"https://www.epe.gov.br/pt/imprensa/noticias",
+ "megawhat":"https://megawhat.uol.com.br/",
+ "paranoa_energia":"https://www.paranoaenergia.com.br/",
+ "leis_org":"https://leis.org/aneel",
 }
 DIRECT=re.compile(r"diamante|jorge lacerda|ctjl|pec[eé]m|itaqui",re.I)
-SECTOR=re.compile(r"consulta p[uú]blica|tomada de subs[ií]dios|prorroga|retifica|prazo|procedimentos de rede|modalidade.{0,20}opera|termel[eé]tric|receita fixa|cvu|inflexibilidade|reserva de capacidade|lrcap|reequil[ií]brio|comercializa|recontabiliza",re.I)
+SECTOR=re.compile(r"energia|gera[cç][aã]o|ANEEL|ONS|MME|consulta p[uú]blica|tomada de subs[ií]dios|prorroga|retifica|prazo|procedimentos de rede|modalidade.{0,20}opera|termel[eé]tric|receita fixa|cvu|inflexibilidade|reserva de capacidade|lrcap|reequil[ií]brio|comercializa|recontabiliza",re.I)
 DOC=re.compile(r"despacho|resolu[cç][aã]o|aviso|consulta|audi[eê]ncia|reuni[aã]o|diretoria|procedimentos de rede",re.I)
 class Links(HTMLParser):
  def __init__(self): super().__init__();self.href=None;self.label=[];self.items=[]
@@ -66,7 +74,7 @@ def main():
     report["alertas_prazo"].append({"consulta":entry["consulta"],"prazo_final":date.isoformat(),"dias_restantes":remaining,"url_documento_oficial":entry["url_documento_oficial"]})
  except Exception as exc:
   report["avisos"].append("Cadastro de prazos indisponivel: "+str(exc))
- report["candidatos"]=report["candidatos"][:120]
+ report["candidatos"]=report["candidatos"][:250]
  report["avisos"].append("Lista de links não é varredura exaustiva do DOU; avisos de prorrogação podem não constar nas páginas indexadas.")
  report["avisos"].append("Prazos e efeitos jurídicos somente após conferência do aviso oficial e documentos anexos.")
  out=Path("dados/auditoria/triagem-aneel.json");out.parent.mkdir(parents=True,exist_ok=True)
