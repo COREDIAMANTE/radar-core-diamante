@@ -15,6 +15,7 @@ SOURCES={
  "consultas_aneel":"https://www.gov.br/aneel/pt-br/acesso-a-informacao/participacao-social/consultas-publicas",
  "noticias_aneel":"https://www.gov.br/aneel/pt-br/assuntos/noticias",
  "legislacao_aneel":"https://www.gov.br/aneel/pt-br/centrais-de-conteudos/legislacao",
+ "dou_portal":"https://www.in.gov.br/leiturajornal",
 }
 DIRECT=re.compile(r"diamante|jorge lacerda|ctjl|pec[eé]m|itaqui",re.I)
 SECTOR=re.compile(r"consulta p[uú]blica|tomada de subs[ií]dios|prorroga|retifica|prazo|procedimentos de rede|modalidade.{0,20}opera|termel[eé]tric|receita fixa|cvu|inflexibilidade|reserva de capacidade|lrcap|reequil[ií]brio|comercializa|recontabiliza",re.I)
@@ -54,11 +55,22 @@ def main():
   except Exception as exc:
    report["fontes"][name]={"status":"falha","erro":str(exc)}
    report["avisos"].append(name+": acesso falhou; não interpretar como ausência de atos")
+ report["alertas_prazo"]=[]
+ try:
+  entries=json.loads(Path("dados/prazos-aneel.json").read_text(encoding="utf-8")).get("consultas",[])
+  for entry in entries:
+   if entry.get("status_validacao")!="confirmado_documento_oficial" or not entry.get("url_documento_oficial"):continue
+   date=dt.date.fromisoformat(entry["prazo_final"])
+   remaining=(date-now.date()).days
+   if remaining<=7:
+    report["alertas_prazo"].append({"consulta":entry["consulta"],"prazo_final":date.isoformat(),"dias_restantes":remaining,"url_documento_oficial":entry["url_documento_oficial"]})
+ except Exception as exc:
+  report["avisos"].append("Cadastro de prazos indisponivel: "+str(exc))
  report["candidatos"]=report["candidatos"][:120]
  report["avisos"].append("Lista de links não é varredura exaustiva do DOU; avisos de prorrogação podem não constar nas páginas indexadas.")
  report["avisos"].append("Prazos e efeitos jurídicos somente após conferência do aviso oficial e documentos anexos.")
  out=Path("dados/auditoria/triagem-aneel.json");out.parent.mkdir(parents=True,exist_ok=True)
  out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
- print(json.dumps({"fontes":report["fontes"],"candidatos":len(report["candidatos"]),"avisos":report["avisos"]},ensure_ascii=False))
+ print(json.dumps({"fontes":report["fontes"],"candidatos":len(report["candidatos"]),"alertas_prazo":report["alertas_prazo"],"avisos":report["avisos"]},ensure_ascii=False))
  if not any(v["status"]=="acessivel" for v in report["fontes"].values()):raise SystemExit("Todas as fontes falharam: triagem inconclusiva")
 if __name__=="__main__":main()
