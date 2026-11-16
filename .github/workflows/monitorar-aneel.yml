@@ -1,0 +1,31 @@
+name: Triagem diaria de atos ANEEL CORE
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/monitorar_aneel.py'
+      - '.github/workflows/monitorar-aneel.yml'
+  schedule:
+    - cron: '0 12 * * 1-5'
+permissions:
+  contents: read
+jobs:
+  monitorar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Triar fontes oficiais ANEEL
+        run: python scripts/monitorar_aneel.py
+      - name: Preservar resultado e falhas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: triagem-aneel-core
+          path: dados/auditoria/triagem-aneel.json
+          if-no-files-found: warn
+          retention-days: 30
