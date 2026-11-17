@@ -70,12 +70,12 @@ def main():
    if entry.get("status_validacao")!="confirmado_documento_oficial" or not entry.get("url_documento_oficial"):continue
    date=dt.date.fromisoformat(entry["prazo_final"])
    remaining=(date-now.date()).days
-   if remaining<=7:
+   if 0<=remaining<=7:
     report["alertas_prazo"].append({"consulta":entry["consulta"],"prazo_final":date.isoformat(),"dias_restantes":remaining,"url_documento_oficial":entry["url_documento_oficial"]})
  except Exception as exc:
   report["avisos"].append("Cadastro de prazos indisponivel: "+str(exc))
  report["candidatos"]=report["candidatos"][:250]
- report["avisos"].append("Lista de links não é varredura exaustiva do DOU; avisos de prorrogação podem não constar nas páginas indexadas.")
+ report["avisos"].append("Lista de links não é varredura exaustiva do DOU; páginas dinâmicas, anexos e documentos integrais não são indexados por este coletor.")
  report["avisos"].append("ATOS DO DIA: publicar apenas atos com vínculo direto confirmado à Diamante ou ativos; consultas setoriais e temas potenciais pertencem exclusivamente à edição semanal de terça-feira.")
  report["avisos"].append("Menção nominal é apenas candidato: Pecém e Itaqui podem designar outras instalações; validar titularidade e objeto no documento oficial.")
  report["avisos"].append("Prazos e efeitos jurídicos somente após conferência do aviso oficial e documentos anexos.")
