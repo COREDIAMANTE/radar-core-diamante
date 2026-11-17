@@ -51,6 +51,22 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.side-item,.edition-picker>summary{transition:none}}
 
 
+
+/* Mercado CORE: cartões de mesma altura, leitura hierárquica e CVU em largura total */
+#mercado .market-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important;align-items:stretch!important}
+#mercado .market{display:flex!important;flex-direction:column!important;min-width:0!important;min-height:190px!important;padding:20px 22px!important}
+#mercado .market .name{font-size:12px!important;line-height:1.5!important;letter-spacing:.06em!important}
+#mercado .market-source{display:block!important;font-size:10px!important;margin-top:4px!important;letter-spacing:.02em!important}
+#mercado .market .value{font-size:25px!important;line-height:1.25!important;overflow-wrap:anywhere!important;margin:15px 0 10px!important}
+#mercado .market .note{margin-top:auto!important;font-size:12px!important;line-height:1.55!important;min-height:0!important;padding-top:10px!important}
+#mercado .market .source{display:block!important;width:max-content!important;max-width:100%!important;font-size:11px!important;margin-top:10px!important}
+#mercado .market .ear-values{font-size:18px!important;line-height:1.65!important;color:#eaf5ff!important;margin:14px 0 10px!important;font-weight:650!important}
+#mercado .market-bottom{display:block!important;width:100%!important;margin-top:14px!important}
+#mercado .cvu-card{width:100%!important;max-width:none!important;padding:22px!important;overflow-x:auto!important}
+#mercado .cvu-table{width:100%!important;table-layout:auto!important}
+#mercado .cvu-table th,#mercado .cvu-table td{padding:10px 12px!important;font-size:12px!important}
+#mercado .cvu-table td:last-child,#mercado .cvu-table th:last-child{text-align:right!important;font-variant-numeric:tabular-nums!important}
+@media(max-width:700px){#mercado .market-grid{grid-template-columns:minmax(0,1fr)!important}#mercado .market{min-height:0!important}#mercado .cvu-card{padding:14px!important}}
 </style>
 <link rel="stylesheet" href="assets/core-theme.css?v=42">
 <style id="core-emergency-layout-fix">
@@ -120,26 +136,26 @@ body>.layout .processes,body>.layout .monitor-grid{grid-template-columns:repeat(
 </div></section>
 
 <section id="mercado" class="section">
- <div class="section-kicker">04 / MERCADO</div><h2 class="section-title">Mercado em 60 segundos · referências datadas</h2>
+ <div class="section-kicker">04 / MERCADO</div><h2 class="section-title">Indicadores do mercado de energia</h2>
  <div class="market-grid">
-  <div class="market"><div class="name">PLD · MÉDIA DIÁRIA <span class="market-source">CCEE · 17/11/2026</span></div><div class="value">R$ 315,85/MWh</div><div class="note">Mesmo valor em SE/CO, Sul, Nordeste e Norte. Média diária oficial; não é CMO. <a class="source" href="https://dadosabertos.ccee.org.br/dataset/pld_media_diaria" target="_blank" rel="noopener">Fonte: CCEE</a></div></div>
-  <div class="market"><div class="name">PLD · MÉDIA DOS 7 DIAS <span class="market-source">CCEE · 10–16/11 · CÁLCULO CORE</span></div><div class="value">R$ 83,52/MWh</div><div class="note">Média aritmética simples das 28 observações: sete dias completos e quatro submercados. Não é semana operativa ONS. <a class="source" href="https://dadosabertos.ccee.org.br/dataset/pld_media_diaria" target="_blank" rel="noopener">Fonte: CCEE</a></div></div>
-  <div class="market"><div class="name">CMO · MÉDIA SEMANAL <span class="market-source">ONS · SEMANA ATÉ 20/11</span></div><div class="value">R$ 11,64/MWh</div><div class="note">SE/CO 11,64 · Sul 6,03 · Nordeste 11,64 · Norte 289,25. Coluna val_cmomediasemanal. <a class="source" href="https://dados.ons.org.br/dataset/cmo-semanal" target="_blank" rel="noopener">Fonte: ONS</a></div></div>
-  <div class="market"><div class="name">EAR · OBSERVADO <span class="market-source">ONS · 16/11/2026</span></div><div style="font-size:10px;color:#637486;line-height:1.7">SE/CO <b>55,19%</b> · Sul <b>81,48%</b><br>Nordeste <b>58,83%</b> · Norte <b>52,75%</b></div><div class="note">Valores observados em ear_verif_subsistema_percentual; não são projeções. <a class="source" href="https://dados.ons.org.br/dataset/ear-diario-por-subsistema" target="_blank" rel="noopener">Fonte: ONS</a></div></div>
-  <div class="market"><div class="name">HENRY HUB · SPOT <span class="market-source">EIA · 11/11 · PUBLICADO 12/11</span></div><div class="value">US$ 3,00/MMBtu</div><div class="note">Preço spot físico; separado de futuros NYMEX. Última observação publicada no corte. <a class="source" href="https://www.eia.gov/dnav/ng/hist/rngwhhdD.htm" target="_blank" rel="noopener">Fonte: EIA</a></div></div>
-  <div class="market"><div class="name">NEWCASTLE · FUTUROS <span class="market-source">ICE · ÚLTIMA REFERÊNCIA 04/11</span></div><div class="value data-pending">nov/26 145,00 · dez/26 145,15 US$/t</div><div class="note"><span class="pending">Atualização pendente:</span> interface oficial reconsultada em 17/11 sem nova tabela extraível. Valores por vencimento, não preço físico nem settlement presumido. <a class="source" href="https://www.ice.com/products/243/Newcastle-Coal-Futures" target="_blank" rel="noopener">Fonte: ICE</a></div></div>
-  <div class="market"><div class="name">BRENT · SPOT <span class="market-source">EIA · 11/11 · PUBLICADO 12/11</span></div><div class="value">US$ 92,14/bbl</div><div class="note">Spot Europe Brent da EIA; não é contrato futuro nem fechamento Reuters. Produto alterado para uma referência primária verificável. <a class="source" href="https://www.eia.gov/dnav/pet/hist/RBRTED.htm" target="_blank" rel="noopener">Fonte: EIA</a></div></div>
-  <div class="market"><div class="name">ÍNDICE FORWARD PÚBLICO · SE <span class="market-source">DCIDE · BASE 16/11 · PUBLICADO 17/11</span></div><div class="value">R$ 129,05/MWh</div><div class="note">Convencional trimestre M+1–M+3: 129,05; convencional longo A+1–A+4: 222,67. Incentivada 50%: 156,42 e 250,12. Índices por produto/horizonte; não preço médio universal nem curva BBCE completa. <a class="source" href="https://www.dcide.com.br/" target="_blank" rel="noopener">Fonte: Dcide</a></div></div>
+  <div class="market"><div class="name">PLD · MÉDIA DIÁRIA <span class="market-source">CCEE · 17/11/2026</span></div><div class="value">R$ 315,85/MWh</div><div class="note">Valor diário igual nos quatro submercados. <a class="source" href="https://dadosabertos.ccee.org.br/dataset/pld_media_diaria" target="_blank" rel="noopener">Fonte: CCEE</a></div></div>
+  <div class="market"><div class="name">PLD · MÉDIA DOS 7 DIAS <span class="market-source">CCEE · 10–16/11 · CÁLCULO CORE</span></div><div class="value">R$ 83,52/MWh</div><div class="note">Média simples dos quatro submercados, de 10 a 16/11. <a class="source" href="https://dadosabertos.ccee.org.br/dataset/pld_media_diaria" target="_blank" rel="noopener">Fonte: CCEE</a></div></div>
+  <div class="market"><div class="name">CMO · SE/CO · MÉDIA SEMANAL <span class="market-source">ONS · SEMANA ATÉ 20/11</span></div><div class="value">R$ 11,64/MWh</div><div class="note">SE/CO: R$ 11,64 · Sul: R$ 6,03 · Nordeste: R$ 11,64 · Norte: R$ 289,25/MWh. <a class="source" href="https://dados.ons.org.br/dataset/cmo-semanal" target="_blank" rel="noopener">Fonte: ONS</a></div></div>
+  <div class="market"><div class="name">EAR · OBSERVADO <span class="market-source">ONS · 16/11/2026</span></div><div class="ear-values">SE/CO 55,19% · Sul 81,48%<br>Nordeste 58,83% · Norte 52,75%</div><div class="note">Energia armazenada observada por subsistema. <a class="source" href="https://dados.ons.org.br/dataset/ear-diario-por-subsistema" target="_blank" rel="noopener">Fonte: ONS</a></div></div>
+  <div class="market"><div class="name">HENRY HUB · SPOT <span class="market-source">EIA · 11/11 · PUBLICADO 12/11</span></div><div class="value">US$ 3,00/MMBtu</div><div class="note">Preço à vista do gás natural no mercado norte-americano. <a class="source" href="https://www.eia.gov/dnav/ng/hist/rngwhhdD.htm" target="_blank" rel="noopener">Fonte: EIA</a></div></div>
+  <div class="market"><div class="name">NEWCASTLE · FUTUROS <span class="market-source">ICE · ÚLTIMA REFERÊNCIA 04/11</span></div><div class="value data-pending">nov/26 145,00 · dez/26 145,15 US$/t</div><div class="note">Referências de 04/11 para os contratos de novembro e dezembro de 2026. <a class="source" href="https://www.ice.com/products/243/Newcastle-Coal-Futures" target="_blank" rel="noopener">Fonte: ICE</a></div></div>
+  <div class="market"><div class="name">BRENT · SPOT <span class="market-source">EIA · 11/11 · PUBLICADO 12/11</span></div><div class="value">US$ 92,14/bbl</div><div class="note">Cotação à vista do petróleo Brent, referência internacional de petróleo. <a class="source" href="https://www.eia.gov/dnav/pet/hist/RBRTED.htm" target="_blank" rel="noopener">Fonte: EIA</a></div></div>
+  <div class="market"><div class="name">ÍNDICE FORWARD · CONVENCIONAL · SE <span class="market-source">DCIDE · BASE 16/11 · PUBLICADO 17/11</span></div><div class="value">R$ 129,05/MWh</div><div class="note">Energia convencional, trimestre M+1 a M+3: R$ 129,05/MWh. Longo prazo A+1 a A+4: R$ 222,67/MWh. <a class="source" href="https://www.dcide.com.br/" target="_blank" rel="noopener">Fonte: Dcide</a></div></div>
  </div>
- <div class="market-bottom"><div class="cvu-card" style="border-top:4px solid var(--orange)"><div class="name" style="font-size:12px;font-weight:800;color:var(--blue)">CVU DAS USINAS DIAMANTE · SEMANA OPERATIVA 14–20/11/2026 · R$/MWh <span class="market-source">ONS · REVISÃO 2 · CSV OFICIAL</span></div>
+ <div class="market-bottom"><div class="cvu-card" style="border-top:4px solid var(--orange)"><div class="name" style="font-size:12px;font-weight:800;color:var(--blue)">CVU DAS USINAS DIAMANTE · SEMANA OPERATIVA 14–20/11/2026 · R$/MWh <span class="market-source">ONS · REVISÃO 2</span></div>
   <table class="cvu-table"><thead><tr><th>Usina / parcela</th><th>Código ONS</th><th>CVU · R$/MWh</th></tr></thead><tbody>
    <tr><td>Jorge Lacerda A1</td><td>26 · J.LAC. A1</td><td>522,87</td></tr><tr><td>Jorge Lacerda A2</td><td>27 · J.LAC. A2</td><td>419,92</td></tr><tr><td>Jorge Lacerda B</td><td>25 · J.LACER. B</td><td>410,40</td></tr><tr><td>Jorge Lacerda C</td><td>24 · J.LACER. C</td><td>350,34</td></tr><tr><td>UTE Porto do Pecém I</td><td>167 · P.PECEM1</td><td>431,90</td></tr><tr><td>UTE Porto do Pecém II</td><td>163 · P.PECEM2</td><td>437,26</td></tr><tr><td>Porto do Itaqui</td><td>176 · P. ITAQUI</td><td>428,25</td></tr>
   </tbody></table> <a class="source" href="https://dados.ons.org.br/dataset/cvu-usitermica" target="_blank" rel="noopener">Fonte: ONS · CVU</a>
  </div></div>
- <details class="tech"><summary>Painel técnico · metodologia e rastreabilidade</summary><div class="tech-inner">
+ <details class="tech"><summary>Fontes e metodologia</summary><div class="tech-inner">
   <div class="tech-item"><strong>PLD</strong>CSV CCEE: diário 17/11; média simples do período completo 10–16/11, quatro submercados.</div><div class="tech-item"><strong>CVU operacional</strong>CSV ONS, Revisão 2, semana 14–20/11; sete códigos exatos.</div><div class="tech-item"><strong>CMO e reservatórios</strong>CSV ONS: CMO semanal com referência 20/11; EAR observado em 16/11.</div><div class="tech-item"><strong>Combustíveis e forward</strong>Henry Hub spot e Brent spot EIA de 11/11; Newcastle futuro por vencimento, mantido em 04/11 por falha de extração; Dcide base 16/11.</div>
  </div></details>
- <div style="font-size:10px;color:#7b8998;margin-top:10px">Fontes: CCEE, ONS, EIA, ICE e Dcide/Denergia. Dados têm datas de referência distintas. Nenhum valor antigo foi apresentado como novo.</div>
+ <div style="font-size:10px;color:#7b8998;margin-top:10px">Fontes: CCEE, ONS, EIA, ICE e Dcide/Denergia. Dados têm datas de referência distintas. </div>
 </section>
 
 <section id="monitor" class="section">
