@@ -3,6 +3,95 @@
   "timezone": "America/Sao_Paulo",
   "ultima_execucao": "2026-11-05T11:04:58.356338-03:00",
   "dias": {
+    "2026-01-14": {
+      "data": "2026-01-14",
+      "executado_em": null,
+      "status": "registro_historico",
+      "candidatos_verificados": null,
+      "avisos": [
+        "Inclusão editorial retrospectiva; não corresponde a uma coleta automática da data."
+      ],
+      "atos": [
+        {
+          "titulo": "Portaria SNTEP/MME nº 3.042/2026 · Complexo Jorge Lacerda",
+          "url": "https://www.sijur.com.br/dou/2026/01/14/portaria-sntep-mme-3-042-secretaria-nacional-de-transicao-energetica-e-planejamento.html",
+          "data_dou": "2026-01-14",
+          "ativos": [
+            "Diamante",
+            "CTJL"
+          ],
+          "status": "historico_regulatorio_fonte_secundaria",
+          "resumo": "Prorrogação por 15 anos, contados de 01/01/2026, da autorização de geração do Complexo Termelétrico Jorge Lacerda. Processo MME nº 48340.001122/2022-11; referência ao CER CTJL nº 478/2025.",
+          "publicado_leis_org": null
+        }
+      ]
+    },
+    "2026-03-12": {
+      "data": "2026-03-12",
+      "executado_em": null,
+      "status": "registro_historico",
+      "candidatos_verificados": null,
+      "avisos": [
+        "Inclusão editorial retrospectiva; não corresponde a uma coleta automática da data."
+      ],
+      "atos": [
+        {
+          "titulo": "Acordo de Cooperação Técnica IBAMA/SEMACE nº 10/2026 · Porto do Pecém",
+          "url": "https://www.gov.br/ibama/pt-br/acesso-a-informacao/publicacoes-oficiais/extrato-do-acordo-de-cooperacao-tecnica-no-10-2026-entre-ibama-e-semace",
+          "data_dou": "2026-03-12",
+          "ativos": [
+            "Pecém"
+          ],
+          "status": "historico_regulatorio_fonte_oficial",
+          "resumo": "Delegação à SEMACE da condução do licenciamento ambiental do empreendimento Porto do Pecém Geração de Energia. O acordo não equivale à concessão de licença para toda a capacidade prevista no projeto.",
+          "publicado_leis_org": null
+        }
+      ]
+    },
+    "2026-04-07": {
+      "data": "2026-04-07",
+      "executado_em": null,
+      "status": "registro_historico",
+      "candidatos_verificados": null,
+      "avisos": [
+        "Inclusão editorial retrospectiva; não corresponde a uma coleta automática da data."
+      ],
+      "atos": [
+        {
+          "titulo": "Despacho ANEEL nº 1.141/2026 · UTE Porto do Itaqui",
+          "url": "https://www.in.gov.br/web/dou",
+          "data_dou": "2026-04-07",
+          "ativos": [
+            "Itaqui"
+          ],
+          "status": "historico_regulatorio_fonte_secundaria",
+          "resumo": "Recurso administrativo da Itaqui Geração de Energia S.A. contra o Auto de Infração nº 56/2025: decisão de manutenção da penalidade por desempenho operacional. Processo ANEEL nº 48500.901772/2024-30. Ato anterior à incorporação do ativo ao Grupo Diamante; situação atual da penalidade não confirmada nesta ficha.",
+          "publicado_leis_org": null
+        }
+      ]
+    },
+    "2026-08-14": {
+      "data": "2026-08-14",
+      "executado_em": null,
+      "status": "registro_historico",
+      "candidatos_verificados": null,
+      "avisos": [
+        "Inclusão editorial retrospectiva; não corresponde a uma coleta automática da data."
+      ],
+      "atos": [
+        {
+          "titulo": "Despacho ANEEL nº 2.887/2026 · UTE Porto do Pecém II",
+          "url": "https://www.sijur.com.br/dou/2026/08/14/despacho-2-887-agencia-nacional-de-energia-eletrica.html",
+          "data_dou": "2026-08-14",
+          "ativos": [
+            "Pecém II"
+          ],
+          "status": "historico_regulatorio_fonte_secundaria",
+          "resumo": "Alteração da potência instalada autorizada da UTE Porto do Pecém II de 365 MW para 360 MW, segundo os dados apresentados à EPE para habilitação no LRCAP 2026. Processo ANEEL nº 48500.020755/2026-63.",
+          "publicado_leis_org": null
+        }
+      ]
+    },
     "2026-10-29": {
       "data": "2026-10-29",
       "executado_em": null,
