@@ -54,7 +54,7 @@ def http_get(url, opener=None, limit=4_000_000, timeout=12):
     req = urllib.request.Request(url, headers={
         "User-Agent": "Mozilla/5.0 (compatible; RadarCORE/2.0; triagem publica)",
         "Accept": "text/html,application/xml,application/zip,*/*"})
-    with (opener or urllib.request).open(req, timeout=timeout) as response:
+    with (opener.open if opener else urllib.request.urlopen)(req, timeout=timeout) as response:
         payload = response.read(limit + 1)
         if len(payload) > limit:
             raise ValueError("resposta maior que limite de seguranca")
