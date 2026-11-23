@@ -1,5 +1,5 @@
 {
-  "fonte": "DOU (prioritária); ANEEL Atos do Dia (encaminhamento); Leis.org (complementar)",
+  "fonte": "Publicações oficiais (ANEEL, DOU, MME, IBAMA, INPI); fontes secundárias identificadas por registro",
   "timezone": "America/Sao_Paulo",
   "ultima_execucao": "2026-11-05T11:04:58.356338-03:00",
   "dias": {
@@ -135,6 +135,29 @@
           ],
           "status": "publicacao_dou_conferida",
           "resumo": "Aprova minuta de Termo Aditivo ao CER CTJL nº 478/2025 para retificar a subcláusula 8.2, estabelecendo dezembro de 2024 como mês de referência do reajuste anual da Receita Fixa. Determina à CCEE reapurar a Receita Fixa de 2026 em até 30 dias após a celebração do termo aditivo. Processo nº 48500.011030/2026-84. DOU Seção 1, nº 207, p. 92, de 04/11/2026."
+        }
+      ]
+    },
+    "2026-11-10": {
+      "data": "2026-11-10",
+      "executado_em": null,
+      "status": "publicacao_oficial_conferida",
+      "candidatos_verificados": null,
+      "avisos": [
+        "Inclusão editorial realizada com a Revista da Propriedade Industrial nº 2914 (10/11/2026), INPI. Não é ato ANEEL nem despacho do DOU."
+      ],
+      "atos": [
+        {
+          "titulo": "INPI · RPI nº 2914/2026 · Publicação anulada em pedido de patente com Itaqui Geração",
+          "url": "https://revistas.inpi.gov.br/pdf/Patentes2914.pdf",
+          "publicado_leis_org": null,
+          "data_dou": "2026-11-10",
+          "ativos": [
+            "Itaqui",
+            "INPI"
+          ],
+          "status": "publicacao_oficial_conferida",
+          "resumo": "O INPI anulou, pelo código 2.6, a publicação código 2.10 da RPI nº 2913 (03/11/2026) relativa ao pedido de patente BR 10 2026 023249-1. A Itaqui Geração de Energia S.A. consta como uma das depositantes. A anulação diz respeito à publicação anterior, não à patente ou ao depósito. O próprio INPI informa que não é necessário responder a esse despacho, mas que o pedido deve continuar sendo acompanhado. Fonte: Revista da Propriedade Industrial nº 2914, de 10/11/2026, seção de Patentes, p. 143."
         }
       ]
     }
