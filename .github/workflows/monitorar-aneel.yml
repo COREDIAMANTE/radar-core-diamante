@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/monitorar_aneel.py'
+      - 'scripts/test_monitorar_aneel.py'
       - '.github/workflows/monitorar-aneel.yml'
   schedule:
     - cron: '0 12 * * 1-5'
@@ -13,15 +14,23 @@ permissions:
 jobs:
   monitorar:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Triar fontes oficiais ANEEL
+      - name: Validar sintaxe e filtragem dos ativos
+        run: |
+          python -m py_compile scripts/monitorar_aneel.py
+          python -m unittest discover -s scripts -p 'test_monitorar_aneel.py' -v
+      - name: Triar INLABS, fontes oficiais e noticias indexadas
+        env:
+          INLABS_EMAIL: ${{ secrets.INLABS_EMAIL }}
+          INLABS_PASSWORD: ${{ secrets.INLABS_PASSWORD }}
+          INLABS_LOOKBACK_DAYS: '7'
         run: python scripts/monitorar_aneel.py
-      - name: Preservar resultado e falhas
+      - name: Preservar relatorio mesmo quando houver falhas
         if: always()
         uses: actions/upload-artifact@v4
         with:
