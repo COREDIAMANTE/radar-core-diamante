@@ -59,13 +59,13 @@
       "atos": [
         {
           "titulo": "Despacho ANEEL nº 1.141/2026 · UTE Porto do Itaqui",
-          "url": "https://www.in.gov.br/web/dou",
+          "url": "https://www.sijur.com.br/dou/2026/04/07/despacho-1-141-agencia-nacional-de-energia-eletrica.html",
           "data_dou": "2026-04-07",
           "ativos": [
             "Itaqui"
           ],
           "status": "historico_regulatorio_fonte_secundaria",
-          "resumo": "Recurso administrativo da Itaqui Geração de Energia S.A. contra o Auto de Infração nº 56/2025: decisão de manutenção da penalidade por desempenho operacional. Processo ANEEL nº 48500.901772/2024-30. Ato anterior à incorporação do ativo ao Grupo Diamante; situação atual da penalidade não confirmada nesta ficha.",
+          "resumo": "ANEEL negou provimento ao recurso administrativo da Itaqui Geração de Energia S.A. contra o Auto de Infração nº 56/2025 e manteve a multa por baixo desempenho operacional da UTE Porto do Itaqui quando despachada pelo ONS. Processo ANEEL nº 48500.901772/2024-30. Ato publicado antes da entrada do ativo no Grupo Diamante; não se presume a situação atual da penalidade.",
           "publicado_leis_org": null
         }
       ]
