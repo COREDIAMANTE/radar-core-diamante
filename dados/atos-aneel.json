@@ -160,6 +160,28 @@
           "resumo": "O INPI anulou, pelo código 2.6, a publicação código 2.10 da RPI nº 2913 (03/11/2026) relativa ao pedido de patente BR 10 2026 023249-1. A Itaqui Geração de Energia S.A. consta como uma das depositantes. A anulação diz respeito à publicação anterior, não à patente ou ao depósito. O próprio INPI informa que não é necessário responder a esse despacho, mas que o pedido deve continuar sendo acompanhado. Fonte: Revista da Propriedade Industrial nº 2914, de 10/11/2026, seção de Patentes, p. 143."
         }
       ]
+    },
+    "2026-11-23": {
+      "data": "2026-11-23",
+      "executado_em": null,
+      "status": "publicacao_oficial_conferida",
+      "candidatos_verificados": null,
+      "avisos": [],
+      "atos": [
+        {
+          "titulo": "Resolução Normativa ANEEL nº 1.176, de 17 de novembro de 2026",
+          "url": "https://www.in.gov.br/web/dou/-/resolucao-normativa-n-1.176-de-17-de-novembro-de-2026-745566480",
+          "publicado_leis_org": null,
+          "data_dou": "2026-11-23",
+          "ativos": [
+            "ANEEL",
+            "ECR",
+            "Transmissão"
+          ],
+          "status": "publicacao_dou_conferida",
+          "resumo": "Regulamenta o faturamento e a prestação de informações do Encargo Complementar de Recursos (ECR), que reduz benefícios tarifários custeados pela CDE. As distribuidoras terão regime transitório de faturamento de janeiro a junho de 2027; o ONS deverá considerar o ECR nos benefícios incidentes sobre a TUST desde o início da vigência do mecanismo, sem postergação pelo prazo de adaptação de dados. A metodologia do Fator ECR, o Teto da CDE e a operacionalização definitiva pela CCEE serão regulamentados posteriormente. Vigente desde a publicação em 23/11/2026. Processo ANEEL nº 48500.022172/2026-77. DOU nº 219, Seção 1, p. 132. Regra setorial de aplicação condicionada à existência de benefícios tarifários abrangidos; não se confunde com o ERCAP."
+        }
+      ]
     }
   },
   "ultimo_status": "inconclusivo",
