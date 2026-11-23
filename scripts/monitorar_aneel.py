@@ -38,7 +38,8 @@ SEARCH_TERMS = [
 DIRECT = re.compile(
     r"diamante geracao de energia|jorge lacerda|\bctjl\b|"
     r"\bcer.?ctjl\b|27[.]?093[.]?977[/]?0001[-]?57|"
-    r"08[.]?219[.]?477[/]?0001[-]?74|10[.]?471[.]?487[/]?0001[-]?44|08[.]?976[.]?495[/]?0001[-]?09|"\n    r"itaqui geracao de energia|porto do itaqui geracao|"
+    r"08[.]?219[.]?477[/]?0001[-]?74|10[.]?471[.]?487[/]?0001[-]?44|08[.]?976[.]?495[/]?0001[-]?09|"
+    r"itaqui geracao de energia|porto do itaqui geracao|"
     r"pecem ii geracao de energia|porto do pecem geracao de energia|"
     r"\bute porto do pecem (?:i|ii|1|2)\b", re.I
 )
@@ -54,7 +55,9 @@ def http_get(url, opener=None, limit=4_000_000, timeout=12):
     req = urllib.request.Request(url, headers={
         "User-Agent": "Mozilla/5.0 (compatible; RadarCORE/2.0; triagem publica)",
         "Accept": "text/html,application/xml,application/zip,*/*"})
-    if opener is not None:\n        req.add_header("origem", "736372697074")\n    with (opener.open if opener else urllib.request.urlopen)(req, timeout=timeout) as response:
+    if opener is not None:
+        req.add_header("origem", "736372697074")
+    with (opener.open if opener else urllib.request.urlopen)(req, timeout=timeout) as response:
         payload = response.read(limit + 1)
         if len(payload) > limit:
             raise ValueError("resposta maior que limite de seguranca")
