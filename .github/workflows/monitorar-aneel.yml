@@ -30,6 +30,18 @@ jobs:
           INLABS_PASSWORD: ${{ secrets.INLABS_PASSWORD }}
           INLABS_LOOKBACK_DAYS: '7'
         run: python scripts/monitorar_aneel.py
+      - name: Sinalizar cobertura incompleta do DOU
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          arquivo = Path("dados/auditoria/triagem-aneel.json")
+          if arquivo.exists():
+              dados = json.loads(arquivo.read_text(encoding="utf-8"))
+              if not dados.get("cobertura_dou_xml"):
+                  print("::warning title=DOU não verificado integralmente::Coleta parcial, sem XML oficial validado no INLABS. A ausência de candidatos não significa ausência de atos.")
+          PY
       - name: Preservar relatorio mesmo quando houver falhas
         if: always()
         uses: actions/upload-artifact@v4
