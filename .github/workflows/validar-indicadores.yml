@@ -1,0 +1,29 @@
+name: Validar indicadores oficiais do mercado
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/coletar_indicadores_2026.py'
+      - '.github/workflows/validar-indicadores.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Ler bases oficiais recentes
+        run: python scripts/coletar_indicadores_2026.py
+      - name: Guardar relatório de validação
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: indicadores-mercado-core
+          path: dados/auditoria/indicadores_2026_execucao.json
+          if-no-files-found: warn
+          retention-days: 14
