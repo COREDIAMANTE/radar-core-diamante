@@ -439,7 +439,8 @@
     "Sem validação: preservar último dado datado, sinalizar pendência e motivo; nunca avançar data para simular atualização.",
     "Página inicial/agenda é ponto de descoberta, não prova suficiente para notícia, prazo ou andamento.",
     "Fontes novas precisam de cadastro, classificação e vínculo à evidência antes de publicação.",
-    "O cadastro fontes contém páginas fixas e bases recorrentes, nunca notícias de uma única edição. Links específicos devem ser guardados em historico_evidencias; referencias_edicoes preserva o cadastro inicial legado."
+    "O cadastro fontes contém páginas fixas e bases recorrentes, nunca notícias de uma única edição. Links específicos devem ser guardados em historico_evidencias; referencias_edicoes preserva o cadastro inicial legado.",
+    "Atenção extrema: reservar a classe core-critical e o span core-critical-icon (aria-label e title \"Atenção extrema\", conteúdo !) a notícias de risco regulatório, financeiro ou operacional material que demandem atenção prioritária do CORE. Não marcar toda notícia importante, agendas técnicas rotineiras ou impacto meramente indireto. Reavaliar a cada edição; não repetir o alerta no Monitor CORE quando o mesmo tema já estiver sinalizado na notícia."
   ],
   "historico_evidencias": [
     {
