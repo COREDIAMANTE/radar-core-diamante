@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "atualizado_em": "2026-11-24T13:04:31.862Z",
+  "atualizado_em": "2026-11-24T10:49:00-03:00",
   "repositorio": "COREDIAMANTE/radar-core-diamante",
   "descricao": "Cadastro canônico de fontes, metodologia e histórico de evidências do Radar CORE. Cadastro não equivale a validação dos valores publicados.",
   "fontes": [
@@ -442,7 +442,8 @@
     "O cadastro fontes contém páginas fixas e bases recorrentes, nunca notícias de uma única edição. Links específicos devem ser guardados em historico_evidencias; referencias_edicoes preserva o cadastro inicial legado.",
     "Atenção extrema: reservar a classe core-critical e o span core-critical-icon (aria-label e title \"Atenção extrema\", conteúdo !) a notícias de risco regulatório, financeiro ou operacional material que demandem atenção prioritária do CORE. Não marcar toda notícia importante, agendas técnicas rotineiras ou impacto meramente indireto. Reavaliar a cada edição; não repetir o alerta no Monitor CORE quando o mesmo tema já estiver sinalizado na notícia.",
     "Relevante: usar a classe core-relevant e o span core-relevant-icon (aria-label e title \"Relevante\", conteúdo ◆) com losango dourado em quadrado arredondado de 21px, fundo âmbar translúcido e contorno suave, em notícias selecionadas com impacto potencial material, inclusive indireto, ou necessidade de acompanhamento pelo CORE, sem urgência crítica. Vermelho permanece exclusivo de atenção extrema. Nunca usar os dois ícones no mesmo card. Para consultas públicas destacadas, identificar órgão e número/ano explicitamente no título principal. Reavaliar prioridades a cada edição.",
-    "Revisão editorial: aplicar os ícones também a temas estratégicos e processos com obrigação ou prazo material, quando não duplicarem alerta de notícia. Sinalização explícita no HTML, não por palavras-chave. Não incluir legenda visual de prioridades; preservar os rótulos acessíveis e o título de cada ícone. Notícias e monitor não devem duplicar a mesma sinalização."
+    "Revisão editorial: aplicar os ícones também a temas estratégicos e processos com obrigação ou prazo material, quando não duplicarem alerta de notícia. Sinalização explícita no HTML, não por palavras-chave. Não incluir legenda visual de prioridades; preservar os rótulos acessíveis e o título de cada ícone. Notícias e monitor não devem duplicar a mesma sinalização.",
+    "Atualização manual de 24/11/2026: processo ANEEL 48500.011033/2026-18 (reequilíbrio econômico-financeiro do CER CTJL) excluído da análise ativa. Não reinserir sem orientação expressa. Preservar registros históricos. Reajuste RF (48500.011030/2026-84): termo aditivo concluído; aguardar operacionalização CCEE na apuração de dezembro/2026, até confirmação de novo andamento."
   ],
   "historico_evidencias": [
     {
@@ -3287,6 +3288,23 @@
       "edicao": "2026-11-24",
       "substitui_id": null,
       "fonte_url_na_coleta": "https://www.gov.br/aneel/pt-br/acesso-a-informacao/participacao-social/consultas-publicas"
+    },
+    {
+      "id": "EVID-20261124-RF-CER-ATUALIZACAO-USUARIO",
+      "fonte_id": "F023",
+      "url_documento": "https://pesquisa.in.gov.br/imprensa/jsp/visualiza/index.jsp?data=04%2F11%2F2026&jornal=515&pagina=92",
+      "titulo": "Reajuste RF CER CTJL — atualização de status informada pelo usuário",
+      "data_publicacao": "2026-11-04",
+      "data_referencia_inicio": "2026-11-24",
+      "data_referencia_fim": null,
+      "coletado_em": "2026-11-24T10:49:00-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "Despacho 4.133/2026 acolheu pleito e determinou termo aditivo ao CER, já concluído segundo atualização do usuário. Aguardando operacionalização da CCEE para próxima apuração mensal (dez/2026).",
+      "status_validacao": "ato_publicado_status_operacional_informado_pelo_usuario",
+      "metodo": "Ato identificado no DOU; conclusão do aditivo e status de operacionalização informados pelo usuário em 24/11, sem confirmação documental independente nesta revisão.",
+      "edicao": "2026-11-24",
+      "substitui_id": "EVID-20261110-DESPACHO4133",
+      "fonte_url_na_coleta": "https://pesquisa.in.gov.br/"
     }
   ],
   "campos_obrigatorios_evidencia": [
@@ -3466,7 +3484,10 @@
   "processos_fontes": {
     "aneel": "F019",
     "tcu": "F020",
-    "regra": "Consultar canais fixos por número completo. Registrar evidência de andamento apenas quando efetivamente obtida; ausência de extração não significa ausência de movimentação."
+    "regra": "Consultar canais fixos por número completo. Registrar evidência de andamento apenas quando efetivamente obtida; ausência de extração não significa ausência de movimentação.",
+    "excluidos_da_analise_ativa": [
+      "48500.011033/2026-18"
+    ]
   },
   "validacao_operacional": {
     "data": "2026-11-24",
@@ -3474,7 +3495,7 @@
     "curva_forward": "F022 revalidado: base 16/11, publicado 17/11, semana 47, quatro índices por produto/horizonte no SE.",
     "regulacao": "ANP CP25/2026 prazo 02/12 confirmado em comunicado oficial de 23/11; REN ANEEL 1.176/2026 publicada 23/11; Despacho ANEEL 4.370/2026 sobre ION; ação ABEEólica perante STF contra rateio de armazenamento. Complemento 24/11: CP042, CP044, agendas CCEE sobre PLD e garantias e Comunicado CPL 4 (Leilão 5). CP040 vigente acompanhada.",
     "aneel": "REN 1.176/2026 (ECR) e Despacho 4.370/2026 (LRCAP) publicados em 23/11; distinguir ECR de ERCAP da CP037.",
-    "processos": "Preservados os registros CTJL atualizados, a manifestação TCU 005.914/2026-4 com prazo de 11/12 e acompanhamento TCU 008.289/2025-5.",
+    "processos": "Reajuste da RF do CER CTJL: pleito acolhido pelo Despacho 4.133/2026, termo aditivo concluído; aguardando operacionalização CCEE na apuração mensal de dezembro/2026, conforme atualização do usuário. Processo 48500.011033/2026-18 (reequilíbrio) excluído da análise ativa por orientação do usuário; histórico preservado. Mantidos os demais processos, incluindo TCU 005.914/2026-4 e TCU 008.289/2025-5.",
     "ultima_edicao": {
       "edicao": "2026-11-24",
       "corte": "2026-11-24T08:30:00-03:00",
