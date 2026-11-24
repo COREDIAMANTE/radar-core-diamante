@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "atualizado_em": "2026-11-24T13:42:03-03:00",
+  "atualizado_em": "2026-11-24T16:57:22.839Z",
   "repositorio": "COREDIAMANTE/radar-core-diamante",
   "descricao": "Cadastro canônico de fontes, metodologia e histórico de evidências do Radar CORE. Cadastro não equivale a validação dos valores publicados.",
   "fontes": [
@@ -255,7 +255,7 @@
       "tipo": "primaria",
       "acesso": "público; tabela de mercado com atraso",
       "metodo": "Registrar contrato/vencimento, tipo de campo (last, settlement ou bid/offer), data/hora e volume. Não tratar último negócio como settlement nem como preço físico entregue.",
-      "validacao": "ICE, Dec26: último negócio US$150,50/t de 23/11/2026; painel com atraso mínimo de 15 min, não preço de ajuste."
+      "validacao": "ICE, Dec26: último negócio US$148,25/t em 24/11/2026 às 11h53 GMT; painel de 07h30min20s ET, atraso mínimo de 15 min, não preço de ajuste."
     },
     {
       "id": "F027",
@@ -3396,6 +3396,23 @@
       "edicao": "2026-11-24",
       "substitui_id": null,
       "fonte_url_na_coleta": "https://www.terra.com.br/economia/"
+    },
+    {
+      "id": "EVID-20261124-NEWCASTLE-ICE-RECONFERENCIA",
+      "fonte_id": "F026",
+      "url_documento": "https://www.ice.com/products/1137/globalCOAL-Newcastle-Coal-Futures/data?marketId=5310550&span=1",
+      "titulo": "ICE Newcastle Dec26, último negócio de 24/11",
+      "data_publicacao": "2026-11-24",
+      "data_referencia_inicio": "2026-11-24",
+      "data_referencia_fim": "2026-11-24",
+      "coletado_em": "2026-11-24T16:57:22.839Z",
+      "unidade": "US$/t",
+      "valor_ou_resumo": "148,25",
+      "status_validacao": "validado_fonte_primaria",
+      "metodo": "Tabela indexada da ICE, linha Dec26, coluna Last: 148.250; Time(GMT) 11/24/2026 11:53 AM; volume 34; snapshot 24/11 07:30:20 AM ET, atraso mínimo de 15 min. Não é preço de ajuste.",
+      "edicao": "2026-11-24",
+      "substitui_id": "EVID-20261124-NEWCASTLE-ICE",
+      "fonte_url_na_coleta": "https://www.ice.com/products/1137/globalCOAL-Newcastle-Coal-Futures/data?marketId=5310550&span=1"
     }
   ],
   "campos_obrigatorios_evidencia": [
@@ -3582,7 +3599,7 @@
   },
   "validacao_operacional": {
     "data": "2026-11-24",
-    "mercado": "CSV oficiais revalidados em 24/11: PLD 24/11 R$141,29 e média simples 17–23/11 R$124,36; EAR observado 23/11; CMO semana até 27/11; sete CVUs semana 21–27/11 revisão 3. EIA Henry Hub e Brent spot de 17/11; ICE Newcastle Dec26 último negócio 23/11, US$150,50/t.",
+    "mercado": "CSV oficiais revalidados em 24/11: PLD 24/11 R$141,29 e média simples 17–23/11 R$124,36; EAR observado 23/11; CMO semana até 27/11; sete CVUs semana 21–27/11 revisão 3. EIA Henry Hub e Brent spot de 17/11; ICE Newcastle Dec26 último negócio 24/11 às 11h53 GMT, US$148,25/t.",
     "curva_forward": "F022 revalidado no endpoint público: base 23/11, publicado 24/11, semana 48; quatro índices do SE/CO separados por tipo de energia e horizonte.",
     "regulacao": "ANP CP25/2026 prazo 02/12 confirmado em comunicado oficial de 23/11; REN ANEEL 1.176/2026 publicada 23/11; Despacho ANEEL 4.370/2026 sobre ION; ação ABEEólica perante STF contra rateio de armazenamento. Complemento 24/11: CP042, CP044, agendas CCEE sobre PLD e garantias e Comunicado CPL 4 (Leilão 5). CP040 vigente acompanhada.",
     "aneel": "Pauta ANEEL de 24/11 conferida no CSV oficial: 56 registros sem resultado preenchido no corte e nenhum item diretamente associado aos ativos do Grupo. REN 1.176/2026 e Despacho 4.370/2026 permanecem tratados conforme documentos específicos.",
@@ -3594,7 +3611,7 @@
       "lacunas": [
         "Pauta ANEEL de 24/11: resultados de julgamento ainda não preenchidos no CSV oficial no corte; ausência no arquivo não significa ausência de deliberação.",
         "Aguardam-se deliberações definitivas da CP 037/2026 e dos recursos pendentes do LRCAP; ajuizamento não foi confundido com suspensão judicial.",
-        "Newcastle Dec26: último negócio de 23/11 validado; não foi identificada cotação posterior nem preço de ajuste.",
+        "Newcastle Dec26: último negócio de 24/11 às 11h53 GMT, US$148,25/t; preço de ajuste não apurado.",
         "Henry Hub e Brent spot: EIA indica próxima divulgação em 25/11; última observação disponível 17/11.",
         "Despacho 4.370: inteiro teor conferido em espelho do DOU; endereço oficial apresentou falha na revisão.",
         "TCU 005.914/2026-4: prazo de 11/12 e situação processual informados pelo CORE; falta confirmação documental independente.",
@@ -3620,7 +3637,21 @@
           "CP ANEEL 44/2026"
         ]
       },
-      "revisao_editorial_em": "2026-11-24T13:42:03-03:00"
+      "revisao_editorial_em": "2026-11-24T13:42:03-03:00",
+      "reconferencia_mercado": {
+        "data": "2026-11-24",
+        "executado_em": "2026-11-24T16:57:22.839Z",
+        "confirmados": [
+          "PLD diário: portal CCEE e log de coleta oficial 45390941606",
+          "PLD média 7 dias, CMO e sete CVUs: log de coleta oficial 45390941606",
+          "Henry Hub e Brent: tabelas EIA, publicação 18/11 e próxima 25/11",
+          "Newcastle: ICE, último negócio 24/11"
+        ],
+        "preservados_sem_nova_extracao": [
+          "EAR observado 23/11: evidência EVID-20261124-EAR-1303, coleta 13h03",
+          "Forward Denergia: evidência EVID-20261124-F022, coleta 13h03; endpoint não acessível na reconferência"
+        ]
+      }
     }
   },
   "monitoramento_atos_aneel": {
