@@ -36,12 +36,19 @@ def resumo(nome,rows):
   return {"inicio":today[0],"revisao":today[1],"fim":matches[0]["dat_fimsemana"] if matches else None,"dados":[{"ativo":name,"codigo":code,"nome":next((x["nom_usina"] for x in matches if x["cod_usinaplanejamento"]==str(code)),None),"valor":next((x["val_cvu"] for x in matches if x["cod_usinaplanejamento"]==str(code)),None)} for name,code in CODIGOS.items()]}
  if nome=="pld":
   import datetime
-  valid=[x for x in rows if len(x.get("DIA",""))==10 and datetime.datetime.strptime(x["DIA"],"%d/%m/%Y").date().isoformat()<="2026-11-24"]
+  from zoneinfo import ZoneInfo
+  corte=datetime.datetime.now(ZoneInfo("America/Sao_Paulo")).date()
+  valid=[x for x in rows if len(x.get("DIA",""))==10 and datetime.datetime.strptime(x["DIA"],"%d/%m/%Y").date()<=corte]
   dt=max(datetime.datetime.strptime(x["DIA"],"%d/%m/%Y").date() for x in valid)
   day=[x for x in valid if datetime.datetime.strptime(x["DIA"],"%d/%m/%Y").date()==dt]
   seven=[x for x in valid if datetime.timedelta(1)<=dt-datetime.datetime.strptime(x["DIA"],"%d/%m/%Y").date()<=datetime.timedelta(7)]
-  avg=sum(float(x["PLD_MEDIA_DIA"]) for x in seven)/len(seven) if seven else None
-  return {"data":dt.isoformat(),"dados":[{"submercado":x["SUBMERCADO"],"valor":x["PLD_MEDIA_DIA"]} for x in day],"media_7_dias_anteriores":round(avg,4) if avg is not None else None,"amostras_media":len(seven)}
+  subs={"NORDESTE","NORTE","SUDESTE","SUL"}
+  if len(day)!=4 or {x["SUBMERCADO"] for x in day}!=subs:
+   raise ValueError("PLD diário incompleto ou duplicado")
+  expected={(dt-datetime.timedelta(days=i),s) for i in range(1,8) for s in subs}
+  actual={(datetime.datetime.strptime(x["DIA"],"%d/%m/%Y").date(),x["SUBMERCADO"]) for x in seven}
+  avg=sum(float(x["PLD_MEDIA_DIA"]) for x in seven)/28 if len(seven)==28 and actual==expected else None
+  return {"data":dt.isoformat(),"media_7_dias_status":"completa" if avg is not None else "incompleta_ou_duplicada","dados":[{"submercado":x["SUBMERCADO"],"valor":x["PLD_MEDIA_DIA"]} for x in day],"media_7_dias_anteriores":round(avg,4) if avg is not None else None,"amostras_media":len(seven)}
 out={"coleta":"GitHub Actions; arquivos CSV oficiais; valores não verificados independentemente"}
 for name,url in FONTES.items():
  try:
