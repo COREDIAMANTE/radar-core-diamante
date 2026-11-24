@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "atualizado_em": "2026-11-24T09:18:19-03:00",
+  "atualizado_em": "2026-11-24T13:04:31.862Z",
   "repositorio": "COREDIAMANTE/radar-core-diamante",
   "descricao": "Cadastro canônico de fontes, metodologia e histórico de evidências do Radar CORE. Cadastro não equivale a validação dos valores publicados.",
   "fontes": [
@@ -41,7 +41,7 @@
       "url": "https://www.gov.br/aneel/pt-br/acesso-a-informacao/participacao-social/consultas-publicas",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "CP 036/2026 com prazo até 22/11 encerrado; CP 037/2026 (ERCAP) aguarda relatório de contribuições e deliberação definitiva.",
+      "validacao": "CP 036/2026 com prazo até 22/11 encerrado; CP 037/2026 (ERCAP) aguarda relatório de contribuições e deliberação definitiva. CP 044/2026: contribuições de 19/11/2026 a 31/01/2027; proposta experimental de 24 meses (notícia ANEEL de 17/11).",
       "metodo": "Aplicar monitoramento_atos_aneel: buscar também avisos de prorrogação e retificação de CPs por assunto, mesmo sem citar ativos nominalmente; registrar prazo e fonte oficial."
     },
     {
@@ -3270,6 +3270,23 @@
       "edicao": "2026-11-24",
       "substitui_id": null,
       "fonte_url_na_coleta": "https://www.ccee.org.br/mercado/leilao-mercado"
+    },
+    {
+      "id": "EVID-20261124-CP044",
+      "fonte_id": "F004",
+      "url_documento": "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026/consulta-publica-discutira-proposta-de-sandbox-para-coordenar-acionamentos-de-mmgd-entre-ons-e-distribuidoras",
+      "titulo": "CP ANEEL 044/2026: coordenação do despacho da MMGD",
+      "data_publicacao": "2026-11-17",
+      "data_referencia_inicio": "2026-11-19",
+      "data_referencia_fim": "2027-01-31",
+      "coletado_em": "2026-11-24T13:04:31.862Z",
+      "unidade": null,
+      "valor_ou_resumo": "Proposta de sandbox de 24 meses com cinco distribuidoras para desenvolvimento do MAI pelo ONS; consulta até 31/01/2027. Relevância indireta para geração centralizada, sem impacto individual confirmado.",
+      "status_validacao": "validado_fonte_primaria",
+      "metodo": "Notícia oficial ANEEL; distinguir proposta em consulta de norma definitiva. Substitui editorialmente o card de serviços ancilares, cujo histórico de evidências permanece preservado.",
+      "edicao": "2026-11-24",
+      "substitui_id": null,
+      "fonte_url_na_coleta": "https://www.gov.br/aneel/pt-br/acesso-a-informacao/participacao-social/consultas-publicas"
     }
   ],
   "campos_obrigatorios_evidencia": [
@@ -3455,24 +3472,23 @@
     "data": "2026-11-24",
     "mercado": "CSV oficiais coletados 24/11: PLD 24/11 R$141,29 e média 17–23/11 R$124,36; EAR 22/11; CMO semana 27/11; sete CVUs semana 21–27/11 revisão 3; EIA Henry Hub e Brent de 17/11; ICE Newcastle Dec26 último negócio 23/11, US$150,50/t.",
     "curva_forward": "F022 revalidado: base 16/11, publicado 17/11, semana 47, quatro índices por produto/horizonte no SE.",
-    "regulacao": "ANP CP25/2026 prazo 02/12 confirmado em comunicado oficial de 23/11; REN ANEEL 1.176/2026 publicada 23/11; Despacho ANEEL 4.370/2026 sobre ION; ação ABEEólica perante STF contra rateio de armazenamento. Complemento 24/11: CP042, agendas CCEE sobre PLD e garantias, serviços ancilares ONS/CCEE e Comunicado CPL 4 (Leilão 5). CP040 vigente acompanhada.",
+    "regulacao": "ANP CP25/2026 prazo 02/12 confirmado em comunicado oficial de 23/11; REN ANEEL 1.176/2026 publicada 23/11; Despacho ANEEL 4.370/2026 sobre ION; ação ABEEólica perante STF contra rateio de armazenamento. Complemento 24/11: CP042, CP044, agendas CCEE sobre PLD e garantias e Comunicado CPL 4 (Leilão 5). CP040 vigente acompanhada.",
     "aneel": "REN 1.176/2026 (ECR) e Despacho 4.370/2026 (LRCAP) publicados em 23/11; distinguir ECR de ERCAP da CP037.",
     "processos": "Preservados os registros CTJL atualizados, a manifestação TCU 005.914/2026-4 com prazo de 11/12 e acompanhamento TCU 008.289/2025-5.",
     "ultima_edicao": {
       "edicao": "2026-11-24",
       "corte": "2026-11-24T08:30:00-03:00",
-      "cobertura": "Principais notícias 18–24/11, ANP CP25/2026, ABEEólica/STF, REN 1.176/2026, LRCAP 2026 e sete itens no Monitor CORE. PLD CCEE 24/11; CMO ONS até 27/11; EAR 22/11; CVU revisão 3, semana 21–27/11; Henry Hub e Brent spot EIA 17/11, Newcastle ICE Dec26 último negócio de 23/11, US$150,50/t. Complemento: CP042, agendas de PLD, garantias financeiras e serviços ancilares; cronograma do Leilão 5 conforme Comunicado 4; CP040 mantida em acompanhamento.",
+      "cobertura": "Principais notícias 18–24/11, ANP CP25/2026, ABEEólica/STF, REN 1.176/2026, LRCAP 2026 e sete itens no Monitor CORE. PLD CCEE 24/11; CMO ONS até 27/11; EAR 22/11; CVU revisão 3, semana 21–27/11; Henry Hub e Brent spot EIA 17/11, Newcastle ICE Dec26 último negócio de 23/11, US$150,50/t. Complemento: CP042, CP044, agendas de PLD e garantias financeiras; cronograma do Leilão 5 conforme Comunicado 4; CP040 mantida em acompanhamento.",
       "lacunas": [
         "Aguardam-se as deliberações definitivas da CP 037/2026 e dos recursos pendentes do LRCAP; não confundir ajuizamento com suspensão judicial concedida.",
         "Newcastle Dec26: último negócio de 23/11 validado; não foi identificada cotação posterior nem preço de ajuste.",
         "Henry Hub e Brent spot: EIA indica próxima divulgação em 25/11; última observação disponível 17/11.",
-        "Workshop de serviços ancilares de 24/11: resultados ainda não confirmados; elegibilidade técnica individual deve ser avaliada.",
         "Despacho 4.370: inteiro teor conferido em espelho do DOU; endereço oficial retornou 502 na revisão.",
         "Atos do Dia: última execução automática registrada inconclusiva em 05/11; registros editoriais posteriores existem, mas não comprovam cobertura integral."
       ],
       "noticias_novas_materiais": true,
       "revisao_mercado_em": "2026-11-24T09:07:00-03:00",
-      "revisao_regulatoria_em": "2026-11-24T09:18:19-03:00",
+      "revisao_regulatoria_em": "2026-11-24T13:04:31.862Z",
       "prioridades_editoriais": {
         "criticas": [
           "ERCAP/STF",
@@ -3486,7 +3502,8 @@
           "Formação do PLD",
           "Liquidação e garantias financeiras",
           "Gas Release",
-          "CP ANEEL 40/2026"
+          "CP ANEEL 40/2026",
+          "CP ANEEL 44/2026"
         ]
       }
     }
