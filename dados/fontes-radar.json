@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "atualizado_em": "2026-11-24T09:07:00-03:00",
+  "atualizado_em": "2026-11-24T09:18:19-03:00",
   "repositorio": "COREDIAMANTE/radar-core-diamante",
   "descricao": "Cadastro canônico de fontes, metodologia e histórico de evidências do Radar CORE. Cadastro não equivale a validação dos valores publicados.",
   "fontes": [
@@ -306,6 +306,26 @@
       "acesso": "público",
       "metodo": "Usar notícia e documentos específicos do certame; registrar modalidade, produto, período, volume, preço/deságio e vencedores quando publicados. Resultado agregado não comprova participação individual.",
       "validacao": "Resultado oficial dos Leilões A-1, A-2 e A-3 de 13/11/2026 localizado e validado em notícia específica da CCEE."
+    },
+    {
+      "id": "F032",
+      "assunto": "Notícias e agendas técnicas sobre comercialização, liquidação, garantias e PLD",
+      "orgao": "CCEE",
+      "url": "https://www.ccee.org.br/web/guest/noticias",
+      "tipo": "primaria",
+      "acesso": "público",
+      "metodo": "Registrar a notícia específica, data de divulgação e data da agenda. Separar estudo, consulta, agenda e decisão vigente.",
+      "validacao": "Notícias oficiais de 18/11 e 23/11 sobre garantias financeiras e encontro especial do PLD verificadas em 24/11."
+    },
+    {
+      "id": "F033",
+      "assunto": "Serviços ancilares e sandbox de suporte de potência reativa",
+      "orgao": "ONS",
+      "url": "https://www.ons.org.br/paginas/energia-amanha/sandbox-controle-de-tensao",
+      "tipo": "primaria",
+      "acesso": "público",
+      "metodo": "Verificar minuta, cronograma, requisitos técnicos e região de efetividade; não inferir elegibilidade de ativos.",
+      "validacao": "Documentação do segundo mecanismo de 2026 e consulta de 05 a 18/11 conferidas em 24/11."
     }
   ],
   "indicadores": [
@@ -3128,6 +3148,125 @@
       "metodo": "Tabela diária EIA; Release Date 18/11; próxima publicação 25/11.",
       "edicao": "2026-11-24",
       "fonte_url_na_coleta": "https://www.eia.gov/dnav/pet/hist/RBRTED.htm"
+    },
+    {
+      "id": "EVID-20261124-CP042",
+      "fonte_id": "F004",
+      "url_documento": "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026/consulta-publica-discutira-tratamento-contabil-ao-excesso-de-mmgd-contabilizado-na-carga-das-distribuidoras",
+      "titulo": "CP ANEEL 042/2026: excedentes de MMGD",
+      "data_publicacao": "2026-11-17",
+      "data_referencia_inicio": "2026-11-19",
+      "data_referencia_fim": "2027-01-04",
+      "coletado_em": "2026-11-24T09:18:19-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "Consulta aberta; tratamento provisório aprovado para contabilização de janeiro/2027, com efeitos no cálculo de perdas da Rede Básica. Proposta ampla ainda em discussão.",
+      "status_validacao": "validado_fonte_primaria",
+      "metodo": "Notícia oficial ANEEL; separar proposta abrangente de tratamento provisório aprovado.",
+      "edicao": "2026-11-24",
+      "substitui_id": null,
+      "fonte_url_na_coleta": "https://www.gov.br/aneel/pt-br/acesso-a-informacao/participacao-social/consultas-publicas"
+    },
+    {
+      "id": "EVID-20261124-GARANTIAS",
+      "fonte_id": "F032",
+      "url_documento": "https://www.ccee.org.br/-/ccee-abre-inscricoes-para-webinar-sobre-a-evolucao-dos-modelos-de-liquidacao-financeira-e-operacionalizacao-de-garantias-financeiras",
+      "titulo": "CCEE: estudos de liquidação e garantias",
+      "data_publicacao": "2026-11-18",
+      "data_referencia_inicio": "2026-11-27",
+      "data_referencia_fim": "2026-11-27",
+      "coletado_em": "2026-11-24T09:18:19-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "Webinar 27/11 10h–12h; inscrições até 26/11. Estudos conceituais sobre liquidação e garantias, não norma.",
+      "status_validacao": "agenda_validada",
+      "metodo": "Notícia específica da CCEE; agenda futura.",
+      "edicao": "2026-11-24",
+      "substitui_id": null,
+      "fonte_url_na_coleta": "https://www.ccee.org.br/web/guest/noticias"
+    },
+    {
+      "id": "EVID-20261124-PLD-AGENDA",
+      "fonte_id": "F032",
+      "url_documento": "https://www.ccee.org.br/web/guest/-/participe-da-edicao-especial-do-encontro-do-pld-na-segunda-feira-30-",
+      "titulo": "CCEE: edição especial do Encontro do PLD",
+      "data_publicacao": "2026-11-23",
+      "data_referencia_inicio": "2026-11-30",
+      "data_referencia_fim": "2026-11-30",
+      "coletado_em": "2026-11-24T09:18:19-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "Encontro 30/11 15h–18h; aprimoramentos PMO/PLD, sinal econômico, PLD ex-post, dupla contabilização e armazenamento.",
+      "status_validacao": "agenda_validada",
+      "metodo": "Notícia específica CCEE; agenda futura, não resultado.",
+      "edicao": "2026-11-24",
+      "substitui_id": null,
+      "fonte_url_na_coleta": "https://www.ccee.org.br/web/guest/noticias"
+    },
+    {
+      "id": "EVID-20261124-ANCILARES",
+      "fonte_id": "F033",
+      "url_documento": "https://www.ons.org.br/paginas/energia-amanha/sandbox-controle-de-tensao",
+      "titulo": "ONS: segundo mecanismo competitivo de suporte de reativos",
+      "data_publicacao": null,
+      "data_referencia_inicio": "2026-11-05",
+      "data_referencia_fim": "2026-11-18",
+      "coletado_em": "2026-11-24T09:18:19-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "Consulta externa encerrada; requisitos de efetividade local, agentes sem CPSA assinado e condições do edital. Elegibilidade das usinas não apurada.",
+      "status_validacao": "validado_fonte_primaria",
+      "metodo": "Página oficial ONS com documentação e período da consulta.",
+      "edicao": "2026-11-24",
+      "substitui_id": null,
+      "fonte_url_na_coleta": "https://www.ons.org.br/paginas/energia-amanha/sandbox-controle-de-tensao"
+    },
+    {
+      "id": "EVID-20261124-ANCILARES-AGENDA",
+      "fonte_id": "F032",
+      "url_documento": "https://www.ccee.org.br/-/ccee-e-ons-promovem-workshop-sobre-segundo-mecanismo-competitivo-do-sandbox-de-servicos-ancilares",
+      "titulo": "CCEE: workshop de serviços ancilares",
+      "data_publicacao": "2026-10-28",
+      "data_referencia_inicio": "2026-11-24",
+      "data_referencia_fim": "2026-11-24",
+      "coletado_em": "2026-11-24T09:18:19-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "Workshop de apresentação dos resultados previsto para 24/11; realização e resultados não confirmados no corte.",
+      "status_validacao": "agenda_validada",
+      "metodo": "Notícia oficial de 28/10; data do segundo workshop, sem inferir horário do primeiro.",
+      "edicao": "2026-11-24",
+      "substitui_id": null,
+      "fonte_url_na_coleta": "https://www.ccee.org.br/web/guest/noticias"
+    },
+    {
+      "id": "EVID-20261124-CP040-AGENDA",
+      "fonte_id": "F004",
+      "url_documento": "https://www.gov.br/aneel/pt-br/assuntos/noticias/2026/mercado-livre-de-energia-consulta-publica-propoe-regulamentacao-do-fim-do-desconto-nas-tarifas-de-uso-dos-sistemas",
+      "titulo": "CP ANEEL 040/2026: desconto TUSD/TUST na parcela consumo",
+      "data_publicacao": "2026-10-27",
+      "data_referencia_inicio": "2026-10-29",
+      "data_referencia_fim": "2026-12-14",
+      "coletado_em": "2026-11-24T09:18:19-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "Consulta vigente até 14/12, impacto direto sobre consumidores que migram ou ampliam capacidade, repercussão indireta sobre mercado livre; não trata do desconto de geração.",
+      "status_validacao": "validado_fonte_primaria",
+      "metodo": "Revalidação de agenda já existente; não republicada como notícia nova.",
+      "edicao": "2026-11-24",
+      "substitui_id": null,
+      "fonte_url_na_coleta": "https://www.gov.br/aneel/pt-br/acesso-a-informacao/participacao-social/consultas-publicas"
+    },
+    {
+      "id": "EVID-20261124-LRCAP-ARMAZ-COM4",
+      "fonte_id": "F031",
+      "url_documento": "https://www.ccee.org.br/documents/80415/37684385/SEI_0512342_Comunicado_Relevante_4.pdf/688f748c-5aba-ea22-ccc2-000dbbbfb709",
+      "titulo": "CPL ANEEL: Comunicado Relevante 4, Leilão 5/2026",
+      "data_publicacao": "2026-11-19",
+      "data_referencia_inicio": "2026-11-23",
+      "data_referencia_fim": "2026-11-23",
+      "coletado_em": "2026-11-24T09:18:19-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "Prazo de inscrição online prorrogado até 23/11 às 12h; demais datas do cronograma mantidas no comunicado. SEI 0512342.",
+      "status_validacao": "validado_fonte_primaria",
+      "metodo": "Conferência do PDF oficial assinado em 19/11 e hospedado pela CCEE; não implica suspensão ou mudança do Leilão 6.",
+      "edicao": "2026-11-24",
+      "substitui_id": null,
+      "fonte_url_na_coleta": "https://www.ccee.org.br/mercado/leilao-mercado"
     }
   ],
   "campos_obrigatorios_evidencia": [
@@ -3313,20 +3452,22 @@
     "data": "2026-11-24",
     "mercado": "CSV oficiais coletados 24/11: PLD 24/11 R$141,29 e média 17–23/11 R$124,36; EAR 22/11; CMO semana 27/11; sete CVUs semana 21–27/11 revisão 3; EIA Henry Hub e Brent de 17/11; ICE Newcastle Dec26 último negócio 23/11, US$150,50/t.",
     "curva_forward": "F022 revalidado: base 16/11, publicado 17/11, semana 47, quatro índices por produto/horizonte no SE.",
-    "regulacao": "ANP CP25/2026 prazo 02/12 confirmado em comunicado oficial de 23/11; REN ANEEL 1.176/2026 publicada 23/11; Despacho ANEEL 4.370/2026 sobre ION; ação ABEEólica perante STF contra rateio de armazenamento.",
+    "regulacao": "ANP CP25/2026 prazo 02/12 confirmado em comunicado oficial de 23/11; REN ANEEL 1.176/2026 publicada 23/11; Despacho ANEEL 4.370/2026 sobre ION; ação ABEEólica perante STF contra rateio de armazenamento. Complemento 24/11: CP042, agendas CCEE sobre PLD e garantias, serviços ancilares ONS/CCEE e Comunicado CPL 4 (Leilão 5). CP040 vigente acompanhada.",
     "aneel": "REN 1.176/2026 (ECR) e Despacho 4.370/2026 (LRCAP) publicados em 23/11; distinguir ECR de ERCAP da CP037.",
     "processos": "Preservados os registros CTJL atualizados, a manifestação TCU 005.914/2026-4 com prazo de 11/12 e acompanhamento TCU 008.289/2025-5.",
     "ultima_edicao": {
       "edicao": "2026-11-24",
       "corte": "2026-11-24T08:30:00-03:00",
-      "cobertura": "Principais notícias 18–24/11, ANP CP25/2026, ABEEólica/STF, REN 1.176/2026, LRCAP 2026 e seis itens no Monitor CORE. PLD CCEE 24/11; CMO ONS até 27/11; EAR 22/11; CVU revisão 3, semana 21–27/11; Henry Hub e Brent spot EIA 17/11, Newcastle ICE Dec26 último negócio de 23/11, US$150,50/t.",
+      "cobertura": "Principais notícias 18–24/11, ANP CP25/2026, ABEEólica/STF, REN 1.176/2026, LRCAP 2026 e sete itens no Monitor CORE. PLD CCEE 24/11; CMO ONS até 27/11; EAR 22/11; CVU revisão 3, semana 21–27/11; Henry Hub e Brent spot EIA 17/11, Newcastle ICE Dec26 último negócio de 23/11, US$150,50/t. Complemento: CP042, agendas de PLD, garantias financeiras e serviços ancilares; cronograma do Leilão 5 conforme Comunicado 4; CP040 mantida em acompanhamento.",
       "lacunas": [
         "Aguardam-se as deliberações definitivas da CP 037/2026 e dos recursos pendentes do LRCAP; não confundir ajuizamento com suspensão judicial concedida.",
         "Newcastle Dec26: último negócio de 23/11 validado; não foi identificada cotação posterior nem preço de ajuste.",
-        "Henry Hub e Brent spot: EIA indica próxima divulgação em 25/11; última observação disponível 17/11."
+        "Henry Hub e Brent spot: EIA indica próxima divulgação em 25/11; última observação disponível 17/11.",
+        "Workshop de serviços ancilares de 24/11: resultados ainda não confirmados; elegibilidade técnica individual deve ser avaliada."
       ],
       "noticias_novas_materiais": true,
-      "revisao_mercado_em": "2026-11-24T09:07:00-03:00"
+      "revisao_mercado_em": "2026-11-24T09:07:00-03:00",
+      "revisao_regulatoria_em": "2026-11-24T09:18:19-03:00"
     }
   },
   "monitoramento_atos_aneel": {
