@@ -112,10 +112,9 @@ details.tech summary{color:#fff}.tech-inner{gap:14px}
 @media(max-width:940px){.layout{grid-template-columns:minmax(0,1fr)!important;max-width:920px!important}}
 @media(max-width:700px){.layout{max-width:100%!important;padding:18px 15px 44px!important}}
 
-/* Atenção extrema: marcação editorial explícita, reservada a notícias críticas. */
-.highlight.core-critical,.decision.core-critical{position:relative}
-.highlight.core-critical,.decision.core-critical{padding-right:49px!important}
-.core-critical>.core-critical-icon{
+/* Prioridades editoriais: vermelho = atenção extrema; amarelo = relevante. */
+.highlight.core-critical,.decision.core-critical,.highlight.core-relevant,.decision.core-relevant{position:relative;padding-right:49px!important}
+.core-critical>.core-critical-icon,.core-relevant>.core-relevant-icon{
  position:absolute;top:12px;right:12px;z-index:2;
  display:inline-grid;place-items:center;width:23px;height:23px;
  box-sizing:border-box;border:1px solid rgba(255,199,199,.85);border-radius:50%;
@@ -123,3 +122,5 @@ details.tech summary{color:#fff}.tech-inner{gap:14px}
  box-shadow:0 2px 7px rgba(61,8,16,.24);cursor:help;
 }
 @media print{.core-critical>.core-critical-icon{background:#fff!important;color:#a52531!important;border:1px solid #a52531;box-shadow:none}}
+.core-relevant>.core-relevant-icon{background:#f2c44c;color:#382900;border-color:#ffe49a;box-shadow:0 2px 7px rgba(64,44,0,.24)}
+@media print{.core-relevant>.core-relevant-icon{background:#fff!important;color:#805d00!important;border:1px solid #805d00;box-shadow:none}}
