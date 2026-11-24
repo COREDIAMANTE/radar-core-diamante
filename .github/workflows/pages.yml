@@ -38,6 +38,8 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+      - name: Aguardar indexação do artefato no GitHub Pages
+        run: sleep 20
       - name: Publicar
         id: deployment
         uses: actions/deploy-pages@v4
