@@ -18,8 +18,26 @@ class Scan(HTMLParser):
         self.ids = set()
         self.links = []
         self.open_tags = []
+        self.priority_cards = 0
+        self.priority_icons = 0
+        self.priority_kinds = {"core-critical": 0, "core-relevant": 0}
+        self.priority_icon_kinds = {"core-critical": 0, "core-relevant": 0}
     def handle_starttag(self, tag, attrs):
         d = dict(attrs)
+        classes = set(d.get("class", "").split())
+        priorities = classes & {"core-critical", "core-relevant"}
+        if priorities:
+            self.priority_cards += 1
+            for kind in priorities:
+                self.priority_kinds[kind] += 1
+            if len(priorities) != 1:
+                ERRORS.append("Card com prioridades conflitantes")
+        for kind, label in (("core-critical", "Atenção extrema"), ("core-relevant", "Relevante")):
+            if kind + "-icon" in classes:
+                self.priority_icons += 1
+                self.priority_icon_kinds[kind] += 1
+                if d.get("aria-label") != label or d.get("title") != label:
+                    ERRORS.append("Ícone de prioridade sem identificação acessível")
         if d.get("id"):
             if d["id"] in self.ids:
                 ERRORS.append(f"ID duplicado: {d['id']}")
@@ -44,6 +62,8 @@ for page in PAGES:
         parser.close()
     except Exception as exc:
         ERRORS.append(f"{page.name}: HTML inválido: {exc}")
+    if parser.priority_kinds != parser.priority_icon_kinds:
+        ERRORS.append(f"{page.name}: quantidade/tipo de ícones não coincide com cards de prioridade")
     if "<html" not in html.lower() or "</html>" not in html.lower():
         ERRORS.append(f"{page.name}: estrutura HTML incompleta")
     for tag, raw in parser.links:

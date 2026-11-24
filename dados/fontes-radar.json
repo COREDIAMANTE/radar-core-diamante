@@ -441,7 +441,8 @@
     "Fontes novas precisam de cadastro, classificação e vínculo à evidência antes de publicação.",
     "O cadastro fontes contém páginas fixas e bases recorrentes, nunca notícias de uma única edição. Links específicos devem ser guardados em historico_evidencias; referencias_edicoes preserva o cadastro inicial legado.",
     "Atenção extrema: reservar a classe core-critical e o span core-critical-icon (aria-label e title \"Atenção extrema\", conteúdo !) a notícias de risco regulatório, financeiro ou operacional material que demandem atenção prioritária do CORE. Não marcar toda notícia importante, agendas técnicas rotineiras ou impacto meramente indireto. Reavaliar a cada edição; não repetir o alerta no Monitor CORE quando o mesmo tema já estiver sinalizado na notícia.",
-    "Relevante: usar a classe core-relevant e o span core-relevant-icon (aria-label e title \"Relevante\", conteúdo !) em notícias selecionadas com impacto potencial material, inclusive indireto, ou necessidade de acompanhamento pelo CORE, sem urgência crítica. Vermelho permanece exclusivo de atenção extrema. Nunca usar os dois ícones no mesmo card. Para consultas públicas destacadas, identificar órgão e número/ano explicitamente no título principal. Reavaliar prioridades a cada edição."
+    "Relevante: usar a classe core-relevant e o span core-relevant-icon (aria-label e title \"Relevante\", conteúdo !) em notícias selecionadas com impacto potencial material, inclusive indireto, ou necessidade de acompanhamento pelo CORE, sem urgência crítica. Vermelho permanece exclusivo de atenção extrema. Nunca usar os dois ícones no mesmo card. Para consultas públicas destacadas, identificar órgão e número/ano explicitamente no título principal. Reavaliar prioridades a cada edição.",
+    "Revisão editorial: aplicar os ícones também a temas estratégicos e processos com obrigação ou prazo material, quando não duplicarem alerta de notícia. Sinalização explícita no HTML, não por palavras-chave. Preservar a legenda compacta. Notícias e monitor não devem duplicar a mesma sinalização."
   ],
   "historico_evidencias": [
     {
@@ -3089,19 +3090,19 @@
     },
     {
       "id": "EVID-20261124-ION",
-      "fonte_id": "F015",
-      "url_documento": "https://megawhat.uol.com.br/regulacao/epp-reverte-inabilitacao-de-17-gw-no-lrcap-mas-tera-que-comprovar-recursos/",
+      "fonte_id": "F023",
+      "url_documento": "https://www.in.gov.br/web/dou/-/despacho-n-4.370-de-17-de-novembro-de-2026-745562917",
       "titulo": "Despacho 4.370/2026 - recursos ION no LRCAP",
       "data_publicacao": "2026-11-23",
       "data_referencia_inicio": "2026-11-18",
       "data_referencia_fim": "2026-11-24",
       "coletado_em": "2026-11-24T08:30:00-03:00",
       "unidade": null,
-      "valor_ou_resumo": "Publicado DOU em 23/11; seis consórcios ION têm recurso provido condicionadamente.",
-      "status_validacao": "fonte_secundaria_documento_identificado",
-      "metodo": "Conferência documental da publicação e data de referência",
+      "valor_ou_resumo": "Despacho de 17/11 publicado em 23/11: recurso provido, homologação parcial e adjudicação deliberadas para seis consórcios; manutenção da habilitação condicionada à comprovação financeira em 15 dias corridos da publicação do aviso.",
+      "status_validacao": "inteiro_teor_em_espelho_dou_oficial_indisponivel",
+      "metodo": "Conferido inteiro teor reproduzido pelo Jurídico em Pauta, edição 219, seção 1, p. 138, com link oficial; DOU retornou HTTP 502 na revisão. Cobertura MegaWhat complementar.",
       "edicao": "2026-11-24",
-      "fonte_url_na_coleta": "https://megawhat.uol.com.br/regulacao/epp-reverte-inabilitacao-de-17-gw-no-lrcap-mas-tera-que-comprovar-recursos/"
+      "fonte_url_na_coleta": "https://juridicoempauta.com.br/materia/1374906-despacho-n-4-370-de-17-de-novembro-de-2026-diretoria-colegiada-agencia-nacional-de"
     },
     {
       "id": "EVID-20261124-NEWCASTLE-ICE",
@@ -3465,11 +3466,29 @@
         "Aguardam-se as deliberações definitivas da CP 037/2026 e dos recursos pendentes do LRCAP; não confundir ajuizamento com suspensão judicial concedida.",
         "Newcastle Dec26: último negócio de 23/11 validado; não foi identificada cotação posterior nem preço de ajuste.",
         "Henry Hub e Brent spot: EIA indica próxima divulgação em 25/11; última observação disponível 17/11.",
-        "Workshop de serviços ancilares de 24/11: resultados ainda não confirmados; elegibilidade técnica individual deve ser avaliada."
+        "Workshop de serviços ancilares de 24/11: resultados ainda não confirmados; elegibilidade técnica individual deve ser avaliada.",
+        "Despacho 4.370: inteiro teor conferido em espelho do DOU; endereço oficial retornou 502 na revisão.",
+        "Atos do Dia: última execução automática registrada inconclusiva em 05/11; registros editoriais posteriores existem, mas não comprovam cobertura integral."
       ],
       "noticias_novas_materiais": true,
       "revisao_mercado_em": "2026-11-24T09:07:00-03:00",
-      "revisao_regulatoria_em": "2026-11-24T09:18:19-03:00"
+      "revisao_regulatoria_em": "2026-11-24T09:18:19-03:00",
+      "prioridades_editoriais": {
+        "criticas": [
+          "ERCAP/STF",
+          "REN 1.176/2026",
+          "TCU 005.914/2026-4: prazo informado 11/12"
+        ],
+        "relevantes": [
+          "CP ANP 25/2026",
+          "Despacho ANEEL 4.370/2026",
+          "CP ANEEL 42/2026",
+          "Formação do PLD",
+          "Liquidação e garantias financeiras",
+          "Gas Release",
+          "CP ANEEL 40/2026"
+        ]
+      }
     }
   },
   "monitoramento_atos_aneel": {

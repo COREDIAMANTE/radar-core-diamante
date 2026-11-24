@@ -44,7 +44,7 @@ label{color:#e5a767}
 .item>.status{color:#e5a767}
 </style></head><body>
 <header><div class="top"><div><small>DIAMANTE GERAÇÃO DE ENERGIA · CORE</small><h1>Atos do Dia</h1><p>Publicações oficiais relacionadas ao Grupo Diamante e seus ativos</p></div><a href="./index.html">Voltar ao Radar CORE</a></div></header>
-<main><div class="panel"><div class="controls"><div><label for="dia">Data da publicação</label><select id="dia" aria-label="Data da coleta"><option>Carregando...</option></select></div><div><strong>Ativos monitorados</strong><div>Diamante · CTJL · Pecém I/II · Itaqui</div></div></div><div id="estado" class="status" role="status">Consultando o histórico...</div></div><div id="resultados" aria-live="polite"></div><div class="foot">Publicações organizadas pela data oficial. Consulte a íntegra na fonte indicada. Referências em sites de reprodução são identificadas como fontes secundárias.</div></main>
+<main><div class="panel"><div class="controls"><div><label for="dia">Data da publicação</label><select id="dia" aria-label="Data da coleta"><option>Carregando...</option></select></div><div><strong>Ativos monitorados</strong><div>Diamante · CTJL · Pecém I/II · Itaqui</div></div></div><div id="estado" class="status" role="status">Consultando o histórico...</div><div id="cobertura" class="status warn" hidden></div></div><div id="resultados" aria-live="polite"></div><div class="foot">Publicações organizadas pela data oficial. Consulte a íntegra na fonte indicada. Referências em sites de reprodução são identificadas como fontes secundárias.</div></main>
 <script>
 const select=document.getElementById('dia'),estado=document.getElementById('estado'),area=document.getElementById('resultados');
 const node=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e};
@@ -62,6 +62,14 @@ function render(day){
  }
 }
 fetch('./dados/atos-aneel.json?atualizacao='+Math.floor(Date.now()/300000),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(data=>{
+ const cobertura=document.getElementById('cobertura');
+ const ultima=data.ultima_execucao?new Date(data.ultima_execucao):null;
+ const quando=ultima&&!Number.isNaN(ultima.getTime())?ultima.toLocaleString('pt-BR',{timeZone:'America/Sao_Paulo'}):'não registrada';
+ const st=String(data.ultimo_status||'não informado');
+ if(!['sucesso','validado','coleta_validada'].includes(st)||!ultima||Date.now()-ultima.getTime()>48*3600*1000){
+  cobertura.hidden=false;
+  cobertura.textContent='Cobertura automática: '+st+' · Última execução: '+quando+'. Os registros editoriais podem ser mais recentes. A ausência de um ato nesta lista não comprova ausência de publicação.';
+ }
  window.dias=data.dias||{};const dates=Object.keys(window.dias).filter(key => window.dias[key].atos?.length).sort().reverse();select.replaceChildren();
  if(!dates.length){estado.textContent='Ainda não há coletas registradas.';return}
  for(const d of dates){const opt=node('option','',d.split('-').reverse().join('/'));opt.value=d;select.append(opt)}
