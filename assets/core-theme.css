@@ -112,7 +112,7 @@ details.tech summary{color:#fff}.tech-inner{gap:14px}
 @media(max-width:940px){.layout{grid-template-columns:minmax(0,1fr)!important;max-width:920px!important}}
 @media(max-width:700px){.layout{max-width:100%!important;padding:18px 15px 44px!important}}
 
-/* Prioridades editoriais: vermelho = atenção extrema; amarelo = relevante. */
+/* Prioridades editoriais: vermelho = prioridade alta; amarelo = relevante. */
 :is(.highlight,.decision,.monitor-item,.process).core-critical{position:relative;padding-right:49px!important}
 :is(.highlight,.decision,.monitor-item,.process).core-relevant{position:relative;padding-right:46px!important}
 .core-critical>.core-critical-icon{

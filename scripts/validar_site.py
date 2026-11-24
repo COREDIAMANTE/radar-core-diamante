@@ -32,7 +32,7 @@ class Scan(HTMLParser):
                 self.priority_kinds[kind] += 1
             if len(priorities) != 1:
                 ERRORS.append("Card com prioridades conflitantes")
-        for kind, label in (("core-critical", "Atenção extrema"), ("core-relevant", "Relevante")):
+        for kind, label in (("core-critical", "Prioridade alta"), ("core-relevant", "Relevante")):
             if kind + "-icon" in classes:
                 self.priority_icons += 1
                 self.priority_icon_kinds[kind] += 1
