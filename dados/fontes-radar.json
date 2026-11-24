@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "atualizado_em": "2026-11-17T13:00:00-03:00",
+  "atualizado_em": "2026-11-24T08:30:00-03:00",
   "repositorio": "COREDIAMANTE/radar-core-diamante",
   "descricao": "Cadastro canônico de fontes, metodologia e histórico de evidências do Radar CORE. Cadastro não equivale a validação dos valores publicados.",
   "fontes": [
@@ -11,7 +11,7 @@
       "url": "https://dados.ons.org.br/dataset/ear-diario-por-subsistema",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "CSV EAR_DIARIO_SUBSISTEMA_2026 extraído em 17/11/2026; última observação disponível 16/11/2026."
+      "validacao": "Arquivo oficial ONS EAR_DIARIO_SUBSISTEMA_2026.csv consultado em 24/11/2026; última observação 22/11: SE 55,42%, S 81,91%, NE 59,04%, N 51,90%."
     },
     {
       "id": "F002",
@@ -29,7 +29,7 @@
       "url": "https://www.gov.br/mme/pt-br/servicos/consultas-publicas",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "Portal oficial revisado em 17/11/2026: CP 240 encerra em 17/11, CP 239 em 30/11; CPs 241 e 242 sem impacto material direto identificado para esta edição.",
+      "validacao": "MME CP 239/2026 com encerramento indicado em 30/11; acompanham-se contribuições e desdobramentos.",
       "acesso": "público; endpoint JSON sem login",
       "metodo": "POST no endpoint_publico com corpo {} e paginação. Ler id, título, dtPublicadoDou, dtInicio, dtFim, status, responsável SEI e arquivos. Confirmar notícia e documentos específicos antes de publicar.",
       "endpoint_publico": "https://consultas-publicas.mme.gov.br/consulta-publica/v1/public/listagem-sem-filtros?pageNumber=0&pageSize=20&sortBy=id&sortDirection=desc"
@@ -41,7 +41,7 @@
       "url": "https://www.gov.br/aneel/pt-br/acesso-a-informacao/participacao-social/consultas-publicas",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "Consultas ANEEL revisadas em 17/11/2026; CP 036 encerra em 22/11 e CP 040 em 14/12, mantidas apenas em agenda/monitoramento.",
+      "validacao": "CP 036/2026 com prazo até 22/11 encerrado; CP 037/2026 (ERCAP) aguarda relatório de contribuições e deliberação definitiva.",
       "metodo": "Aplicar monitoramento_atos_aneel: buscar também avisos de prorrogação e retificação de CPs por assunto, mesmo sem citar ativos nominalmente; registrar prazo e fonte oficial."
     },
     {
@@ -51,7 +51,7 @@
       "url": "https://www.gov.br/anp/pt-br/assuntos/consultas-e-audiencias-publicas",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "Decisão oficial de 12/11 reverteu o sobrestamento da revisão tarifária do transporte; Gas Release confirmado para 19/11."
+      "validacao": "ANP CP 25/2026 para receitas e tarifas de transporte de gás natural 2026–2030; notícia oficial em 23/11 retifica prazo final para 02/12."
     },
     {
       "id": "F006",
@@ -60,7 +60,7 @@
       "url": "https://www.gov.br/anp/pt-br/acesso-a-informacao/agenda-eventos",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "Agenda e notícias ANP revisadas em 17/11/2026; reunião extraordinária da revisão tarifária indicada para 18/11 às 10h e Gas Release em 19/11."
+      "validacao": "ANP: CP 25/2026 prazo 02/12; audiência pública Gas Release 16/2026 realizada em 19/11, sem norma final aprovada."
     },
     {
       "id": "F007",
@@ -69,7 +69,7 @@
       "url": "https://dados.ons.org.br/dataset/cvu-usitermica",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "CSV CVU_USINA_TERMICA_2026 extraído em 17/11/2026; semana 14–20/11, Revisão 2; sete códigos conferidos individualmente."
+      "validacao": "Arquivo oficial ONS CVU_USINA_TERMICA_2026.csv consultado em 24/11; semana 21–27/11, revisão 3; sete códigos monitorados conferidos."
     },
     {
       "id": "F008",
@@ -78,7 +78,7 @@
       "url": "https://dadosabertos.ccee.org.br/dataset/pld_media_diaria",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "CSV PLD média diária extraído em 17/11/2026; diário 17/11 e período completo 10–16/11 agregados por média aritmética simples."
+      "validacao": "Arquivo CCEE pld_media_diaria_2026.csv consultado em 24/11: PLD diário 24/11 R$141,29/MWh nos quatro submercados e média aritmética 17–23/11 R$124,36/MWh."
     },
     {
       "id": "F009",
@@ -96,7 +96,7 @@
       "url": "https://www.ons.org.br/paginas/imprensa/sala-de-imprensa",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "CMO semanal revalidado no CSV oficial em 17/11/2026; referência 20/11 por subsistema."
+      "validacao": "Arquivo oficial ONS CMO_SEMANAL_2026.csv consultado 24/11; semana 27/11: SE 9,20, S 5,02, NE 9,20, N 289,25 R$/MWh."
     },
     {
       "id": "F011",
@@ -114,7 +114,7 @@
       "url": "https://www.eia.gov/dnav/ng/hist/rngwhhdd.htm",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "Tabela EIA revalidada em 17/11/2026; última observação publicada no corte: Henry Hub spot de 11/11, divulgação 12/11."
+      "validacao": "EIA Henry Hub spot 17/11, publicado em 18/11: US$3,10/MMBtu."
     },
     {
       "id": "F013",
@@ -141,7 +141,7 @@
       "url": "https://www.gov.br/aneel/pt-br/assuntos/noticias/",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "Notícias e pauta ANEEL revisadas em 17/11; 23ª RPO contém dois recursos do LRCAP, sem resultado no CSV oficial gerado em 13/11."
+      "validacao": "Despacho ANEEL 4.370/2026, publicado em 23/11: recurso de seis consórcios ION acolhido condicionalmente; recurso TermoG permanece pendente após pedido de vista na cobertura consultada."
     },
     {
       "id": "F016",
@@ -255,7 +255,7 @@
       "tipo": "primaria",
       "acesso": "público; tabela de mercado com atraso",
       "metodo": "Registrar contrato/vencimento, tipo de campo (last, settlement ou bid/offer), data/hora e volume. Não tratar último negócio como settlement nem como preço físico entregue.",
-      "validacao": "Página oficial ICE reconsultada em 17/11/2026; nova tabela não ficou extraível. Últimos valores por vencimento de 04/11 preservados com pendência."
+      "validacao": "ICE Newcastle dez/26: última negociação anteriormente conferida em 17/11 US$146,00/t; nova cotação em 24/11 não validada."
     },
     {
       "id": "F027",
@@ -285,7 +285,7 @@
       "tipo": "primaria",
       "acesso": "público; CSV anual",
       "metodo": "Extrair CMO_SEMANAL_2026.csv; usar val_cmomediasemanal por subsistema e referência din_instante. Não confundir com PLD ou CMO por patamar.",
-      "validacao": "CSV oficial extraído em 17/11/2026; semana com referência 20/11 confirmada para SE, S, NE e N."
+      "validacao": "CMO oficial ONS: referência 27/11, SE/CO e NE 9,20, S 5,02, N 289,25 R$/MWh."
     },
     {
       "id": "F030",
@@ -295,7 +295,7 @@
       "tipo": "primaria",
       "acesso": "público; tabela histórica diária",
       "metodo": "Registrar data da observação e data de divulgação; usar como Brent spot Europe. Não confundir com contrato futuro, vencimento ou cotação intradiária.",
-      "validacao": "Tabela oficial revalidada em 17/11/2026; última observação publicada no corte: US$ 92,14/bbl em 11/11, divulgação 12/11."
+      "validacao": "EIA Brent spot Europe 17/11, publicado em 18/11: US$92,94/bbl."
     },
     {
       "id": "F031",
@@ -2965,6 +2965,118 @@
       "edicao": "2026-11-17",
       "substitui_id": "EVID-20261110-PROCESSOS",
       "fonte_url_na_coleta": "https://pesquisa.apps.tcu.gov.br/"
+    },
+    {
+      "id": "EVID-20261124-PLD",
+      "fonte_id": "F008",
+      "url_documento": "https://pda-download.ccee.org.br/T09SGpnfRN-2ZaeWfHgrMw/content",
+      "titulo": "PLD CCEE 24/11 e média 17–23/11",
+      "data_publicacao": "2026-11-24",
+      "data_referencia_inicio": "2026-11-18",
+      "data_referencia_fim": "2026-11-24",
+      "coletado_em": "2026-11-24T08:30:00-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "PLD em quatro submercados: R$141,29/MWh em 24/11; média aritmética de 28 observações de 17–23/11: R$124,36/MWh.",
+      "status_validacao": "validado_fonte_primaria",
+      "metodo": "CSV oficial CCEE, quatro submercados, média aritmética de 28 observações",
+      "edicao": "2026-11-24",
+      "fonte_url_na_coleta": "https://pda-download.ccee.org.br/T09SGpnfRN-2ZaeWfHgrMw/content"
+    },
+    {
+      "id": "EVID-20261124-CVU",
+      "fonte_id": "F007",
+      "url_documento": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/cvu_usitermica_se/CVU_USINA_TERMICA_2026.csv",
+      "titulo": "CVU ONS 21–27/11, revisão 3",
+      "data_publicacao": "2026-11-24",
+      "data_referencia_inicio": "2026-11-18",
+      "data_referencia_fim": "2026-11-24",
+      "coletado_em": "2026-11-24T08:30:00-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "Sete CVUs validados individualmente: 522,87; 419,92; 410,40; 350,34; 431,90; 437,26; 428,25 R$/MWh.",
+      "status_validacao": "validado_fonte_primaria",
+      "metodo": "Leitura direta de CSV oficial ONS via GitHub Actions 45384537523",
+      "edicao": "2026-11-24",
+      "fonte_url_na_coleta": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/cvu_usitermica_se/CVU_USINA_TERMICA_2026.csv"
+    },
+    {
+      "id": "EVID-20261124-EAR",
+      "fonte_id": "F001",
+      "url_documento": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/ear_subsistema_di/EAR_DIARIO_SUBSISTEMA_2026.csv",
+      "titulo": "EAR ONS observado 22/11",
+      "data_publicacao": "2026-11-24",
+      "data_referencia_inicio": "2026-11-18",
+      "data_referencia_fim": "2026-11-24",
+      "coletado_em": "2026-11-24T08:30:00-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "SE 55,42%, S 81,91%, NE 59,04%, N 51,90%.",
+      "status_validacao": "validado_fonte_primaria",
+      "metodo": "Leitura direta de CSV oficial ONS via GitHub Actions 45384537523",
+      "edicao": "2026-11-24",
+      "fonte_url_na_coleta": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/ear_subsistema_di/EAR_DIARIO_SUBSISTEMA_2026.csv"
+    },
+    {
+      "id": "EVID-20261124-CMO",
+      "fonte_id": "F029",
+      "url_documento": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/cmo_se/CMO_SEMANAL_2026.csv",
+      "titulo": "CMO ONS semana operativa até 27/11",
+      "data_publicacao": "2026-11-24",
+      "data_referencia_inicio": "2026-11-18",
+      "data_referencia_fim": "2026-11-24",
+      "coletado_em": "2026-11-24T08:30:00-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "SE 9,20, S 5,02, NE 9,20, N 289,25 R$/MWh.",
+      "status_validacao": "validado_fonte_primaria",
+      "metodo": "Leitura direta de CSV oficial ONS via GitHub Actions 45384537523",
+      "edicao": "2026-11-24",
+      "fonte_url_na_coleta": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/cmo_se/CMO_SEMANAL_2026.csv"
+    },
+    {
+      "id": "EVID-20261124-ANP",
+      "fonte_id": "F005",
+      "url_documento": "https://www.gov.br/anp/pt-br/canais_atendimento/imprensa/noticias-comunicados/prazo-da-consulta-publica-sobre-receitas-e-tarifas-de-transporte-de-gas-natural-para-2026-2030-termina-em-2-12",
+      "titulo": "ANP CP25/2026 - prazo retificado",
+      "data_publicacao": "2026-11-24",
+      "data_referencia_inicio": "2026-11-18",
+      "data_referencia_fim": "2026-11-24",
+      "coletado_em": "2026-11-24T08:30:00-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "Prazo para contribuições até 02/12/2026 e revisão de receitas/tarifas transporte gás 2026–2030.",
+      "status_validacao": "validado_fonte_primaria",
+      "metodo": "Conferência documental da publicação e data de referência",
+      "edicao": "2026-11-24",
+      "fonte_url_na_coleta": "https://www.gov.br/anp/pt-br/canais_atendimento/imprensa/noticias-comunicados/prazo-da-consulta-publica-sobre-receitas-e-tarifas-de-transporte-de-gas-natural-para-2026-2030-termina-em-2-12"
+    },
+    {
+      "id": "EVID-20261124-REN",
+      "fonte_id": "F023",
+      "url_documento": "https://www.in.gov.br/web/dou/-/resolucao-normativa-n-1.176-de-17-de-novembro-de-2026-745566480",
+      "titulo": "REN ANEEL 1.176/2026 - ECR",
+      "data_publicacao": "2026-11-24",
+      "data_referencia_inicio": "2026-11-18",
+      "data_referencia_fim": "2026-11-24",
+      "coletado_em": "2026-11-24T08:30:00-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "Publicada em 23/11 e vigente desde a publicação; faturamento de benefícios CDE e TUST.",
+      "status_validacao": "validado_fonte_primaria",
+      "metodo": "Conferência documental da publicação e data de referência",
+      "edicao": "2026-11-24",
+      "fonte_url_na_coleta": "https://www.in.gov.br/web/dou/-/resolucao-normativa-n-1.176-de-17-de-novembro-de-2026-745566480"
+    },
+    {
+      "id": "EVID-20261124-ION",
+      "fonte_id": "F015",
+      "url_documento": "https://megawhat.uol.com.br/regulacao/epp-reverte-inabilitacao-de-17-gw-no-lrcap-mas-tera-que-comprovar-recursos/",
+      "titulo": "Despacho 4.370/2026 - recursos ION no LRCAP",
+      "data_publicacao": "2026-11-24",
+      "data_referencia_inicio": "2026-11-18",
+      "data_referencia_fim": "2026-11-24",
+      "coletado_em": "2026-11-24T08:30:00-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "Publicado DOU em 23/11; seis consórcios ION têm recurso provido condicionadamente.",
+      "status_validacao": "fonte_secundaria_documento_identificado",
+      "metodo": "Conferência documental da publicação e data de referência",
+      "edicao": "2026-11-24",
+      "fonte_url_na_coleta": "https://megawhat.uol.com.br/regulacao/epp-reverte-inabilitacao-de-17-gw-no-lrcap-mas-tera-que-comprovar-recursos/"
     }
   ],
   "campos_obrigatorios_evidencia": [
@@ -3147,22 +3259,20 @@
     "regra": "Consultar canais fixos por número completo. Registrar evidência de andamento apenas quando efetivamente obtida; ausência de extração não significa ausência de movimentação."
   },
   "validacao_operacional": {
-    "data": "2026-11-17",
-    "mercado": "PLD 17/11 e média completa 10–16/11; CMO até 20/11; EAR observado 16/11; sete CVUs Revisão 2; Henry Hub e Brent spot EIA; Newcastle preservado com pendência de interface.",
+    "data": "2026-11-24",
+    "mercado": "CSV oficiais coletados 24/11: PLD 24/11 R$141,29 e média 17–23/11 R$124,36; EAR 22/11; CMO semana 27/11; sete CVUs semana 21–27/11 revisão 3; EIA Henry Hub e Brent de 17/11; ICE Newcastle última negociação 17/11.",
     "curva_forward": "F022 revalidado: base 16/11, publicado 17/11, semana 47, quatro índices por produto/horizonte no SE.",
-    "regulacao": "Resultado dos leilões A-1/A-2/A-3 e retomada da revisão tarifária do gás validados em documentos oficiais específicos.",
-    "aneel": "23ª RPO confirmada no CSV oficial gerado em 13/11, com dois recursos LRCAP; resultados ausentes no corte.",
-    "processos": "TCU 005.914/2026-4 e 008.289/2025-5 reconsultados; processos ANEEL sem andamento individual extraível.",
+    "regulacao": "ANP CP25/2026 prazo 02/12 confirmado em comunicado oficial de 23/11; REN ANEEL 1.176/2026 publicada 23/11; Despacho ANEEL 4.370/2026 sobre ION; ação ABEEólica perante STF contra rateio de armazenamento.",
+    "aneel": "REN 1.176/2026 (ECR) e Despacho 4.370/2026 (LRCAP) publicados em 23/11; distinguir ECR de ERCAP da CP037.",
+    "processos": "Preservados os registros CTJL atualizados, a manifestação TCU 005.914/2026-4 com prazo de 11/12 e acompanhamento TCU 008.289/2025-5.",
     "ultima_edicao": {
-      "edicao": "2026-11-17",
-      "corte": "2026-11-17T13:00:00-03:00",
-      "cobertura": "Notícias 11–17/11, atos, consultas, pauta, sete CVUs, PLD, CMO, EAR observado, Henry Hub, Newcastle, Brent spot, índice forward público, agenda, ações e processos permanentes.",
+      "edicao": "2026-11-24",
+      "corte": "2026-11-24T08:30:00-03:00",
+      "cobertura": "Principais notícias 18–24/11, ANP CP25/2026, ABEEólica/STF, REN 1.176/2026, LRCAP 2026 e seis itens no Monitor CORE. PLD CCEE 24/11; CMO ONS até 27/11; EAR 22/11; CVU revisão 3, semana 21–27/11; Henry Hub e Brent spot EIA 17/11, Newcastle ICE negociação de 17/11.",
       "lacunas": [
-        "resultados individuais da 23ª RPO ANEEL não disponíveis no CSV gerado em 13/11",
-        "andamentos individuais dos processos ANEEL não extraídos por indisponibilidade/limitação do SEI",
-        "nova tabela de preços Newcastle não extraída da interface ICE; valores de 04/11 preservados",
-        "lista individual de vencedores/produtos/preços dos leilões não validada no corte",
-        "assinatura e memória de cálculo posteriores ao Despacho 4.133/2026 não confirmadas"
+        "Aguardam-se as deliberações definitivas da CP 037/2026 e dos recursos pendentes do LRCAP; não confundir ajuizamento com suspensão judicial concedida.",
+        "Nova cotação Newcastle ICE em 24/11 não validada; última negociação de 17/11 identificada.",
+        "Atualização oficial do Henry Hub e Brent posterior a 17/11 não confirmada nesta edição."
       ],
       "noticias_novas_materiais": true
     }
