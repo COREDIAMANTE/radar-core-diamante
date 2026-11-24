@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "atualizado_em": "2026-11-24T10:49:00-03:00",
+  "atualizado_em": "2026-11-24T13:03:00-03:00",
   "repositorio": "COREDIAMANTE/radar-core-diamante",
   "descricao": "Cadastro canônico de fontes, metodologia e histórico de evidências do Radar CORE. Cadastro não equivale a validação dos valores publicados.",
   "fontes": [
@@ -11,7 +11,7 @@
       "url": "https://dados.ons.org.br/dataset/ear-diario-por-subsistema",
       "tipo": "primaria",
       "papel": "ponto fixo de consulta; localizar e registrar documento/recurso específico em cada atualização",
-      "validacao": "Arquivo oficial ONS EAR_DIARIO_SUBSISTEMA_2026.csv consultado em 24/11/2026; última observação 22/11: SE 55,42%, S 81,91%, NE 59,04%, N 51,90%."
+      "validacao": "Arquivo oficial ONS EAR_DIARIO_SUBSISTEMA_2026.csv consultado em 24/11/2026; última observação 23/11: SE/CO 55,6768%, S 81,1946%, NE 58,7660%, N 49,9738%."
     },
     {
       "id": "F002",
@@ -216,7 +216,7 @@
       "tipo": "primaria",
       "acesso": "público sem login; GET retornou HTTP 200 e JSON success=true em 16/10/2026",
       "metodo": "GET endpoint_publico. Ler data.indices_curva_forward_por_data: data_base, data_publicacao, descricao_semana e tabela. Tabela possui convencional_trimestre, convencional_longo_prazo, incentivada_50_trimestre e incentivada_50_longo_prazo. Converter indice para decimal. SE; Trimestre M+1 a M+3 e Longo Prazo A+1 a A+4. Não chamar de preço médio geral nem de curva completa BBCE.",
-      "validacao": "Endpoint público revalidado em 17/11/2026: data-base 16/11, publicação 17/11, semana 47.",
+      "validacao": "Endpoint público revalidado em 24/11/2026: data-base 23/11, publicação 24/11, semana 48; quatro índices por tipo de energia e horizonte no SE/CO.",
       "endpoint_publico": "https://widget-api.denergia.com.br/indices-curva-forward"
     },
     {
@@ -275,7 +275,7 @@
       "tipo": "primaria",
       "acesso": "público; CSV e portal institucional",
       "metodo": "Consultar calendário, página de pautas/atas e CSV oficial. Registrar tipo de deliberação, número, data e documento específico. Calendário não equivale a pauta, voto ou resultado. Aplicar monitoramento_atos_aneel: buscar também avisos de prorrogação e retificação de CPs por assunto, mesmo sem citar ativos nominalmente; registrar prazo e fonte oficial.",
-      "validacao": "CSV oficial gerado em 13/11 e calendário consultados em 17/11; 23ª RPO contém 39 registros, inclusive dois recursos LRCAP no processo 48500.032821/2025-67; resultados ausentes no corte."
+      "validacao": "CSV oficial gerado em 20/11 e consultado em 24/11; pauta de 24/11 com 56 registros, todos sem resultado preenchido no corte; nenhum item diretamente associado a CTJL, Pecém I/II, Itaqui ou à Comercializadora."
     },
     {
       "id": "F029",
@@ -326,6 +326,15 @@
       "acesso": "público",
       "metodo": "Verificar minuta, cronograma, requisitos técnicos e região de efetividade; não inferir elegibilidade de ativos.",
       "validacao": "Documentação do segundo mecanismo de 2026 e consulta de 05 a 18/11 conferidas em 24/11."
+    },
+    {
+      "id": "F034",
+      "assunto": "Cobertura complementar de judicialização setorial",
+      "orgao": "Terra / UOL",
+      "url": "https://www.terra.com.br/economia/",
+      "tipo": "complementar",
+      "metodo": "Usar somente com atribuição, título, URL e data. Não tratar ajuizamento relatado como decisão, liminar ou suspensão; confirmar cronograma e atos regulatórios em fontes primárias.",
+      "validacao": "Matéria específica sobre ação da ABEEólica no STF localizada para a edição de 24/11; cronograma do Leilão 5/2026 revalidado separadamente no Comunicado Relevante nº 4 da CPL/CCEE."
     }
   ],
   "indicadores": [
@@ -3007,7 +3016,8 @@
       "status_validacao": "validado_fonte_primaria",
       "metodo": "CSV oficial CCEE, quatro submercados, média aritmética de 28 observações; resultado reconferido no log GitHub Actions 45384537523 (24/11, 08h28 BRT).",
       "edicao": "2026-11-24",
-      "fonte_url_na_coleta": "https://pda-download.ccee.org.br/T09SGpnfRN-2ZaeWfHgrMw/content"
+      "fonte_url_na_coleta": "https://pda-download.ccee.org.br/T09SGpnfRN-2ZaeWfHgrMw/content",
+      "substitui_id": "EVID-20261117-PLD"
     },
     {
       "id": "EVID-20261124-CVU",
@@ -3023,7 +3033,8 @@
       "status_validacao": "validado_fonte_primaria",
       "metodo": "Leitura direta de CSV oficial ONS via GitHub Actions 45384537523; resultado reconferido no log GitHub Actions 45384537523 (24/11, 08h28 BRT).",
       "edicao": "2026-11-24",
-      "fonte_url_na_coleta": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/cvu_usitermica_se/CVU_USINA_TERMICA_2026.csv"
+      "fonte_url_na_coleta": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/cvu_usitermica_se/CVU_USINA_TERMICA_2026.csv",
+      "substitui_id": "EVID-20261117-CVU"
     },
     {
       "id": "EVID-20261124-EAR",
@@ -3039,7 +3050,8 @@
       "status_validacao": "validado_fonte_primaria",
       "metodo": "Leitura direta de CSV oficial ONS via GitHub Actions 45384537523; resultado reconferido no log GitHub Actions 45384537523 (24/11, 08h28 BRT).",
       "edicao": "2026-11-24",
-      "fonte_url_na_coleta": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/ear_subsistema_di/EAR_DIARIO_SUBSISTEMA_2026.csv"
+      "fonte_url_na_coleta": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/ear_subsistema_di/EAR_DIARIO_SUBSISTEMA_2026.csv",
+      "substitui_id": "EVID-20261117-EAR"
     },
     {
       "id": "EVID-20261124-CMO",
@@ -3055,7 +3067,8 @@
       "status_validacao": "validado_fonte_primaria",
       "metodo": "Leitura direta de CSV oficial ONS via GitHub Actions 45384537523; resultado reconferido no log GitHub Actions 45384537523 (24/11, 08h28 BRT).",
       "edicao": "2026-11-24",
-      "fonte_url_na_coleta": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/cmo_se/CMO_SEMANAL_2026.csv"
+      "fonte_url_na_coleta": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/cmo_se/CMO_SEMANAL_2026.csv",
+      "substitui_id": "EVID-20261117-CMO"
     },
     {
       "id": "EVID-20261124-ANP",
@@ -3071,7 +3084,8 @@
       "status_validacao": "validado_fonte_primaria",
       "metodo": "Conferência documental da publicação e data de referência",
       "edicao": "2026-11-24",
-      "fonte_url_na_coleta": "https://www.gov.br/anp/pt-br/canais_atendimento/imprensa/noticias-comunicados/prazo-da-consulta-publica-sobre-receitas-e-tarifas-de-transporte-de-gas-natural-para-2026-2030-termina-em-2-12"
+      "fonte_url_na_coleta": "https://www.gov.br/anp/pt-br/canais_atendimento/imprensa/noticias-comunicados/prazo-da-consulta-publica-sobre-receitas-e-tarifas-de-transporte-de-gas-natural-para-2026-2030-termina-em-2-12",
+      "substitui_id": "EVID-20261117-ANP-REVISAO"
     },
     {
       "id": "EVID-20261124-REN",
@@ -3087,7 +3101,8 @@
       "status_validacao": "validado_fonte_primaria",
       "metodo": "Conferência documental da publicação e data de referência",
       "edicao": "2026-11-24",
-      "fonte_url_na_coleta": "https://www.in.gov.br/web/dou/-/resolucao-normativa-n-1.176-de-17-de-novembro-de-2026-745566480"
+      "fonte_url_na_coleta": "https://www.in.gov.br/web/dou/-/resolucao-normativa-n-1.176-de-17-de-novembro-de-2026-745566480",
+      "substitui_id": null
     },
     {
       "id": "EVID-20261124-ION",
@@ -3103,7 +3118,8 @@
       "status_validacao": "inteiro_teor_em_espelho_dou_oficial_indisponivel",
       "metodo": "Conferido inteiro teor reproduzido pelo Jurídico em Pauta, edição 219, seção 1, p. 138, com link oficial; DOU retornou HTTP 502 na revisão. Cobertura MegaWhat complementar.",
       "edicao": "2026-11-24",
-      "fonte_url_na_coleta": "https://juridicoempauta.com.br/materia/1374906-despacho-n-4-370-de-17-de-novembro-de-2026-diretoria-colegiada-agencia-nacional-de"
+      "fonte_url_na_coleta": "https://juridicoempauta.com.br/materia/1374906-despacho-n-4-370-de-17-de-novembro-de-2026-diretoria-colegiada-agencia-nacional-de",
+      "substitui_id": "EVID-20261117-PAUTA-ANEEL"
     },
     {
       "id": "EVID-20261124-NEWCASTLE-ICE",
@@ -3119,7 +3135,8 @@
       "status_validacao": "validado_fonte_primaria",
       "metodo": "Linha Dec26, coluna Last, data 23/11; painel ICE de 23/11 07:30 ET, atraso mínimo de 15 minutos. Unidade confirmada na especificação ICE 1137; não settlement.",
       "edicao": "2026-11-24",
-      "fonte_url_na_coleta": "https://www.ice.com/products/1137/globalCOAL-Newcastle-Coal-Futures/data?marketId=5310550&span=1"
+      "fonte_url_na_coleta": "https://www.ice.com/products/1137/globalCOAL-Newcastle-Coal-Futures/data?marketId=5310550&span=1",
+      "substitui_id": "EVID-20261117-ICE"
     },
     {
       "id": "EVID-20261124-HENRY-HUB",
@@ -3135,7 +3152,8 @@
       "status_validacao": "validado_fonte_primaria",
       "metodo": "Tabela diária EIA; Release Date 18/11; próxima publicação 25/11.",
       "edicao": "2026-11-24",
-      "fonte_url_na_coleta": "https://www.eia.gov/dnav/ng/hist/rngwhhdD.htm"
+      "fonte_url_na_coleta": "https://www.eia.gov/dnav/ng/hist/rngwhhdD.htm",
+      "substitui_id": "EVID-20261117-HH"
     },
     {
       "id": "EVID-20261124-BRENT-SPOT",
@@ -3151,7 +3169,8 @@
       "status_validacao": "validado_fonte_primaria",
       "metodo": "Tabela diária EIA; Release Date 18/11; próxima publicação 25/11.",
       "edicao": "2026-11-24",
-      "fonte_url_na_coleta": "https://www.eia.gov/dnav/pet/hist/RBRTED.htm"
+      "fonte_url_na_coleta": "https://www.eia.gov/dnav/pet/hist/RBRTED.htm",
+      "substitui_id": "EVID-20261117-BRENT-SPOT"
     },
     {
       "id": "EVID-20261124-CP042",
@@ -3305,6 +3324,74 @@
       "edicao": "2026-11-24",
       "substitui_id": "EVID-20261110-DESPACHO4133",
       "fonte_url_na_coleta": "https://pesquisa.in.gov.br/"
+    },
+    {
+      "id": "EVID-20261124-EAR-1303",
+      "fonte_id": "F001",
+      "url_documento": "https://ons-dl-prod-opendata.s3.amazonaws.com/dataset/ear_subsistema_diario/EAR_DIARIO_SUBSISTEMA_2026.csv",
+      "titulo": "ONS: EAR diário por subsistema — observação de 23/11/2026",
+      "data_publicacao": null,
+      "data_referencia_inicio": "2026-11-23",
+      "data_referencia_fim": "2026-11-23",
+      "coletado_em": "2026-11-24T13:03:00-03:00",
+      "unidade": "% da EAR máxima",
+      "valor_ou_resumo": "SE/CO 55,6768%; Sul 81,1946%; Nordeste 58,7660%; Norte 49,9738%.",
+      "status_validacao": "validado_fonte_primaria",
+      "metodo": "Leitura do CSV anual oficial do ONS; seleção da maior data din_instante e transcrição de val_ear_verifpercentual por subsistema. Dado observado, não projeção.",
+      "edicao": "2026-11-24",
+      "substitui_id": "EVID-20261124-EAR",
+      "fonte_url_na_coleta": "https://dados.ons.org.br/dataset/ear-diario-por-subsistema"
+    },
+    {
+      "id": "EVID-20261124-F022",
+      "fonte_id": "F022",
+      "url_documento": "https://widget-api.denergia.com.br/indices-curva-forward",
+      "titulo": "Denergia: índices públicos da curva forward — semana 48",
+      "data_publicacao": "2026-11-24",
+      "data_referencia_inicio": "2026-11-23",
+      "data_referencia_fim": "2026-11-23",
+      "coletado_em": "2026-11-24T13:03:00-03:00",
+      "unidade": "R$/MWh",
+      "valor_ou_resumo": "SE/CO: convencional trimestre 123,86; convencional longo prazo 224,53; incentivada 50% trimestre 151,44; incentivada 50% longo prazo 251,96. Trimestre M+1 a M+3; longo prazo A+1 a A+4.",
+      "status_validacao": "validado_endpoint_publico",
+      "metodo": "GET no endpoint público F022; leitura de data_base, data_publicacao, descricao_semana e quatro campos da tabela. Índices por produto e horizonte; não representam preço médio universal nem curva completa BBCE.",
+      "edicao": "2026-11-24",
+      "substitui_id": "EVID-20261117-F022",
+      "fonte_url_na_coleta": "https://widget-api.denergia.com.br/indices-curva-forward"
+    },
+    {
+      "id": "EVID-20261124-PAUTA-ANEEL-1303",
+      "fonte_id": "F028",
+      "url_documento": "https://dadosabertos.aneel.gov.br/dataset/pautas-e-atas-das-reunioes-publicas-da-diretoria",
+      "titulo": "ANEEL: pauta da reunião de 24/11/2026",
+      "data_publicacao": "2026-11-20",
+      "data_referencia_inicio": "2026-11-24",
+      "data_referencia_fim": "2026-11-24",
+      "coletado_em": "2026-11-24T13:03:00-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "CSV continha 56 registros para 24/11, todos com situação de pauta e sem resultado de julgamento preenchido no corte. Nenhum item foi identificado como diretamente associado a CTJL, Pecém I, Pecém II, Itaqui ou Comercializadora; ocorrências nominais de 'Diamante' de terceiros não foram atribuídas ao Grupo.",
+      "status_validacao": "pauta_validada_resultados_pendentes",
+      "metodo": "Filtro da data da reunião no CSV oficial; conferência de situação, resultado, processo, assunto e interessado. Ausência de resultado no arquivo não foi interpretada como ausência de deliberação.",
+      "edicao": "2026-11-24",
+      "substitui_id": "EVID-20261117-PAUTA-ANEEL",
+      "fonte_url_na_coleta": "https://dadosabertos.aneel.gov.br/dataset/pautas-e-atas-das-reunioes-publicas-da-diretoria"
+    },
+    {
+      "id": "EVID-20261124-ABEEOLICA-STF",
+      "fonte_id": "F034",
+      "url_documento": "https://www.terra.com.br/economia/abeeolica-vai-ao-stf-contra-regra-de-custeio-de-baterias-a-serem-contratadas-em-leilao%2C9debc924af46517f5be816592a453c3122u4fo16.html",
+      "titulo": "Terra: ABEEólica vai ao STF contra regra de custeio de baterias",
+      "data_publicacao": "2026-11-21",
+      "data_referencia_inicio": "2026-11-21",
+      "data_referencia_fim": "2026-11-21",
+      "coletado_em": "2026-11-24T13:03:00-03:00",
+      "unidade": null,
+      "valor_ou_resumo": "Cobertura complementar relata ajuizamento de ação pela ABEEólica contra regra de custeio. Não foi confirmada, nesta revisão, decisão liminar ou suspensão dos leilões.",
+      "status_validacao": "complementar_atribuida_decisao_nao_confirmada",
+      "metodo": "Registro atribuído à matéria específica, com data. Cronograma tratado separadamente com documento primário CPL/CCEE; ajuizamento não equiparado a decisão judicial.",
+      "edicao": "2026-11-24",
+      "substitui_id": null,
+      "fonte_url_na_coleta": "https://www.terra.com.br/economia/"
     }
   ],
   "campos_obrigatorios_evidencia": [
@@ -3338,11 +3425,11 @@
       "Preservar layout e correções manuais",
       "Publicar e verificar workflow geral e comparar site ao commit; em falha preservar última edição válida e informar"
     ],
-    "ultima_coleta_completa": "2026-11-17T13:00:00-03:00",
+    "ultima_coleta_completa": "2026-11-24T13:03:00-03:00",
     "intervalo_dias": 7,
     "inicio": "2026-10-16",
     "nova_edicao_por_execucao": true,
-    "ultima_edicao": "2026-11-17"
+    "ultima_edicao": "2026-11-24"
   },
   "referencias_edicoes": [
     {
@@ -3491,25 +3578,27 @@
   },
   "validacao_operacional": {
     "data": "2026-11-24",
-    "mercado": "CSV oficiais coletados 24/11: PLD 24/11 R$141,29 e média 17–23/11 R$124,36; EAR 22/11; CMO semana 27/11; sete CVUs semana 21–27/11 revisão 3; EIA Henry Hub e Brent de 17/11; ICE Newcastle Dec26 último negócio 23/11, US$150,50/t.",
-    "curva_forward": "F022 revalidado: base 16/11, publicado 17/11, semana 47, quatro índices por produto/horizonte no SE.",
+    "mercado": "CSV oficiais revalidados em 24/11: PLD 24/11 R$141,29 e média simples 17–23/11 R$124,36; EAR observado 23/11; CMO semana até 27/11; sete CVUs semana 21–27/11 revisão 3. EIA Henry Hub e Brent spot de 17/11; ICE Newcastle Dec26 último negócio 23/11, US$150,50/t.",
+    "curva_forward": "F022 revalidado no endpoint público: base 23/11, publicado 24/11, semana 48; quatro índices do SE/CO separados por tipo de energia e horizonte.",
     "regulacao": "ANP CP25/2026 prazo 02/12 confirmado em comunicado oficial de 23/11; REN ANEEL 1.176/2026 publicada 23/11; Despacho ANEEL 4.370/2026 sobre ION; ação ABEEólica perante STF contra rateio de armazenamento. Complemento 24/11: CP042, CP044, agendas CCEE sobre PLD e garantias e Comunicado CPL 4 (Leilão 5). CP040 vigente acompanhada.",
-    "aneel": "REN 1.176/2026 (ECR) e Despacho 4.370/2026 (LRCAP) publicados em 23/11; distinguir ECR de ERCAP da CP037.",
+    "aneel": "Pauta ANEEL de 24/11 conferida no CSV oficial: 56 registros sem resultado preenchido no corte e nenhum item diretamente associado aos ativos do Grupo. REN 1.176/2026 e Despacho 4.370/2026 permanecem tratados conforme documentos específicos.",
     "processos": "Reajuste da RF do CER CTJL: pleito acolhido pelo Despacho 4.133/2026, termo aditivo concluído; aguardando operacionalização CCEE na apuração mensal de dezembro/2026, conforme atualização do usuário. Processo 48500.011033/2026-18 (reequilíbrio) excluído da análise ativa por orientação do usuário; histórico preservado. Mantidos os demais processos, incluindo TCU 005.914/2026-4 e TCU 008.289/2025-5.",
     "ultima_edicao": {
       "edicao": "2026-11-24",
-      "corte": "2026-11-24T08:30:00-03:00",
-      "cobertura": "Principais notícias 18–24/11, ANP CP25/2026, ABEEólica/STF, REN 1.176/2026, LRCAP 2026 e sete itens no Monitor CORE. PLD CCEE 24/11; CMO ONS até 27/11; EAR 22/11; CVU revisão 3, semana 21–27/11; Henry Hub e Brent spot EIA 17/11, Newcastle ICE Dec26 último negócio de 23/11, US$150,50/t. Complemento: CP042, CP044, agendas de PLD e garantias financeiras; cronograma do Leilão 5 conforme Comunicado 4; CP040 mantida em acompanhamento.",
+      "corte": "2026-11-24T13:03:00-03:00",
+      "cobertura": "Edição principal semanal com notícias materiais posteriores ao corte de 17/11; Insight CORE, Mercado, Monitor, Agenda, Ações e Processos permanentes revisados. PLD CCEE 24/11; CMO ONS até 27/11; EAR observado 23/11; sete CVUs ONS revisão 3 da semana 21–27/11; curva forward pública F022 base 23/11/publicação 24/11; combustíveis com datas e produto identificados.",
       "lacunas": [
-        "Aguardam-se as deliberações definitivas da CP 037/2026 e dos recursos pendentes do LRCAP; não confundir ajuizamento com suspensão judicial concedida.",
+        "Pauta ANEEL de 24/11: resultados de julgamento ainda não preenchidos no CSV oficial no corte; ausência no arquivo não significa ausência de deliberação.",
+        "Aguardam-se deliberações definitivas da CP 037/2026 e dos recursos pendentes do LRCAP; ajuizamento não foi confundido com suspensão judicial.",
         "Newcastle Dec26: último negócio de 23/11 validado; não foi identificada cotação posterior nem preço de ajuste.",
         "Henry Hub e Brent spot: EIA indica próxima divulgação em 25/11; última observação disponível 17/11.",
-        "Despacho 4.370: inteiro teor conferido em espelho do DOU; endereço oficial retornou 502 na revisão.",
-        "Atos do Dia: última execução automática registrada inconclusiva em 05/11; registros editoriais posteriores existem, mas não comprovam cobertura integral."
+        "Despacho 4.370: inteiro teor conferido em espelho do DOU; endereço oficial apresentou falha na revisão.",
+        "TCU 005.914/2026-4: prazo de 11/12 e situação processual informados pelo CORE; falta confirmação documental independente.",
+        "Atos do Dia permanece independente; sua cadência e conteúdo não foram alterados nesta edição principal."
       ],
       "noticias_novas_materiais": true,
-      "revisao_mercado_em": "2026-11-24T09:07:00-03:00",
-      "revisao_regulatoria_em": "2026-11-24T13:04:31.862Z",
+      "revisao_mercado_em": "2026-11-24T13:03:00-03:00",
+      "revisao_regulatoria_em": "2026-11-24T13:03:00-03:00",
       "prioridades_editoriais": {
         "criticas": [
           "ERCAP/STF",
